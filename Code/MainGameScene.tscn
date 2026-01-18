@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=3 uid="uid://258gob48pfr5"]
+
+[ext_resource type="Texture2D" uid="uid://t0myctwfydpv" path="res://Art/Placeholder/Employee.png" id="1_22ywq"]
+[ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/dialogue_system.tscn" id="1_kgnas"]
+[ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
+[ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/customer_base.tscn" id="4_l8phu"]
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" type="Node2D" parent="Node2D"]
+position = Vector2(-51, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Player"]
+position = Vector2(270, 412.00003)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("1_22ywq")
+
+[node name="Table" type="Node2D" parent="Node2D"]
+
+[node name="bot" type="Polygon2D" parent="Node2D/Table"]
+position = Vector2(0, -13)
+color = Color(0.7581918, 0.7581918, 0.7581917, 1)
+polygon = PackedVector2Array(587, 363, 479, 371, 479, 672, 602, 671)
+
+[node name="top" type="Polygon2D" parent="Node2D/Table"]
+polygon = PackedVector2Array(716, 649, 681, 177, 579, 181, 594, 646)
+
+[node name="Customer" type="Node2D" parent="Node2D"]
+position = Vector2(129, -1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/Customer"]
+position = Vector2(685, 22)
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(160, 148, 240, 148, 240, 224, 156, 224)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Node2D/Customer"]
+position = Vector2(1079, 5)
+scale = Vector2(-1, 1)
+color = Color(1, 0.5568628, 0, 1)
+polygon = PackedVector2Array(155, 264, 242, 266, 306, 339, 271, 386, 226, 368, 224, 487, 219, 644, 121, 645, 117, 489, 123, 331)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l8phu")
+
+[node name="Belts" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="cheap_belt" type="Button" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 226.0
+offset_right = 678.0
+offset_bottom = 257.0
+text = "Cheap Belt
+"
+
+[node name="red_belt" type="Button" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 301.0
+offset_right = 684.0
+offset_bottom = 332.0
+text = "Red Belt
+"
+
+[node name="norm_belt" type="Button" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 471.0
+offset_right = 699.0
+offset_bottom = 502.0
+text = "Normal Belt
+"
+
+[node name="over_belt" type="Button" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 551.0
+offset_right = 698.0
+offset_bottom = 605.0
+text = "Overpriced
+Belt"
+
+[node name="Fix" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="knife" type="Button" parent="UI/Fix"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 442.0
+offset_right = 545.0
+offset_bottom = 473.0
+text = "Knife"
+
+[node name="price_marker" type="Button" parent="UI/Fix"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 491.0
+offset_right = 581.0
+offset_bottom = 522.0
+text = "Marker"
+
+[node name="replacement" type="Button" parent="UI/Fix"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 544.0
+offset_right = 574.0
+offset_bottom = 575.0
+text = "New Belt"
+
+[node name="Dialogue" parent="UI" instance=ExtResource("1_kgnas")]
+layout_mode = 1
+offset_left = -286.0
+offset_right = 286.0
+
+[node name="GUI" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 377.0
+offset_right = 673.0
+offset_bottom = 422.0
+
+[node name="profits" type="PanelContainer" parent="UI/GUI"]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="UI/GUI/profits"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "$0"
+
+[node name="track" type="Node2D" parent="."]
+
+[node name="Customer" parent="track" instance=ExtResource("4_l8phu")]
+position = Vector2(1368, 374)
