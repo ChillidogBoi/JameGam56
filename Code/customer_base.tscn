@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqrftpgctohm7"]
+[gd_scene load_steps=7 format=3 uid="uid://cqrftpgctohm7"]
 
 [ext_resource type="Script" uid="uid://rmhgcp2uoo8w" path="res://Code/customer_class.gd" id="1_m4602"]
 
@@ -36,17 +36,36 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_nnyrb"]
+resource_name = "stop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nnyrb"]
 _data = {
 &"RESET": SubResource("Animation_j6yxq"),
-&"hop": SubResource("Animation_m4602")
+&"hop": SubResource("Animation_m4602"),
+&"stop": SubResource("Animation_nnyrb")
 }
 
-[node name="Customer" type="Sprite2D"]
+[node name="Customer" type="Sprite2D" node_paths=PackedStringArray("anims")]
+visible = false
 texture = SubResource("PlaceholderTexture2D_j6yxq")
 script = ExtResource("1_m4602")
+anims = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_nnyrb")
 }
+playback_default_blend_time = 0.5

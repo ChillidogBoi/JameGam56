@@ -8,6 +8,7 @@ class_name Customer
 @export_multiline var start_dialogue: String
 @export_multiline var end_dialogue_yes: String
 @export_multiline var end_dialogue_no: String
+@export var anims: AnimationPlayer
 var last_line_delivered: int = 0
 var dialogue_seperated: Array = []
 
@@ -24,5 +25,8 @@ func request_next_dialogue() -> String:
 
 func end_dia_setup(answer: bool):
 	if answer:
-		for n:int in start_dialogue.count("&") + 1:
-			dialogue_seperated.append(start_dialogue.get_slice("&", n))
+		for n:int in end_dialogue_yes.count("&") + 1:
+			dialogue_seperated.append(end_dialogue_yes.get_slice("&", n))
+		return
+	for n:int in end_dialogue_no.count("&") + 1:
+		dialogue_seperated.append(end_dialogue_no.get_slice("&", n))
