@@ -1,22 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmgug8w8kn385"]
+[gd_scene load_steps=17 format=3 uid="uid://bmgug8w8kn385"]
 
-[ext_resource type="Script" uid="uid://d1qpkg1enkxf7" path="res://Code/dialogue_system.gd" id="1_jw2xp"]
+[ext_resource type="Script" uid="uid://d1qpkg1enkxf7" path="res://Code/UI/dialogue_system.gd" id="1_jw2xp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw2xp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_476vb"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_qk3tw"]
+keycode = 4194309
+
+[sub_resource type="InputEventKey" id="InputEventKey_n63qp"]
+keycode = 4194310
+
+[sub_resource type="InputEventKey" id="InputEventKey_gaqqe"]
+keycode = 4194322
+
+[sub_resource type="InputEventKey" id="InputEventKey_0qjhe"]
+keycode = 32
+
+[sub_resource type="InputEventScreenTouch" id="InputEventScreenTouch_03j0k"]
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_2qdf1"]
+button_index = 1
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_wmp2k"]
+button_index = 2
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_8vn8r"]
+device = -1
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_yf5t1"]
+device = -1
+button_index = 1
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_litci"]
+device = -1
+button_index = 12
+
+[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_vl0cx"]
+device = -1
+axis = 1
+axis_value = 1.0
+
+[sub_resource type="Shortcut" id="Shortcut_em08e"]
+events = [SubResource("InputEventKey_qk3tw"), SubResource("InputEventKey_n63qp"), SubResource("InputEventKey_gaqqe"), SubResource("InputEventKey_0qjhe"), SubResource("InputEventScreenTouch_03j0k"), SubResource("InputEventMouseButton_2qdf1"), SubResource("InputEventMouseButton_wmp2k"), SubResource("InputEventJoypadButton_8vn8r"), SubResource("InputEventJoypadButton_yf5t1"), SubResource("InputEventJoypadButton_litci"), SubResource("InputEventJoypadMotion_vl0cx")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lvv3"]
 
-[node name="Dialogue" type="PanelContainer"]
+[node name="Dialogue" type="PanelContainer" node_paths=PackedStringArray("label")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -311.0
-offset_right = 261.0
-offset_bottom = 209.0
+offset_right = 161.0
+offset_bottom = 159.0
 grow_horizontal = 2
 script = ExtResource("1_jw2xp")
+label = NodePath("HBoxContainer/VBoxContainer/Label")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -36,11 +76,13 @@ theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_476vb")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(500, 150)
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "This is a test of the dialogue system. If you are seeing this the dialogue system is probably broken."
 autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -49,6 +91,7 @@ alignment = 2
 [node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+shortcut = SubResource("Shortcut_em08e")
 text = " v "
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer"]

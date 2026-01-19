@@ -4,8 +4,8 @@ signal next
 @export var label: Label
 
 
-func reset():
-	label.visible_characters = 0
+func reset(id: String):
+	label.visible_characters = id.length()
 
 func speak():
 	for n in label.text.length():
@@ -13,4 +13,4 @@ func speak():
 		await get_tree().create_timer(0.01).timeout
 
 func _on_continue_pressed():
-	next.emit()
+	if label.visible_characters > label.text.length() - 4: next.emit()
