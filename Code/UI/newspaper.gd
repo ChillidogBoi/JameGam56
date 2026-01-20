@@ -3,8 +3,17 @@ extends Control
 @export var image: TextureRect
 @export var title: Label
 @export var blurb: Label
+@export var result: Label
+@export var profit: Label
+@export var scammed: Label
+@export var helped: Label
 
 func _ready():
+	if Settings.profit < 300: result.text = "You Got Fired!"
+	else: result.text = "You Survived The Day!"
+	profit.text = str("Money Made: $", Settings.profit)
+	scammed.text = str("Customers Scammed: ", Settings.scammed.size())
+	helped.text = str("Customers Helped: ", Settings.helped)
 	_on_button_pressed()
 
 func news_blurb():
@@ -18,6 +27,10 @@ func news_blurb():
 
 
 func _on_button_pressed():
-	if Settings.scammed.is_empty(): get_tree().change_scene_to_file("res://Code/UI/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Code/UI/main_menu.tscn")
+
+func _on_button1_pressed():
+	if Settings.scammed.is_empty():
+		$HBoxContainer.visible = false
+		$HBoxContainer1.visible = true
 	else: news_blurb()
-	

@@ -15,6 +15,8 @@ var cust: Customer
 const MONEY_SOUND = preload("res://Sound/coin_drop_01.ogg")
 const BOSS_DIA1 = "Make $300 by the end of the day. Or you're fired."
 const BOSS_DIA2 =  "I don't care if you have to cheat an OLD LADY out of her Social Security Check"
+var paused = false
+signal resume
 
 
 func _ready():
@@ -88,6 +90,7 @@ func customer_walkup():
 	cust.anims.play("hop")
 	var adder = 0.001
 	while track.position.x > 900:
+		if paused: await resume
 		track.position.x = lerp(track.position.x, 890.0, adder)
 		adder += 0.000275
 		await get_tree().create_timer(0.01).timeout
@@ -102,6 +105,7 @@ func customer_walkaway():
 	cust.anims.play("hop")
 	var adder = 0.001
 	while track.position.x < 1500:
+		if paused: await resume
 		track.position.x = lerp(track.position.x, 1510.0, adder)
 		adder += 0.0003
 		await get_tree().create_timer(0.01).timeout
@@ -129,19 +133,10 @@ func change_price(type:int):
 		float(sell_buttons[type].tooltip_text.get_slice("$", 1)) * 1.5
 	price_d.visible = true
 	price_d.get_child(0).get_child(0).text = str("Enter New Price For: ", sell_buttons[type].name)
+	if paused: await resume
 	await price_d.get_child(1).get_child(1).pressed
 	sell_buttons[type].tooltip_text = str(sell_buttons[type].tooltip_text.get_slice("$", 0),\
 		"$", price_d.get_child(1).get_child(0).value)
-	price_d.visible = false
-
-
-func change_fix_price():
-	price_d.get_child(1).get_child(0).value =\
-		float(fix_buttons[0].tooltip_text.get_slice("$", 1))
-	price_d.visible = true
-	price_d.get_child(0).get_child(0).text = str("Enter New Price For: ", fix_buttons[0].name)
-	await price_d.get_child(1).get_child(1).pressed
-	fix_buttons[0].tooltip_text = str("$", price_d.get_child(1).get_child(0).value)
 	price_d.visible = false
 
 
@@ -164,7 +159,9 @@ func sell(type:int):
 func end_cust():
 	timer.visible = false
 	timer.get_child(0).stop()
+	if paused: await resume
 	await dialogue(cust.id, cust.request_next_dialogue())
+	if paused: await resume
 	await customer_walkaway()
 	
 	if customer_order.is_empty(): end_game()

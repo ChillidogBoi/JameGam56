@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=78 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Texture2D" uid="uid://j8d5l8t11peg" path="res://Art/Placeholder/mc_sketch.png" id="2_1mmhx"]
@@ -36,6 +36,11 @@
 [ext_resource type="Texture2D" uid="uid://mjc35xoopd8q" path="res://Art/Characters/richguy_sketch.png" id="20_a4ng5"]
 [ext_resource type="Texture2D" uid="uid://biuaa2m1c3nlc" path="res://Art/Characters/police_sketch.png" id="21_a4ng5"]
 [ext_resource type="AudioStream" uid="uid://kj616lj5gif5" path="res://Sound/beltgame_gameloop_01.ogg" id="31_77qlp"]
+[ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="31_xdvx7"]
+[ext_resource type="Script" uid="uid://xvayjbr77bty" path="res://Code/UI/pause.gd" id="32_ckaag"]
+[ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="33_4ldi7"]
+[ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="34_yxcn7"]
+[ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="35_qla06"]
 
 [sub_resource type="Theme" id="Theme_f71xg"]
 default_font = ExtResource("13_mfmbs")
@@ -66,6 +71,175 @@ button_index = 1
 
 [sub_resource type="Shortcut" id="Shortcut_pwe3t"]
 events = [SubResource("InputEventKey_qk3tw"), SubResource("InputEventKey_n63qp"), SubResource("InputEventKey_0qjhe"), SubResource("InputEventScreenTouch_03j0k"), SubResource("InputEventMouseButton_2qdf1"), SubResource("InputEventMouseButton_wmp2k"), SubResource("InputEventJoypadButton_8vn8r"), SubResource("InputEventJoypadButton_yf5t1")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rr7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2f7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kb3bb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kypb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4pq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1hvh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31006"]
+texture = ExtResource("33_4ldi7")
+texture_margin_left = 45.0
+texture_margin_top = 15.0
+texture_margin_right = 45.0
+texture_margin_bottom = 45.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sdk8k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ypuxb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmfym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ep8q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66rcu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ip7ob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdvx7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckaag"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ldi7"]
+bg_color = Color(0.6284664, 0.62846583, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxcn7"]
+bg_color = Color(0.6284664, 0.62846583, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qla06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31006"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtoos"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_owyh2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yw65d"]
+
+[sub_resource type="Animation" id="Animation_jxtq8"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Control/VBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_t0yow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Control/VBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l6xh7"]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Control/VBoxContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 600), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_534gl"]
+_data = {
+&"RESET": SubResource("Animation_t0yow"),
+&"close": SubResource("Animation_l6xh7"),
+&"open": SubResource("Animation_jxtq8")
+}
 
 [node name="Node" type="Node"]
 
@@ -423,6 +597,238 @@ texture_progress = ExtResource("12_71nik")
 
 [node name="Timer" type="Timer" parent="UI/TextureProgressBar"]
 
+[node name="Button" type="Button" parent="UI"]
+z_index = 2
+layout_mode = 0
+offset_top = 6.0
+offset_right = 41.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0rr7d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c2f7l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kb3bb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4kypb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s4pq6")
+text = " II "
+script = ExtResource("32_ckaag")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 1140.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="UI/Button/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Button/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="PanelContainer" parent="UI/Button/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31006")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 72
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 48
+text = "Pause"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "1. continue              ->"
+
+[node name="HSeparator3" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button2" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "2. settings              ->"
+
+[node name="HSeparator4" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button3" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "3. quit                   ->"
+
+[node name="HSeparator5" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 166
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 72
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button" type="HBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+text = "1. music volume:"
+
+[node name="HSlider" type="HSlider" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("34_yxcn7")
+theme_override_icons/grabber_highlight = ExtResource("35_qla06")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator3" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button4" type="HBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+text = "2. sfx volume:   "
+
+[node name="HSlider" type="HSlider" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("34_yxcn7")
+theme_override_icons/grabber_highlight = ExtResource("35_qla06")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator4" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button3" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qla06")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_31006")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rtoos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_owyh2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yw65d")
+text = "3. back                  ->"
+
+[node name="HSeparator5" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 166
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="VSeparator2" type="VSeparator" parent="UI/Button/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_534gl")
+}
+
 [node name="sfx" type="AudioStreamPlayer" parent="UI"]
 
 [node name="music" type="AudioStreamPlayer" parent="UI"]
@@ -507,3 +913,10 @@ news_scammed = "Local Belt Store Closed Due to Police Investigation. &The police
 [connection signal="pressed" from="UI/Fix/price_marker" to="UI" method="_on_price_marker_pressed"]
 [connection signal="pressed" from="UI/Fix/replacement" to="UI" method="_on_replacement_pressed"]
 [connection signal="timeout" from="UI/TextureProgressBar/Timer" to="UI" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
+[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button" to="UI/Button" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button2" to="UI/Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button3" to="UI/Button" method="_on_button_3_pressed"]
+[connection signal="value_changed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="UI/Button" method="_on_m_vol_changed"]
+[connection signal="value_changed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="UI/Button" method="_on_s_vol_changed"]
+[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="UI/Button" method="_on_button_4_pressed"]

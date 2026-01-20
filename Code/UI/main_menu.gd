@@ -1,6 +1,10 @@
 extends Control
 
 func _ready():
+	Settings.helped = 0
+	Settings.profit = 0.0
+	Settings.scammed = []
+	Settings.scammed_pic = []
 	get_child(1).visible = false
 
 func _on_play_pressed():

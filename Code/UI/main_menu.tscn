@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://b4epndv7qifxu"]
+[gd_scene load_steps=46 format=3 uid="uid://b4epndv7qifxu"]
 
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="2_6vt4s"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_mvdb3"]
+[ext_resource type="Script" uid="uid://bxviuufjio06" path="res://Code/UI/main_menu_set.gd" id="4_q0h1s"]
 [ext_resource type="Script" uid="uid://js6eod83v61l" path="res://Code/UI/gallery.gd" id="5_jc5cr"]
 [ext_resource type="Texture2D" uid="uid://hupjayq1cerp" path="res://Art/Concept/image2.png" id="5_kpf2y"]
 [ext_resource type="Texture2D" uid="uid://dmyfg1d4ku56v" path="res://Art/Concept/image3.png" id="6_jc5cr"]
@@ -13,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c4s4w3ldos3cx" path="res://Art/Concept/IMG_7051.png" id="10_hp8ss"]
 [ext_resource type="Texture2D" uid="uid://ykr0vntj7uia" path="res://Art/Concept/image.png" id="11_q0h1s"]
 [ext_resource type="AudioStream" uid="uid://cn1c8ijipdvng" path="res://Sound/beltgame_title_01.ogg" id="13_jiwnl"]
+[ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="15_7esfh"]
+[ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="16_nxha8"]
+[ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="17_7p00j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j81p5"]
 
@@ -67,6 +71,96 @@ modulate_color = Color(0.5211406, 0.5211406, 0.5211405, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vt4s"]
 
+[sub_resource type="Animation" id="Animation_eq87d"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1899804, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_hjuct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7s2w4"]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 600), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7qa5s"]
+_data = {
+&"RESET": SubResource("Animation_hjuct"),
+&"close": SubResource("Animation_7s2w4"),
+&"open": SubResource("Animation_eq87d")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7esfh"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -88,6 +182,63 @@ expand_margin_bottom = 8.0
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7p00j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jc5cr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bb43h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnkmd"]
+texture = ExtResource("15_7esfh")
+texture_margin_left = 45.0
+texture_margin_top = 15.0
+texture_margin_right = 45.0
+texture_margin_bottom = 45.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_78oio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13ysf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ih7f"]
+bg_color = Color(0.6284664, 0.62846583, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3k1a"]
+bg_color = Color(0.6284664, 0.62846583, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8svqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6b3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86i17"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7siot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aiixv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -149,6 +300,30 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_25fma")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qlxhu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6vt4s")
 text = "Start"
+
+[node name="Settings" type="Button" parent="Main/HBoxContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.28397107, 0.29625523, 0.6534173, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_xurn6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mvdb3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j81p5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_25fma")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qlxhu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6vt4s")
+text = "Settings"
+script = ExtResource("4_q0h1s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/HBoxContainer/BoxContainer/Settings"]
+libraries = {
+&"": SubResource("AnimationLibrary_7qa5s")
+}
 
 [node name="Gallery" type="Button" parent="Main/HBoxContainer/BoxContainer"]
 layout_mode = 2
@@ -379,7 +554,132 @@ stream = ExtResource("13_jiwnl")
 autoplay = true
 parameters/looping = true
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bb43h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wnkmd")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Control"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 72
+theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
+
+[node name="Button" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 24
+text = "1. music volume:"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_nxha8")
+theme_override_icons/grabber_highlight = ExtResource("17_7p00j")
+theme_override_styles/slider = SubResource("StyleBoxFlat_13ysf")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8ih7f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_t3k1a")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
+
+[node name="Button4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 24
+text = "2. sfx volume:   "
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("16_nxha8")
+theme_override_icons/grabber_highlight = ExtResource("17_7p00j")
+theme_override_styles/slider = SubResource("StyleBoxFlat_13ysf")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8ih7f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_t3k1a")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8svqv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y6b3o")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_86i17")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7siot")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aiixv")
+text = "3. back                  ->"
+
+[node name="HSeparator5" type="HSeparator" parent="HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 166
+theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_bb43h")
+
 [connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Settings" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_pressed"]
 [connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Gallery" to="." method="_on_gallery_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Gallery" method="_on_button0_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Gallery" method="_on_button_1_pressed"]
@@ -391,3 +691,6 @@ parameters/looping = true
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/Button2" to="Gallery" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/Button3" to="Gallery" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4/Button" to="Gallery" method="_on_back_pressed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_m_vol_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_s_vol_changed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_button_pressed"]
