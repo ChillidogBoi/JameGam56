@@ -406,6 +406,7 @@ end_dialogue_yes = "Thanks bunches sweetie."
 end_dialogue_no_exp = "Oh, dear... &Belts sure are expensive these days..."
 end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
 end_dialogue_no_tim = "I'll just go to another shop while I wait."
+news_scammed = "Local Blind Woman Swindled! &\"I thought that nice young lady was helping me,\" says ninety-seven-year-old grandmother of seven, Example Name, \"She seemed very nice, why would she do something like this?\" Why indeed? Is this what it has come to? Taking advantage of the elderly and disabled? What a sad world."
 
 [node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("19_8o1ig")
@@ -424,6 +425,7 @@ Later, dude!"
 end_dialogue_no_exp = "Aw-hah... Like, too rich for my blood.&Later, dude!"
 end_dialogue_no_wrng = "You're trippin' man, who's got that kinda cash?&Later, dude!"
 end_dialogue_no_tim = "Uhh... Like, I'm gonna step outside real quick."
+news_scammed = "Reviews for Example Belt Store: &4/10: Came in for a repair and got upsold to a new one. I was able to fix the old belt at home! Terrible service."
 
 [node name="Customer3" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("20_a4ng5")
@@ -439,6 +441,7 @@ end_dialogue_no_wrng = "You call that fancy?
 Disgusting! &Toodaloo!"
 end_dialogue_no_tim = "Thanks to you, I'm \"fashionably\" late...
 Nevermind it, darling. &Toodaloo!"
+news_scammed = "Male Model Fired for \"Ugly Belt\" &\"It's his fault for coming on [the set] wearing THAT. Ugh, I get shivers just thinking about it,\" says Example Name. When asked for a comment the model only had this to say: \"That's [the fashion industry] for you. [You] go looking for styles in new places, sometimes [they're] good, sometimes [you get] fired.\""
 
 [node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("21_a4ng5")
@@ -455,6 +458,7 @@ end_dialogue_yes = "Alright, thanks, but I've got my eye on you."
 end_dialogue_no_exp = "You're not gonna pull one over on me."
 end_dialogue_no_wrng = "Why would I want that?!"
 end_dialogue_no_tim = "You're lucky I can't wait around all day to catch you in the act."
+news_scammed = "Local Belt Store Closed Due to Police Investigation. &The police have declined to comment or allow the press to speak with the owner who is in prison. One local says \"Yeah, they...overcharge for [bad] belts, who [cares]? You gonna...arrest the [people who are] paying [those] prices next? This is [crazy]!\""
 
 [connection signal="pressed" from="UI/Belts/Cheap Belt" to="UI/Belts" method="_on_cheap_belt_pressed"]
 [connection signal="pressed" from="UI/Belts/Solid Belt" to="UI/Belts" method="_on_red_belt_pressed"]

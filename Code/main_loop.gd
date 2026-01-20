@@ -1,6 +1,6 @@
 extends Control
 
-const cust_start_pos = Vector2(1368, 500)
+const cust_start_pos = Vector2(1368, 374)
 @export var timer: TextureProgressBar
 @export var cust_belt: TextureRect
 @export var profit: Label
@@ -171,7 +171,7 @@ func end_cust():
 
 
 func end_game():
-	print("Morality Rating: ", Settings.scammed.count(false) - Settings.scammed.count(true))
+	get_tree().change_scene_to_file("res://Code/UI/Newspaper.tscn")
 
 
 func _on_replacement_pressed():

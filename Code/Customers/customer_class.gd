@@ -20,6 +20,7 @@ class_name Customer
 @export_multiline var end_dialogue_no_wrng: String
 @export_multiline var end_dialogue_no_tim: String
 @export_multiline var news_scammed: String
+@export var news_pic: Texture2D
 @export var anims: AnimationPlayer
 var last_line_delivered: int = 0
 var dialogue_seperated: Array = []
@@ -41,7 +42,9 @@ func request_next_dialogue() -> String:
 	return str(id, "\n", dialogue_seperated[last_line_delivered -1])
 
 func end_dia_setup(answer: bool, scam: bool, reason: int = 0):
-	if scam: Settings.scammed.append(news_scammed)
+	if scam:
+		Settings.scammed.append(news_scammed)
+		Settings.scammed_pic.append(news_pic)
 	if answer:
 		for n:int in end_dialogue_yes.count("&") + 1:
 			dialogue_seperated.append(end_dialogue_yes.get_slice("&", n))

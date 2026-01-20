@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://hqdui0hrk7r3"]
+[gd_scene load_steps=14 format=3 uid="uid://hqdui0hrk7r3"]
 
+[ext_resource type="Script" uid="uid://c31amembk852q" path="res://Code/UI/newspaper.gd" id="1_ei8so"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_ck7w1"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
@@ -17,13 +18,29 @@ axis_stretch_vertical = 1
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5ut7l"]
 size = Vector2(500, 250)
 
-[node name="Control" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei8so"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kg0mq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iockq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3c3wi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_847dm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2gfb2"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("image", "title", "blurb")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ei8so")
+image = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/TextureRect")
+title = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/Label")
+blurb = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/Label2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -77,11 +94,33 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
 theme_override_fonts/font = ExtResource("3_5ut7l")
 theme_override_font_sizes/font_size = 20
-text = "Terrible things happening around town all seem to mysteriously be linked to one small belt store on Example blvd. Police confirm they are looking into the store, as the reports of terrible things happening increases by the day. Worried locals are calling for the store to be shut down and the owner arrested."
+text = "Blah blah blah, blah bla blah, bla-bla bla. Blah blah blah, blah bla blah, bla-bla bla. Blah blah blah, blah bla blah, bla-bla bla. Blah blah blah, blah bla blah, bla-bla bla. Blah blah blah, blah bla blah, bla-bla bla. Blah blah blah, blah bla blah, bla-bla bla. "
 autowrap_mode = 3
 text_overrun_behavior = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_fonts/font = ExtResource("2_ck7w1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ei8so")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kg0mq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iockq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3c3wi")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_847dm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2gfb2")
+text = "v"
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
+
+[connection signal="pressed" from="HBoxContainer/Panel/HBoxContainer/Button" to="." method="_on_button_pressed"]
