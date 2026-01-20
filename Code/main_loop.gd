@@ -119,7 +119,7 @@ func _on_knife_pressed():
 	
 	elif cust.wants != 5: cust.end_dia_setup(true, true)
 	else: cust.end_dia_setup(true, false)
-	profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
+	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
 		float(fix_buttons[0].tooltip_text.get_slice("$", 1)))
 	Settings.profit = float(profit.text.get_slice("$", 1))
 	
@@ -135,6 +135,9 @@ func change_price(type:int):
 	price_d.get_child(0).get_child(0).text = str("Enter New Price For: ", sell_buttons[type].name)
 	if paused: await resume
 	await price_d.get_child(1).get_child(1).pressed
+	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
+		float(sell_buttons[5].tooltip_text.get_slice("$", 1)))
+	Settings.profit = float(profit.text.get_slice("$", 1))
 	sell_buttons[type].tooltip_text = str(sell_buttons[type].tooltip_text.get_slice("$", 0),\
 		"$", price_d.get_child(1).get_child(0).value)
 	price_d.visible = false
@@ -160,7 +163,9 @@ func end_cust():
 	timer.visible = false
 	timer.get_child(0).stop()
 	if paused: await resume
-	await dialogue(cust.id, cust.request_next_dialogue())
+	for n in cust.dialogue_seperated:
+		await dialogue(cust.id, cust.request_next_dialogue())
+		
 	if paused: await resume
 	await customer_walkaway()
 	

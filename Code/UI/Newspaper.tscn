@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://hqdui0hrk7r3"]
+[gd_scene load_steps=24 format=3 uid="uid://hqdui0hrk7r3"]
 
 [ext_resource type="Script" uid="uid://c31amembk852q" path="res://Code/UI/newspaper.gd" id="1_ei8so"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_ck7w1"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
+[ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="5_kg0mq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ck7w1"]
 
@@ -148,6 +149,7 @@ theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -253,6 +255,17 @@ text = "    Continue...    "
 layout_mode = 2
 theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
+
+[node name="bg" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_kg0mq")
 
 [connection signal="pressed" from="HBoxContainer/Panel/HBoxContainer/Button" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]

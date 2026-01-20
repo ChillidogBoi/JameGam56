@@ -42,11 +42,13 @@ func request_next_dialogue() -> String:
 	return str(id, "\n", dialogue_seperated[last_line_delivered -1])
 
 func end_dia_setup(answer: bool, scam: bool, reason: int = 0):
+	dialogue_seperated = []
+	last_line_delivered = 0
 	if scam:
 		Settings.scammed.append(news_scammed)
 		Settings.scammed_pic.append(news_pic)
+	else: Settings.helped += 1
 	if answer:
-		Settings.helped += 1
 		for n:int in end_dialogue_yes.count("&") + 1:
 			dialogue_seperated.append(end_dialogue_yes.get_slice("&", n))
 		return

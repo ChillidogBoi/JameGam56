@@ -9,7 +9,8 @@ extends Control
 @export var helped: Label
 
 func _ready():
-	if Settings.profit < 300: result.text = "You Got Fired!"
+	if Settings.profit < 0: result.text = "You're In Debt!"
+	elif Settings.profit < 300: result.text = "You Got Fired!"
 	else: result.text = "You Survived The Day!"
 	profit.text = str("Money Made: $", Settings.profit)
 	scammed.text = str("Customers Scammed: ", Settings.scammed.size())

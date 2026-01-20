@@ -415,7 +415,7 @@ offset_left = 701.0
 offset_top = 542.0
 offset_right = 805.0
 offset_bottom = 654.0
-tooltip_text = "* Gold w/ \"$\" Buckle
+tooltip_text = "* Gold w/ Big Buckle
 * Cheap gold paint
 * Weird design
 $300"
@@ -449,7 +449,8 @@ offset_top = 392.0
 offset_right = 549.0
 offset_bottom = 459.0
 tooltip_text = "Try to Fix
-It Yourself"
+It Yourself
+-$5"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("6_5pefq")
 texture_hover = ExtResource("9_71nik")
@@ -473,7 +474,8 @@ offset_top = 431.0
 offset_right = 620.0
 offset_bottom = 503.0
 tooltip_text = "Change an
-Item's Price"
+Item's Price
+-$30"
 theme = ExtResource("4_5pefq")
 toggle_mode = true
 texture_normal = ExtResource("7_pwe3t")
@@ -567,7 +569,6 @@ layout_mode = 2
 layout_mode = 2
 theme = SubResource("Theme_f71xg")
 max_value = 1000.0
-step = 0.05
 prefix = "$"
 
 [node name="Button" type="Button" parent="UI/Price Change/HBoxContainer"]
@@ -849,7 +850,7 @@ allowed = Array[int]([0, 1, 2, 3, 4])
 wait_time = 45.0
 start_dialogue = "Oh...honey, do you have a red belt?&I can't see."
 end_dialogue_yes = "Thanks bunches sweetie."
-end_dialogue_no_exp = "Oh, dear... &Belts sure are expensive these days..."
+end_dialogue_no_exp = "Oh, dear...&Belts sure are expensive these days..."
 end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
 end_dialogue_no_tim = "I'll just go to another shop while I wait."
 news_scammed = "Local Blind Woman Swindled! &\"I thought that nice young lady was helping me,\" says ninety-seven-year-old grandmother of seven, Example Name, \"She seemed very nice, why would she do something like this?\" Why indeed? Is this what it has come to? Taking advantage of the elderly and disabled? What a sad world."
