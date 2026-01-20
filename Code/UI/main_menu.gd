@@ -5,16 +5,19 @@ func _ready():
 	Settings.profit = 0.0
 	Settings.scammed = []
 	Settings.scammed_pic = []
-	get_child(1).visible = false
+	$Gallery.visible = false
+	await get_tree().create_timer(0.01).timeout
+	$Gallery/VBoxContainer/PanelContainer/VBoxContainer.visible = true
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Code/MainGameScene.tscn")
 
 
 func _on_gallery_pressed():
-	get_child(0).visible = false
-	get_child(1).visible = true
+	$Main.visible = false
+	$Gallery.visible = true
+	
 
 func _on_back_pressed():
-	get_child(1).visible = false
-	get_child(0).visible = true
+	$Gallery.visible = false
+	$Main.visible = true

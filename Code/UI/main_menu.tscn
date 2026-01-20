@@ -1,14 +1,17 @@
-[gd_scene load_steps=46 format=3 uid="uid://b4epndv7qifxu"]
+[gd_scene load_steps=51 format=3 uid="uid://b4epndv7qifxu"]
 
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
-[ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="2_6vt4s"]
+[ext_resource type="Texture2D" uid="uid://joyh7crd4ft6" path="res://Art/UI/start_gray.png" id="3_bb43h"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_mvdb3"]
+[ext_resource type="Script" uid="uid://dycgrqbcryruc" path="res://Code/UI/hover_lift.gd" id="4_7s2w4"]
 [ext_resource type="Script" uid="uid://bxviuufjio06" path="res://Code/UI/main_menu_set.gd" id="4_q0h1s"]
+[ext_resource type="Texture2D" uid="uid://c0a7n0ms7361" path="res://Art/UI/settings_gray.png" id="5_78oio"]
 [ext_resource type="Script" uid="uid://js6eod83v61l" path="res://Code/UI/gallery.gd" id="5_jc5cr"]
 [ext_resource type="Texture2D" uid="uid://hupjayq1cerp" path="res://Art/Concept/image2.png" id="5_kpf2y"]
 [ext_resource type="Texture2D" uid="uid://dmyfg1d4ku56v" path="res://Art/Concept/image3.png" id="6_jc5cr"]
 [ext_resource type="Texture2D" uid="uid://bm5p3vdy2pxhp" path="res://Art/Concept/IMG_7057.png" id="7_jiwnl"]
+[ext_resource type="Texture2D" uid="uid://cecvin7d7xkad" path="res://Art/UI/gallery_gray.png" id="8_8ih7f"]
 [ext_resource type="Texture2D" uid="uid://bfyecsw56fjwj" path="res://Art/Concept/IMG_7046.png" id="8_d42lr"]
 [ext_resource type="Texture2D" uid="uid://dq3avhgbbb78i" path="res://Art/Concept/IMG_7048.png" id="9_22it6"]
 [ext_resource type="Texture2D" uid="uid://c4s4w3ldos3cx" path="res://Art/Concept/IMG_7051.png" id="10_hp8ss"]
@@ -17,149 +20,139 @@
 [ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="15_7esfh"]
 [ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="16_nxha8"]
 [ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="17_7p00j"]
+[ext_resource type="Texture2D" uid="uid://xv3uxjg48t4w" path="res://Art/UI/menu_background.jpg" id="23_8svqv"]
+[ext_resource type="Texture2D" uid="uid://0kc17kp3wdvd" path="res://Art/UI/menu_backmagazines.png" id="24_y6b3o"]
+[ext_resource type="Texture2D" uid="uid://didra1bx6mdf8" path="res://Art/UI/menu_frontmagazines.png" id="25_86i17"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j81p5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qa5s"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpf2y"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnkmd"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xurn6"]
-texture = ExtResource("2_6vt4s")
-texture_margin_left = 30.0
-texture_margin_top = 45.0
-texture_margin_right = 25.0
-texture_margin_bottom = 30.0
-axis_stretch_vertical = 1
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13ysf"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6vt4s"]
-load_path = "res://.godot/imported/notebook_sketch.png-6c641cdb4edecd6d1d43e50ee3bc445b.ctex"
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ih7f"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mvdb3"]
-texture = SubResource("CompressedTexture2D_6vt4s")
-texture_margin_left = 30.0
-texture_margin_top = 45.0
-texture_margin_right = 25.0
-texture_margin_bottom = 30.0
-axis_stretch_vertical = 1
-modulate_color = Color(0.3032327, 0.30323288, 0.30323276, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3k1a"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j81p5"]
-texture = SubResource("CompressedTexture2D_6vt4s")
-texture_margin_left = 30.0
-texture_margin_top = 45.0
-texture_margin_right = 25.0
-texture_margin_bottom = 30.0
-axis_stretch_vertical = 1
-modulate_color = Color(0.3032327, 0.30323288, 0.30323276, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htynf"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_25fma"]
-texture = SubResource("CompressedTexture2D_6vt4s")
-texture_margin_left = 30.0
-texture_margin_top = 45.0
-texture_margin_right = 25.0
-texture_margin_bottom = 30.0
-axis_stretch_vertical = 1
-modulate_color = Color(0.3032327, 0.30323288, 0.30323276, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlxhu"]
-texture = SubResource("CompressedTexture2D_6vt4s")
-texture_margin_left = 30.0
-texture_margin_top = 45.0
-texture_margin_right = 25.0
-texture_margin_bottom = 30.0
-axis_stretch_vertical = 1
-modulate_color = Color(0.5211406, 0.5211406, 0.5211405, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vt4s"]
-
-[sub_resource type="Animation" id="Animation_eq87d"]
-resource_name = "open"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 600)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1899804, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
-[sub_resource type="Animation" id="Animation_hjuct"]
+[sub_resource type="Animation" id="Animation_aiixv"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/0/path = NodePath("../../Gallery/VBoxContainer/PanelContainer/VBoxContainer:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Gallery/VBoxContainer/PanelContainer:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_7s2w4"]
-resource_name = "close"
+[sub_resource type="Animation" id="Animation_7siot"]
+resource_name = "open"
 length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/0/path = NodePath("../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 600), Vector2(0, 0)]
+"times": PackedFloat32Array(0, 0.1899804, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/1/path = NodePath("../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_7s2w4"]
+resource_name = "open_2"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../HBoxContainer/VBoxContainer/Control/VBoxContainer3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.01, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7qa5s"]
-_data = {
-&"RESET": SubResource("Animation_hjuct"),
-&"close": SubResource("Animation_7s2w4"),
-&"open": SubResource("Animation_eq87d")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../HBoxContainer/VBoxContainer/Control:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 600), Vector2(0, 0)]
 }
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rp380"]
+_data = {
+&"RESET": SubResource("Animation_aiixv"),
+&"open": SubResource("Animation_7siot"),
+&"open_2": SubResource("Animation_7s2w4")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j81p5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpf2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7esfh"]
 content_margin_left = 4.0
@@ -249,6 +242,40 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6vt4s")
 
+[node name="bg" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("23_8svqv")
+
+[node name="bg2" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("24_y6b3o")
+
+[node name="bg3" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("25_86i17")
+
 [node name="Main" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -256,122 +283,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Main"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-
-[node name="VSeparator" type="VSeparator" parent="Main/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 800
-theme_override_styles/separator = SubResource("StyleBoxEmpty_j81p5")
-
-[node name="BoxContainer" type="VBoxContainer" parent="Main/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="Main/HBoxContainer/BoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 256
-theme_override_styles/separator = SubResource("StyleBoxEmpty_kpf2y")
-
-[node name="Play" type="Button" parent="Main/HBoxContainer/BoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.28397107, 0.29625523, 0.6534173, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
-theme_override_fonts/font = ExtResource("1_f5tht")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxTexture_xurn6")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_mvdb3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j81p5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_25fma")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qlxhu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6vt4s")
-text = "Start"
-
-[node name="Settings" type="Button" parent="Main/HBoxContainer/BoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.28397107, 0.29625523, 0.6534173, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
-theme_override_fonts/font = ExtResource("1_f5tht")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxTexture_xurn6")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_mvdb3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j81p5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_25fma")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qlxhu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6vt4s")
-text = "Settings"
-script = ExtResource("4_q0h1s")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/HBoxContainer/BoxContainer/Settings"]
-libraries = {
-&"": SubResource("AnimationLibrary_7qa5s")
-}
-
-[node name="Gallery" type="Button" parent="Main/HBoxContainer/BoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_hover_color = Color(0.28397107, 0.29625523, 0.6534173, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
-theme_override_fonts/font = ExtResource("1_f5tht")
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxTexture_xurn6")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_mvdb3")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j81p5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_25fma")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qlxhu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6vt4s")
-text = "Gallery"
-
-[node name="VSeparator2" type="VSeparator" parent="Main/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 800
-theme_override_styles/separator = SubResource("StyleBoxEmpty_j81p5")
-
-[node name="Title" type="Label" parent="Main"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -403.0
-offset_top = 9.0
-offset_right = 404.0
-offset_bottom = 274.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.09411765, 0, 0.2509804, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_offset_x = -8
-theme_override_constants/shadow_offset_y = 8
-theme_override_constants/outline_size = 24
-theme_override_constants/shadow_outline_size = 96
-theme_override_fonts/font = ExtResource("1_f5tht")
-theme_override_font_sizes/font_size = 96
-text = "Below
-The Belt"
-horizontal_alignment = 1
+script = ExtResource("4_7s2w4")
 
 [node name="Credits" type="Label" parent="Main"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -381,8 +296,8 @@ offset_top = -113.0
 offset_right = 395.0
 offset_bottom = -16.0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.11631126, 0.25202006, 0.5115193, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0.5294118, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_mvdb3")
 theme_override_font_sizes/font_size = 24
@@ -393,16 +308,110 @@ and Programming by: ChillidogBoi"
 vertical_alignment = 2
 
 [node name="Polygon2D2" type="Polygon2D" parent="Main"]
+z_index = 1
 position = Vector2(166, 0)
+color = Color(1, 1, 0.5294118, 1)
 polygon = PackedVector2Array(303, 547, 307, 547, 310, 545, 310, 542, 307, 543, 303, 544.5)
 
 [node name="Polygon2D" type="Polygon2D" parent="Main"]
+z_index = 1
 position = Vector2(166, 0)
-color = Color(0, 0, 0, 1)
+color = Color(0.11764706, 0.2509804, 0.50980395, 1)
 polygon = PackedVector2Array(304, 546, 307, 546, 309, 545, 309, 543, 307, 544, 304, 545)
+
+[node name="TextureRect" type="TextureRect" parent="Main"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 76.0
+offset_right = 953.0
+offset_bottom = 437.0
+mouse_filter = 2
+texture = ExtResource("3_bb43h")
+
+[node name="TextureRect2" type="TextureRect" parent="Main"]
+layout_mode = 0
+offset_left = 717.90234
+offset_top = 232.14249
+offset_right = 1244.9023
+offset_bottom = 754.14246
+mouse_filter = 2
+texture = ExtResource("5_78oio")
+
+[node name="TextureRect3" type="TextureRect" parent="Main"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 184.0
+offset_right = 791.0
+offset_bottom = 559.0
+mouse_filter = 2
+texture = ExtResource("8_8ih7f")
+
+[node name="start" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 82.59448
+offset_top = -170.85855
+offset_right = 325.7021
+offset_bottom = 81.631134
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.08801663
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7qa5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnkmd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_13ysf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8ih7f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3k1a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_htynf")
+
+[node name="settings" type="Button" parent="Main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 233.72723
+offset_top = -18.545471
+offset_right = 639.73193
+offset_bottom = 260.73956
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.1566007
+scale = Vector2(0.9688238, 0.71307343)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7qa5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnkmd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_13ysf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8ih7f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3k1a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_htynf")
+script = ExtResource("4_q0h1s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/settings"]
+libraries = {
+&"": SubResource("AnimationLibrary_rp380")
+}
+
+[node name="gallery" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 544.99994
+offset_top = 263.0
+offset_right = 754.4486
+offset_bottom = 406.2492
+rotation = 0.22181776
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7qa5s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnkmd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_13ysf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8ih7f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3k1a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_htynf")
 
 [node name="Gallery" type="HBoxContainer" parent="."]
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -430,6 +439,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Gallery/VBoxContainer/PanelContainer"]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Gallery/VBoxContainer/PanelContainer/VBoxContainer"]
@@ -556,6 +566,7 @@ parameters/looping = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -678,9 +689,15 @@ layout_mode = 2
 theme_override_constants/separation = 350
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bb43h")
 
-[connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Settings" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_pressed"]
-[connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Gallery" to="." method="_on_gallery_pressed"]
+[connection signal="mouse_entered" from="Main/start" to="Main" method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="Main/start" to="Main" method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Main/start" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Main/settings" to="Main" method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Main/settings" to="Main" method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="Main/settings" to="Main/settings" method="_on_pressed"]
+[connection signal="mouse_entered" from="Main/gallery" to="Main" method="_on_gallery_mouse_entered"]
+[connection signal="mouse_exited" from="Main/gallery" to="Main" method="_on_gallery_mouse_exited"]
+[connection signal="pressed" from="Main/gallery" to="." method="_on_gallery_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Button" to="Gallery" method="_on_button0_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Button2" to="Gallery" method="_on_button_1_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/Button3" to="Gallery" method="_on_button_2_pressed"]
@@ -691,6 +708,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_bb43h")
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/Button2" to="Gallery" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3/Button3" to="Gallery" method="_on_button_8_pressed"]
 [connection signal="pressed" from="Gallery/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer4/Button" to="Gallery" method="_on_back_pressed"]
-[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_m_vol_changed"]
-[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_s_vol_changed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="Main/HBoxContainer/BoxContainer/Settings" method="_on_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="Main/settings" method="_on_m_vol_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="Main/settings" method="_on_s_vol_changed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="Main/settings" method="_on_button_pressed"]
