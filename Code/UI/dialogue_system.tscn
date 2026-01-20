@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmgug8w8kn385"]
+[gd_scene load_steps=15 format=3 uid="uid://bmgug8w8kn385"]
 
 [ext_resource type="Script" uid="uid://d1qpkg1enkxf7" path="res://Code/UI/dialogue_system.gd" id="1_jw2xp"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_n63qp"]
@@ -31,44 +31,11 @@ corner_radius_bottom_left = 128
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmp2k"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_qk3tw"]
-keycode = 4194309
+[sub_resource type="InputEventAction" id="InputEventAction_n63qp"]
+action = &"continue"
 
-[sub_resource type="InputEventKey" id="InputEventKey_n63qp"]
-keycode = 4194310
-
-[sub_resource type="InputEventKey" id="InputEventKey_gaqqe"]
-keycode = 4194322
-
-[sub_resource type="InputEventKey" id="InputEventKey_0qjhe"]
-keycode = 32
-
-[sub_resource type="InputEventScreenTouch" id="InputEventScreenTouch_03j0k"]
-
-[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_2qdf1"]
-button_index = 1
-
-[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_wmp2k"]
-button_index = 2
-
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_8vn8r"]
-device = -1
-
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_yf5t1"]
-device = -1
-button_index = 1
-
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_litci"]
-device = -1
-button_index = 12
-
-[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_vl0cx"]
-device = -1
-axis = 1
-axis_value = 1.0
-
-[sub_resource type="Shortcut" id="Shortcut_em08e"]
-events = [SubResource("InputEventKey_qk3tw"), SubResource("InputEventKey_n63qp"), SubResource("InputEventKey_gaqqe"), SubResource("InputEventKey_0qjhe"), SubResource("InputEventScreenTouch_03j0k"), SubResource("InputEventMouseButton_2qdf1"), SubResource("InputEventMouseButton_wmp2k"), SubResource("InputEventJoypadButton_8vn8r"), SubResource("InputEventJoypadButton_yf5t1"), SubResource("InputEventJoypadButton_litci"), SubResource("InputEventJoypadMotion_vl0cx")]
+[sub_resource type="Shortcut" id="Shortcut_gaqqe"]
+events = [SubResource("InputEventAction_n63qp")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lvv3"]
 
@@ -128,7 +95,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_0qjhe")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2qdf1")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_03j0k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wmp2k")
-shortcut = SubResource("Shortcut_em08e")
+shortcut = SubResource("Shortcut_gaqqe")
 text = " v "
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
@@ -155,5 +122,7 @@ polygon = PackedVector2Array(329.45456, 174.6154, 330.90912, 186.15387, 335.2727
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(29, -7)
 polygon = PackedVector2Array(330, 163, 331, 179, 337, 192, 346, 202, 358, 213, 371, 219, 395, 224, 386, 214, 379, 205, 376, 192, 377, 180, 382, 165)
+
+[node name="beltese" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]

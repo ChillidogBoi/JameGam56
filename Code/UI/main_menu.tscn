@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4epndv7qifxu"]
+[gd_scene load_steps=27 format=3 uid="uid://b4epndv7qifxu"]
 
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://dq3avhgbbb78i" path="res://Art/Concept/IMG_7048.png" id="9_22it6"]
 [ext_resource type="Texture2D" uid="uid://c4s4w3ldos3cx" path="res://Art/Concept/IMG_7051.png" id="10_hp8ss"]
 [ext_resource type="Texture2D" uid="uid://ykr0vntj7uia" path="res://Art/Concept/image.png" id="11_q0h1s"]
+[ext_resource type="AudioStream" uid="uid://cn1c8ijipdvng" path="res://Sound/beltgame_title_01.ogg" id="13_jiwnl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j81p5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpf2y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xurn6"]
 texture = ExtResource("2_6vt4s")
@@ -63,8 +66,6 @@ axis_stretch_vertical = 1
 modulate_color = Color(0.5211406, 0.5211406, 0.5211405, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vt4s"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpf2y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7esfh"]
 content_margin_left = 4.0
@@ -126,6 +127,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="Main/HBoxContainer/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 256
+theme_override_styles/separator = SubResource("StyleBoxEmpty_kpf2y")
+
 [node name="Play" type="Button" parent="Main/HBoxContainer/BoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -172,10 +178,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -403.5
-offset_top = 32.0
-offset_right = 403.5
-offset_bottom = 163.0
+offset_left = -403.0
+offset_top = 9.0
+offset_right = 404.0
+offset_bottom = 274.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.09411765, 0, 0.2509804, 1)
@@ -186,7 +192,9 @@ theme_override_constants/outline_size = 24
 theme_override_constants/shadow_outline_size = 96
 theme_override_fonts/font = ExtResource("1_f5tht")
 theme_override_font_sizes/font_size = 96
-text = "Title Goes Here"
+text = "Below
+The Belt"
+horizontal_alignment = 1
 
 [node name="Credits" type="Label" parent="Main"]
 layout_mode = 1
@@ -203,12 +211,23 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_mvdb3")
 theme_override_font_sizes/font_size = 24
-text = "Art by: LulladyShift & Naé
-with Music and SFX by: Austin
+text = "Lead Artist: Lullady
+with Story and Additional Art by: Nullnae
+Music and SFX: Austin Lytle
 and Programming by: ChillidogBoi"
 vertical_alignment = 2
 
+[node name="Polygon2D2" type="Polygon2D" parent="Main"]
+position = Vector2(166, 0)
+polygon = PackedVector2Array(303, 547, 307, 547, 310, 545, 310, 542, 307, 543, 303, 544.5)
+
+[node name="Polygon2D" type="Polygon2D" parent="Main"]
+position = Vector2(166, 0)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(304, 546, 307, 546, 309, 545, 309, 543, 307, 544, 304, 545)
+
 [node name="Gallery" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -354,6 +373,11 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_jc5cr")
 layout_mode = 2
 theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_j81p5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jiwnl")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main/HBoxContainer/BoxContainer/Gallery" to="." method="_on_gallery_pressed"]

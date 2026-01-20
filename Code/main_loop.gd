@@ -1,6 +1,7 @@
 extends Control
 
 const cust_start_pos = Vector2(1368, 374)
+@export var sound: AudioStreamPlayer
 @export var timer: TextureProgressBar
 @export var cust_belt: TextureRect
 @export var profit: Label
@@ -11,6 +12,9 @@ const cust_start_pos = Vector2(1368, 374)
 @export var sell_buttons: Array[BaseButton]
 @export var fix_buttons: Array[BaseButton]
 var cust: Customer
+const MONEY_SOUND = preload("res://Sound/coin_drop_01.ogg")
+const BOSS_DIA1 = "Make $300 by the end of the day. Or you're fired."
+const BOSS_DIA2 =  "I don't care if you have to cheat an OLD LADY out of her Social Security Check"
 
 
 func _ready():
@@ -26,6 +30,9 @@ func _ready():
 		n.disabled = true
 		n.get_child(0).visible = true
 	
+	await dialogue("Boss", BOSS_DIA1)
+	await dialogue("Boss", BOSS_DIA2)
+	
 	cust = customer_order.pop_front()
 	
 	run_customer()
@@ -39,7 +46,7 @@ func run_customer():
 		cust_belt.texture = cust.my_belt
 		cust_belt.visible = true
 	for n in cust.dialogue_seperated:
-		await dialogue()
+		await dialogue(cust.id, cust.request_next_dialogue())
 	
 	timer.get_child(0).stop()
 	if cust.wait_time != 0.0:
@@ -56,7 +63,7 @@ func run_customer():
 			n.get_child(0).visible = false
 
 
-func dialogue():
+func dialogue(id:String, txt: String):
 	for n in sell_buttons:
 		n.disabled = true
 		n.get_child(0).visible = true
@@ -64,8 +71,8 @@ func dialogue():
 		n.disabled = true
 		n.get_child(0).visible = true
 	
-	dialogue_box.reset(cust.id)
-	dialogue_box.label.text = cust.request_next_dialogue()
+	dialogue_box.reset(id)
+	dialogue_box.label.text = txt
 	dialogue_box.speak()
 	dialogue_box.visible = true
 	await dialogue_box.next
@@ -104,19 +111,13 @@ func customer_walkaway():
 
 
 func _on_knife_pressed():
-	if sell_buttons[5].button_pressed:
-		change_fix_price()
-		return
-	
-	if float(fix_buttons[0].tooltip_text.get_slice("$", 1)) > cust.wallet:
-		cust.end_dia_setup(false, false)
-	
-	elif not cust.allowed.has(5): cust.end_dia_setup(false, false)
+	if not cust.allowed.has(5): cust.end_dia_setup(false, false)
 	
 	elif cust.wants != 5: cust.end_dia_setup(true, true)
 	else: cust.end_dia_setup(true, false)
 	profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
 		float(fix_buttons[0].tooltip_text.get_slice("$", 1)))
+	Settings.profit = float(profit.text.get_slice("$", 1))
 	
 	end_cust()
 
@@ -152,6 +153,9 @@ func sell(type:int):
 		else:  cust.end_dia_setup(true, true)
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
 			float(sell_buttons[type].tooltip_text.get_slice("$", 1)))
+		Settings.profit = float(profit.text.get_slice("$", 1))
+		sound.stream = MONEY_SOUND
+		sound.play()
 	else: cust.end_dia_setup(false, false)
 	
 	end_cust()
@@ -160,7 +164,7 @@ func sell(type:int):
 func end_cust():
 	timer.visible = false
 	timer.get_child(0).stop()
-	await dialogue()
+	await dialogue(cust.id, cust.request_next_dialogue())
 	await customer_walkaway()
 	
 	if customer_order.is_empty(): end_game()
@@ -179,6 +183,7 @@ func _on_replacement_pressed():
 	
 	else:
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) - cust.replace_price)
+		Settings.profit = float(profit.text.get_slice("$", 1))
 		cust.end_dia_setup(true, false)
 	end_cust()
 

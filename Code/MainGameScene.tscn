@@ -1,27 +1,41 @@
-[gd_scene load_steps=33 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=47 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Texture2D" uid="uid://j8d5l8t11peg" path="res://Art/Placeholder/mc_sketch.png" id="2_1mmhx"]
 [ext_resource type="Texture2D" uid="uid://3f5hyr8ugfc0" path="res://Art/Placeholder/table_sketch.png" id="2_hsik6"]
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
+[ext_resource type="Texture2D" uid="uid://q0mg04cd3wjx" path="res://Art/Placeholder/emotion_fail_sketch.png" id="3_uc6o2"]
 [ext_resource type="Texture2D" uid="uid://dgotf6chm0hfw" path="res://Art/Placeholder/newbelt_sketch.png" id="4_0o8lh"]
 [ext_resource type="Theme" uid="uid://cm5aw08cq41n8" path="res://Code/UI/ToolTip.tres" id="4_5pefq"]
+[ext_resource type="Texture2D" uid="uid://bx0jj5147nt0m" path="res://Art/Placeholder/emotion_joy_sketch.png" id="4_77qlp"]
 [ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/Customers/customer_base.tscn" id="4_l8phu"]
 [ext_resource type="Script" uid="uid://beho3oqau2631" path="res://Code/belts.gd" id="4_pwe3t"]
+[ext_resource type="Texture2D" uid="uid://b4g0pawqetdd8" path="res://Art/Placeholder/emotion_tension_sketch.png" id="5_m3nyn"]
 [ext_resource type="Texture2D" uid="uid://h8bx8n4lflqq" path="res://Art/Placeholder/knife_sketch.png" id="6_5pefq"]
 [ext_resource type="Texture2D" uid="uid://c7nilceq7jed7" path="res://Art/Placeholder/selected_newbelt_sketch.png" id="7_18c1v"]
 [ext_resource type="Texture2D" uid="uid://yo3yvinua0lt" path="res://Art/Placeholder/marker_sketch.png" id="7_pwe3t"]
 [ext_resource type="Texture2D" uid="uid://c00ecsuf0hb2s" path="res://Art/Placeholder/unavailable.png" id="8_bsujd"]
 [ext_resource type="Texture2D" uid="uid://cy5wydy2vydkr" path="res://Art/Placeholder/selected_knife_sketch.png" id="9_71nik"]
+[ext_resource type="Texture2D" uid="uid://xeyld1n72un4" path="res://Art/Placeholder/1belt_sketch.png" id="9_qs6di"]
+[ext_resource type="Texture2D" uid="uid://fc86elyv8mol" path="res://Art/Placeholder/1belt_selected_sketch.png" id="10_sneso"]
 [ext_resource type="Texture2D" uid="uid://cqnpk06kyrtny" path="res://Art/Placeholder/selected_marker_sketch.png" id="11_jc405"]
 [ext_resource type="Texture2D" uid="uid://bwflpjo7umtal" path="res://Art/Placeholder/timer_empty.png" id="11_vbamx"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="12_10sgt"]
 [ext_resource type="Texture2D" uid="uid://bygl4rt5b8cjl" path="res://Art/Placeholder/timer_full.png" id="12_71nik"]
+[ext_resource type="Texture2D" uid="uid://dgogk40bup37w" path="res://Art/Placeholder/2belt_sketch.png" id="12_bj75x"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
+[ext_resource type="Texture2D" uid="uid://bv7dtff050nku" path="res://Art/Placeholder/2belt_selected_sketch.png" id="13_xdvx7"]
+[ext_resource type="Texture2D" uid="uid://lw33nhkiepat" path="res://Art/Placeholder/3belt_sketch.png" id="14_ckaag"]
+[ext_resource type="Texture2D" uid="uid://n217o4xk6fth" path="res://Art/Placeholder/3belt_selected_sketch.png" id="15_4ldi7"]
+[ext_resource type="Texture2D" uid="uid://dh52q8lq66e8u" path="res://Art/Placeholder/4belt_sketch.png" id="16_yxcn7"]
+[ext_resource type="Texture2D" uid="uid://bnl335n3epw5g" path="res://Art/Placeholder/4belt_selected_sketch.png" id="17_qla06"]
+[ext_resource type="Texture2D" uid="uid://b4i8i08jct320" path="res://Art/Placeholder/5belt_sketch.png" id="18_0rr7d"]
 [ext_resource type="Texture2D" uid="uid://8ggu0oepg4fy" path="res://Art/Characters/granny_sketch.png" id="18_jc405"]
 [ext_resource type="Texture2D" uid="uid://dma5dxkiw72h6" path="res://Art/Characters/thin_sketch.png" id="19_8o1ig"]
+[ext_resource type="Texture2D" uid="uid://bhrdjqnjdht1d" path="res://Art/Placeholder/5belt_selected_sketch.png" id="19_c2f7l"]
 [ext_resource type="Texture2D" uid="uid://mjc35xoopd8q" path="res://Art/Characters/richguy_sketch.png" id="20_a4ng5"]
 [ext_resource type="Texture2D" uid="uid://biuaa2m1c3nlc" path="res://Art/Characters/police_sketch.png" id="21_a4ng5"]
+[ext_resource type="AudioStream" uid="uid://kj616lj5gif5" path="res://Sound/beltgame_gameloop_01.ogg" id="31_77qlp"]
 
 [sub_resource type="Theme" id="Theme_f71xg"]
 default_font = ExtResource("13_mfmbs")
@@ -68,10 +82,27 @@ texture = ExtResource("2_hsik6")
 position = Vector2(-85, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Player"]
-position = Vector2(430, 399)
+position = Vector2(430, 386)
 texture = ExtResource("2_1mmhx")
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("timer", "cust_belt", "profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
+[node name="Face" type="Node2D" parent="Node2D/Player"]
+
+[node name="fail" type="Sprite2D" parent="Node2D/Player/Face"]
+visible = false
+position = Vector2(342, 207)
+texture = ExtResource("3_uc6o2")
+
+[node name="joy" type="Sprite2D" parent="Node2D/Player/Face"]
+visible = false
+position = Vector2(342, 207)
+texture = ExtResource("4_77qlp")
+
+[node name="tense" type="Sprite2D" parent="Node2D/Player/Face"]
+visible = false
+position = Vector2(342, 207)
+texture = ExtResource("5_m3nyn")
+
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("sound", "timer", "cust_belt", "profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,6 +110,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_l8phu")
+sound = NodePath("sfx")
 timer = NodePath("TextureProgressBar")
 cust_belt = NodePath("CustBelt")
 profit = NodePath("GUI/profits/Num")
@@ -100,17 +132,17 @@ marker = NodePath("../Fix/price_marker")
 
 [node name="Cheap Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 604.0
-offset_top = 207.0
-offset_right = 664.0
-offset_bottom = 260.0
+offset_left = 595.0
+offset_top = 202.0
+offset_right = 657.0
+offset_bottom = 268.0
 tooltip_text = "* Cheap Brown
 * Poor quality
 * Will break easily
 $10"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("9_qs6di")
+texture_hover = ExtResource("10_sneso")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Cheap Belt"]
@@ -126,17 +158,17 @@ stretch_mode = 3
 
 [node name="Solid Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 645.0
-offset_top = 269.0
+offset_left = 635.0
+offset_top = 240.0
 offset_right = 705.0
-offset_bottom = 322.0
+offset_bottom = 298.0
 tooltip_text = "* Simple Black
 * Solid and reliable
 * A bit boring
 $30"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("12_bj75x")
+texture_hover = ExtResource("13_xdvx7")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Solid Belt"]
@@ -152,17 +184,17 @@ stretch_mode = 3
 
 [node name="Retro Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 634.0
-offset_top = 338.0
-offset_right = 694.0
-offset_bottom = 391.0
+offset_left = 696.0
+offset_top = 366.0
+offset_right = 759.0
+offset_bottom = 447.0
 tooltip_text = "* Retro Red
 * Classic look
 * Pretty
 $50"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("14_ckaag")
+texture_hover = ExtResource("15_4ldi7")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Retro Belt"]
@@ -178,17 +210,17 @@ stretch_mode = 3
 
 [node name="Fancy Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 667.0
-offset_top = 512.0
-offset_right = 727.0
-offset_bottom = 566.0
+offset_left = 649.0
+offset_top = 461.0
+offset_right = 747.0
+offset_bottom = 536.0
 tooltip_text = "* Fancy Blue
 * Real leather
 * Cool brand
 $100"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("16_yxcn7")
+texture_hover = ExtResource("17_qla06")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Fancy Belt"]
@@ -204,17 +236,17 @@ stretch_mode = 3
 
 [node name="Gold Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 732.0
-offset_top = 571.0
-offset_right = 792.0
-offset_bottom = 625.0
+offset_left = 701.0
+offset_top = 542.0
+offset_right = 805.0
+offset_bottom = 654.0
 tooltip_text = "* Gold w/ \"$\" Buckle
 * Cheap gold paint
 * Weird design
 $300"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("18_0rr7d")
+texture_hover = ExtResource("19_c2f7l")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Gold Belt"]
@@ -242,7 +274,7 @@ offset_top = 392.0
 offset_right = 549.0
 offset_bottom = 459.0
 tooltip_text = "Try to Fix
-Charge $10"
+It Yourself"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("6_5pefq")
 texture_hover = ExtResource("9_71nik")
@@ -371,18 +403,18 @@ text = " Submit "
 
 [node name="CustBelt" type="TextureRect" parent="UI"]
 layout_mode = 0
-offset_left = 634.0
-offset_top = 419.0
-offset_right = 704.4889
-offset_bottom = 480.0
+offset_left = 587.0
+offset_top = 308.0
+offset_right = 657.4889
+offset_bottom = 369.0
 texture = ExtResource("4_0o8lh")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
 layout_mode = 0
-offset_left = 850.0
-offset_top = 58.0
-offset_right = 1106.0
-offset_bottom = 314.0
+offset_left = 774.0
+offset_top = 37.0
+offset_right = 1030.0
+offset_bottom = 293.0
 scale = Vector2(0.2, 0.2)
 value = 100.0
 fill_mode = 5
@@ -390,6 +422,13 @@ texture_under = ExtResource("11_vbamx")
 texture_progress = ExtResource("12_71nik")
 
 [node name="Timer" type="Timer" parent="UI/TextureProgressBar"]
+
+[node name="sfx" type="AudioStreamPlayer" parent="UI"]
+
+[node name="music" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("31_77qlp")
+autoplay = true
+parameters/looping = true
 
 [node name="track" type="Node2D" parent="."]
 position = Vector2(890, 374)
@@ -418,8 +457,7 @@ my_belt = ExtResource("4_0o8lh")
 wait_time = 45.0
 fix_works = 100
 replace_price = 30
-start_dialogue = "Uhh... Like, my belt's way long, man.&
-Is there a way you can fix it?"
+start_dialogue = "Uhh... Like, my belt's way long, man.&Is there a way you can fix it?"
 end_dialogue_yes = "Nice, it fits!
 Later, dude!"
 end_dialogue_no_exp = "Aw-hah... Like, too rich for my blood.&Later, dude!"

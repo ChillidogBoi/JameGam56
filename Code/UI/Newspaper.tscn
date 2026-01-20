@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hqdui0hrk7r3"]
+[gd_scene load_steps=16 format=3 uid="uid://hqdui0hrk7r3"]
 
 [ext_resource type="Script" uid="uid://c31amembk852q" path="res://Code/UI/newspaper.gd" id="1_ei8so"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
@@ -29,6 +29,11 @@ size = Vector2(500, 250)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_847dm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2gfb2"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ei8so"]
+
+[sub_resource type="Shortcut" id="Shortcut_kg0mq"]
+events = [SubResource("InputEventAction_ei8so")]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("image", "title", "blurb")]
 layout_mode = 3
@@ -116,6 +121,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_iockq")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3c3wi")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_847dm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2gfb2")
+shortcut = SubResource("Shortcut_kg0mq")
 text = "v"
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
