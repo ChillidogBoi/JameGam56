@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cm5aw08cq41n8"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cm5aw08cq41n8"]
+
+[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="1_o6d06"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mmhx"]
 content_margin_left = 4.0
@@ -13,4 +15,5 @@ corner_radius_bottom_left = 4
 
 [resource]
 TooltipLabel/constants/line_spacing = -4
+TooltipLabel/fonts/font = ExtResource("1_o6d06")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_1mmhx")

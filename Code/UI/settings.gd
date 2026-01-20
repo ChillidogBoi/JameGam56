@@ -1,4 +1,4 @@
 extends Node
 
 
-var scammed: Array[bool] = []
+var scammed: Array[String] = []

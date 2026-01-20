@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://hqdui0hrk7r3"]
+
+[ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
+[ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_ck7w1"]
+[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ck7w1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ut7l"]
+texture = ExtResource("1_hiqo3")
+texture_margin_left = 30.0
+texture_margin_top = 45.0
+texture_margin_right = 25.0
+texture_margin_bottom = 30.0
+axis_stretch_vertical = 1
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5ut7l"]
+size = Vector2(500, 250)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
+
+[node name="Panel" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ut7l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Panel"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_5ut7l")
+
+[node name="Label" type="Label" parent="HBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+theme_override_fonts/font = ExtResource("2_ck7w1")
+theme_override_font_sizes/font_size = 36
+text = "Terrible Things Happen Because of Belt Store?"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(480, 128)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+theme_override_fonts/font = ExtResource("3_5ut7l")
+theme_override_font_sizes/font_size = 20
+text = "Terrible things happening around town all seem to mysteriously be linked to one small belt store on Example blvd. Police confirm they are looking into the store, as the reports of terrible things happening increases by the day. Worried locals are calling for the store to be shut down and the owner arrested."
+autowrap_mode = 3
+text_overrun_behavior = 2
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")

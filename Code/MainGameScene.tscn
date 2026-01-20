@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=33 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Texture2D" uid="uid://j8d5l8t11peg" path="res://Art/Placeholder/mc_sketch.png" id="2_1mmhx"]
@@ -6,37 +6,25 @@
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
 [ext_resource type="Texture2D" uid="uid://dgotf6chm0hfw" path="res://Art/Placeholder/newbelt_sketch.png" id="4_0o8lh"]
 [ext_resource type="Theme" uid="uid://cm5aw08cq41n8" path="res://Code/UI/ToolTip.tres" id="4_5pefq"]
-[ext_resource type="StyleBox" uid="uid://binpdhi7tlcj" path="res://Code/UI/HighlightBorder.tres" id="4_7cca7"]
 [ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/Customers/customer_base.tscn" id="4_l8phu"]
 [ext_resource type="Script" uid="uid://beho3oqau2631" path="res://Code/belts.gd" id="4_pwe3t"]
 [ext_resource type="Texture2D" uid="uid://h8bx8n4lflqq" path="res://Art/Placeholder/knife_sketch.png" id="6_5pefq"]
+[ext_resource type="Texture2D" uid="uid://c7nilceq7jed7" path="res://Art/Placeholder/selected_newbelt_sketch.png" id="7_18c1v"]
 [ext_resource type="Texture2D" uid="uid://yo3yvinua0lt" path="res://Art/Placeholder/marker_sketch.png" id="7_pwe3t"]
+[ext_resource type="Texture2D" uid="uid://c00ecsuf0hb2s" path="res://Art/Placeholder/unavailable.png" id="8_bsujd"]
+[ext_resource type="Texture2D" uid="uid://cy5wydy2vydkr" path="res://Art/Placeholder/selected_knife_sketch.png" id="9_71nik"]
+[ext_resource type="Texture2D" uid="uid://cqnpk06kyrtny" path="res://Art/Placeholder/selected_marker_sketch.png" id="11_jc405"]
+[ext_resource type="Texture2D" uid="uid://bwflpjo7umtal" path="res://Art/Placeholder/timer_empty.png" id="11_vbamx"]
+[ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="12_10sgt"]
+[ext_resource type="Texture2D" uid="uid://bygl4rt5b8cjl" path="res://Art/Placeholder/timer_full.png" id="12_71nik"]
+[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
+[ext_resource type="Texture2D" uid="uid://8ggu0oepg4fy" path="res://Art/Characters/granny_sketch.png" id="18_jc405"]
+[ext_resource type="Texture2D" uid="uid://dma5dxkiw72h6" path="res://Art/Characters/thin_sketch.png" id="19_8o1ig"]
+[ext_resource type="Texture2D" uid="uid://mjc35xoopd8q" path="res://Art/Characters/richguy_sketch.png" id="20_a4ng5"]
+[ext_resource type="Texture2D" uid="uid://biuaa2m1c3nlc" path="res://Art/Characters/police_sketch.png" id="21_a4ng5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cca7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pefq"]
-bg_color = Color(1, 1, 1, 0.8509804)
-border_color = Color(1, 1, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwe3t"]
-bg_color = Color(1, 1, 1, 0.8509804)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pefq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o676b"]
+[sub_resource type="Theme" id="Theme_f71xg"]
+default_font = ExtResource("13_mfmbs")
 
 [sub_resource type="InputEventKey" id="InputEventKey_qk3tw"]
 keycode = 4194309
@@ -83,7 +71,7 @@ position = Vector2(-85, -1)
 position = Vector2(430, 399)
 texture = ExtResource("2_1mmhx")
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("timer", "cust_belt", "profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -91,12 +79,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_l8phu")
+timer = NodePath("TextureProgressBar")
+cust_belt = NodePath("CustBelt")
 profit = NodePath("GUI/profits/Num")
 dialogue_box = NodePath("Dialogue")
 track = NodePath("../track")
-customer_order = [NodePath("../track/Customer"), NodePath("../track/Customer2"), NodePath("../track/Customer3")]
+customer_order = [NodePath("../track/Customer"), NodePath("../track/Customer4"), NodePath("../track/Customer3"), NodePath("../track/Customer2")]
 price_d = NodePath("Price Change")
-sell_buttons = [NodePath("Belts/Cheap Belt"), NodePath("Belts/Red_Belt"), NodePath("Belts/Normal_Belt"), NodePath("Belts/Expensive Belt"), NodePath("Fix/price_marker")]
+sell_buttons = [NodePath("Belts/Cheap Belt"), NodePath("Belts/Solid Belt"), NodePath("Belts/Retro Belt"), NodePath("Belts/Fancy Belt"), NodePath("Belts/Gold Belt"), NodePath("Fix/price_marker")]
 fix_buttons = [NodePath("Fix/knife"), NodePath("Fix/replacement")]
 
 [node name="Belts" type="Control" parent="UI" node_paths=PackedStringArray("marker")]
@@ -108,73 +98,135 @@ offset_bottom = 39.0
 script = ExtResource("4_pwe3t")
 marker = NodePath("../Fix/price_marker")
 
-[node name="Cheap Belt" type="Button" parent="UI/Belts"]
+[node name="Cheap Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 616.0
-offset_top = 219.0
-offset_right = 676.0
-offset_bottom = 272.0
-tooltip_text = "$10"
+offset_left = 604.0
+offset_top = 207.0
+offset_right = 664.0
+offset_bottom = 260.0
+tooltip_text = "* Cheap Brown
+* Poor quality
+* Will break easily
+$10"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7cca7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("4_0o8lh")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
 
-[node name="Red_Belt" type="Button" parent="UI/Belts"]
+[node name="TextureRect" type="TextureRect" parent="UI/Belts/Cheap Belt"]
+visible = false
 layout_mode = 0
-offset_left = 638.0
-offset_top = 293.0
-offset_right = 698.0
-offset_bottom = 346.0
-tooltip_text = "$35"
-theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7cca7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("4_0o8lh")
-icon_alignment = 1
-expand_icon = true
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
 
-[node name="Normal_Belt" type="Button" parent="UI/Belts"]
+[node name="Solid Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 682.0
-offset_top = 450.0
-offset_right = 742.0
-offset_bottom = 503.0
-tooltip_text = "$25"
+offset_left = 645.0
+offset_top = 269.0
+offset_right = 705.0
+offset_bottom = 322.0
+tooltip_text = "* Simple Black
+* Solid and reliable
+* A bit boring
+$30"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7cca7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("4_0o8lh")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
 
-[node name="Expensive Belt" type="Button" parent="UI/Belts"]
+[node name="TextureRect" type="TextureRect" parent="UI/Belts/Solid Belt"]
+visible = false
 layout_mode = 0
-offset_left = 709.0
-offset_top = 537.0
-offset_right = 769.0
-offset_bottom = 591.0
-tooltip_text = "$50"
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
+
+[node name="Retro Belt" type="TextureButton" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 338.0
+offset_right = 694.0
+offset_bottom = 391.0
+tooltip_text = "* Retro Red
+* Classic look
+* Pretty
+$50"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_7cca7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("4_0o8lh")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/Belts/Retro Belt"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
+
+[node name="Fancy Belt" type="TextureButton" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 512.0
+offset_right = 727.0
+offset_bottom = 566.0
+tooltip_text = "* Fancy Blue
+* Real leather
+* Cool brand
+$100"
+theme = ExtResource("4_5pefq")
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/Belts/Fancy Belt"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
+
+[node name="Gold Belt" type="TextureButton" parent="UI/Belts"]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 571.0
+offset_right = 792.0
+offset_bottom = 625.0
+tooltip_text = "* Gold w/ \"$\" Buckle
+* Cheap gold paint
+* Weird design
+$300"
+theme = ExtResource("4_5pefq")
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/Belts/Gold Belt"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
 
 [node name="Fix" type="Control" parent="UI"]
 anchors_preset = 0
@@ -183,7 +235,7 @@ offset_top = -1.0
 offset_right = 6.0
 offset_bottom = 39.0
 
-[node name="knife" type="Button" parent="UI/Fix"]
+[node name="knife" type="TextureButton" parent="UI/Fix"]
 layout_mode = 0
 offset_left = 457.0
 offset_top = 392.0
@@ -192,16 +244,22 @@ offset_bottom = 459.0
 tooltip_text = "Try to Fix
 Charge $10"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_o676b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("6_5pefq")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("6_5pefq")
+texture_hover = ExtResource("9_71nik")
+stretch_mode = 3
 
-[node name="price_marker" type="Button" parent="UI/Fix"]
+[node name="TextureRect" type="TextureRect" parent="UI/Fix/knife"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
+
+[node name="price_marker" type="TextureButton" parent="UI/Fix"]
 layout_mode = 0
 offset_left = 561.0
 offset_top = 431.0
@@ -210,17 +268,24 @@ offset_bottom = 503.0
 tooltip_text = "Change an
 Item's Price"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_o676b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
 toggle_mode = true
-icon = ExtResource("7_pwe3t")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("7_pwe3t")
+texture_pressed = ExtResource("11_jc405")
+texture_hover = ExtResource("11_jc405")
+stretch_mode = 3
 
-[node name="replacement" type="Button" parent="UI/Fix"]
+[node name="TextureRect" type="TextureRect" parent="UI/Fix/price_marker"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
+
+[node name="replacement" type="TextureButton" parent="UI/Fix"]
 layout_mode = 0
 offset_left = 476.0
 offset_top = 480.0
@@ -229,14 +294,20 @@ offset_bottom = 533.0
 tooltip_text = "Replace
 Belt (-$10)"
 theme = ExtResource("4_5pefq")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_o676b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5pefq")
-theme_override_styles/hover = ExtResource("4_7cca7")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_pwe3t")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5pefq")
-icon = ExtResource("4_0o8lh")
-icon_alignment = 1
-expand_icon = true
+texture_normal = ExtResource("4_0o8lh")
+texture_hover = ExtResource("7_18c1v")
+stretch_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/Fix/replacement"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 71.0
+offset_bottom = 65.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_bsujd")
+stretch_mode = 3
 
 [node name="Dialogue" parent="UI" instance=ExtResource("1_kgnas")]
 visible = false
@@ -246,17 +317,24 @@ offset_right = 250.0
 
 [node name="GUI" type="VBoxContainer" parent="UI"]
 layout_mode = 0
-offset_left = 612.0
-offset_top = 374.0
-offset_right = 702.0
-offset_bottom = 419.0
+offset_left = 1.0
+offset_top = 551.0
+offset_right = 203.0
+offset_bottom = 650.0
 
-[node name="profits" type="PanelContainer" parent="UI/GUI"]
+[node name="profits" type="TextureRect" parent="UI/GUI"]
 layout_mode = 2
+texture = ExtResource("12_10sgt")
 
 [node name="Num" type="Label" parent="UI/GUI/profits"]
 custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
+layout_mode = 0
+offset_left = 74.0
+offset_top = 44.0
+offset_right = 164.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0.20392157, 0.21176471, 0.4745098, 1)
+theme_override_fonts/font = ExtResource("13_mfmbs")
 theme_override_font_sizes/font_size = 32
 text = "$0"
 
@@ -280,48 +358,110 @@ layout_mode = 2
 
 [node name="LineEdit" type="SpinBox" parent="UI/Price Change/HBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_f71xg")
 max_value = 1000.0
 step = 0.05
 prefix = "$"
 
 [node name="Button" type="Button" parent="UI/Price Change/HBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_f71xg")
 shortcut = SubResource("Shortcut_pwe3t")
 text = " Submit "
 
+[node name="CustBelt" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 419.0
+offset_right = 704.4889
+offset_bottom = 480.0
+texture = ExtResource("4_0o8lh")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 58.0
+offset_right = 1106.0
+offset_bottom = 314.0
+scale = Vector2(0.2, 0.2)
+value = 100.0
+fill_mode = 5
+texture_under = ExtResource("11_vbamx")
+texture_progress = ExtResource("12_71nik")
+
+[node name="Timer" type="Timer" parent="UI/TextureProgressBar"]
+
 [node name="track" type="Node2D" parent="."]
-position = Vector2(1368, 374)
+position = Vector2(890, 374)
 
 [node name="Customer" parent="track" instance=ExtResource("4_l8phu")]
-id = "Chance"
-wants = 0
-replace_price = 10
-start_dialogue = "I'm Chance&I have saggy pants"
+texture = ExtResource("18_jc405")
+id = "Granny"
+wallet = 150
+wants = 2
+allowed = Array[int]([0, 1, 2, 3, 4])
+wait_time = 45.0
+start_dialogue = "Oh...honey, do you have a red belt?&I can't see."
+end_dialogue_yes = "Thanks bunches sweetie."
+end_dialogue_no_exp = "Oh, dear... &Belts sure are expensive these days..."
+end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
+end_dialogue_no_tim = "I'll just go to another shop while I wait."
 
-[node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
-id = "Finn"
-wallet = 15
-wants = 4
-fix_works = 80
-replace_price = 5
-start_dialogue = "I'm Finn&My belt's broken"
-end_dialogue_yes = "Nice!"
-end_dialogue_no = "Too Expensive!"
+[node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
+texture = ExtResource("19_8o1ig")
+id = "Very Thin Man"
+wallet = 30
+wants = 5
+allowed = Array[int]([0, 1, 2, 3, 5, 6])
+my_belt = ExtResource("4_0o8lh")
+wait_time = 45.0
+fix_works = 100
+replace_price = 30
+start_dialogue = "Uhh... Like, my belt's way long, man.&
+Is there a way you can fix it?"
+end_dialogue_yes = "Nice, it fits!
+Later, dude!"
+end_dialogue_no_exp = "Aw-hah... Like, too rich for my blood.&Later, dude!"
+end_dialogue_no_wrng = "You're trippin' man, who's got that kinda cash?&Later, dude!"
+end_dialogue_no_tim = "Uhh... Like, I'm gonna step outside real quick."
 
 [node name="Customer3" parent="track" instance=ExtResource("4_l8phu")]
-id = "Dirk"
-wallet = 45
+texture = ExtResource("20_a4ng5")
+id = "Rich-looking Guy"
+wallet = 200
+wants = 3
+allowed = Array[int]([2, 3])
+wait_time = 15.0
+start_dialogue = "I need something fancy. Now. &Money's no object, of course."
+end_dialogue_yes = "Gorgeous! Just gorgeous! I love it!&Toodaloo!"
+end_dialogue_no_exp = "Gaudy looking gold is soooo out.& Invest in some fashion sense, darling. &Toodaloo!"
+end_dialogue_no_wrng = "You call that fancy?
+Disgusting! &Toodaloo!"
+end_dialogue_no_tim = "Thanks to you, I'm \"fashionably\" late...
+Nevermind it, darling. &Toodaloo!"
+
+[node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
+texture = ExtResource("21_a4ng5")
+id = "Policeman"
+wallet = 30
 wants = 5
-fix_works = 12
-replace_price = 8
-start_dialogue = "Hello there, my name is Dirk.&This belt I bought here never did work."
-end_dialogue_yes = "Nice!"
-end_dialogue_no = "Too Expensive!"
+allowed = Array[int]([0, 1, 5, 6])
+my_belt = ExtResource("4_0o8lh")
+wait_time = 20.0
+fix_works = 100
+replace_price = 20
+start_dialogue = "I know what you're doing here. I just can't prove it...& yet, but I will... &Anyway this belt is busted. Can you fix it?"
+end_dialogue_yes = "Alright, thanks, but I've got my eye on you."
+end_dialogue_no_exp = "You're not gonna pull one over on me."
+end_dialogue_no_wrng = "Why would I want that?!"
+end_dialogue_no_tim = "You're lucky I can't wait around all day to catch you in the act."
 
 [connection signal="pressed" from="UI/Belts/Cheap Belt" to="UI/Belts" method="_on_cheap_belt_pressed"]
-[connection signal="pressed" from="UI/Belts/Red_Belt" to="UI/Belts" method="_on_red_belt_pressed"]
-[connection signal="pressed" from="UI/Belts/Normal_Belt" to="UI/Belts" method="_on_normal_belt_pressed"]
-[connection signal="pressed" from="UI/Belts/Expensive Belt" to="UI/Belts" method="_on_expensive_belt_pressed"]
+[connection signal="pressed" from="UI/Belts/Solid Belt" to="UI/Belts" method="_on_red_belt_pressed"]
+[connection signal="pressed" from="UI/Belts/Retro Belt" to="UI/Belts" method="_on_normal_belt_pressed"]
+[connection signal="pressed" from="UI/Belts/Fancy Belt" to="UI/Belts" method="_on_expensive_belt_pressed"]
+[connection signal="pressed" from="UI/Belts/Gold Belt" to="UI/Belts" method="_on_gold_belt_pressed"]
 [connection signal="pressed" from="UI/Fix/knife" to="UI" method="_on_knife_pressed"]
 [connection signal="pressed" from="UI/Fix/price_marker" to="UI" method="_on_price_marker_pressed"]
 [connection signal="pressed" from="UI/Fix/replacement" to="UI" method="_on_replacement_pressed"]
+[connection signal="timeout" from="UI/TextureProgressBar/Timer" to="UI" method="_on_timer_timeout"]
