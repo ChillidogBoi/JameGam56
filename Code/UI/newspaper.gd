@@ -14,7 +14,7 @@ func _ready():
 	profit.text = str("Money Made: $", Settings.profit)
 	scammed.text = str("Customers Scammed: ", Settings.scammed.size())
 	helped.text = str("Customers Helped: ", Settings.helped)
-	_on_button_pressed()
+	_on_button1_pressed()
 
 func news_blurb():
 	var tmp1 = Settings.scammed.pop_front()
@@ -32,5 +32,5 @@ func _on_button_pressed():
 func _on_button1_pressed():
 	if Settings.scammed.is_empty():
 		$HBoxContainer.visible = false
-		$HBoxContainer1.visible = true
+		$HBoxContainer2.visible = true
 	else: news_blurb()

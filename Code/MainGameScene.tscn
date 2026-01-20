@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=79 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Texture2D" uid="uid://j8d5l8t11peg" path="res://Art/Placeholder/mc_sketch.png" id="2_1mmhx"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="33_4ldi7"]
 [ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="34_yxcn7"]
 [ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="35_qla06"]
+[ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="42_ckaag"]
 
 [sub_resource type="Theme" id="Theme_f71xg"]
 default_font = ExtResource("13_mfmbs")
@@ -903,6 +904,16 @@ end_dialogue_no_exp = "You're not gonna pull one over on me."
 end_dialogue_no_wrng = "Why would I want that?!"
 end_dialogue_no_tim = "You're lucky I can't wait around all day to catch you in the act."
 news_scammed = "Local Belt Store Closed Due to Police Investigation. &The police have declined to comment or allow the press to speak with the owner who is in prison. One local says \"Yeah, they...overcharge for [bad] belts, who [cares]? You gonna...arrest the [people who are] paying [those] prices next? This is [crazy]!\""
+
+[node name="bg" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("42_ckaag")
 
 [connection signal="pressed" from="UI/Belts/Cheap Belt" to="UI/Belts" method="_on_cheap_belt_pressed"]
 [connection signal="pressed" from="UI/Belts/Solid Belt" to="UI/Belts" method="_on_red_belt_pressed"]

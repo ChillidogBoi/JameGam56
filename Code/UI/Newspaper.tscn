@@ -49,7 +49,7 @@ events = [SubResource("InputEventAction_ei8so")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cepd"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("image", "title", "blurb")]
+[node name="Control" type="Control" node_paths=PackedStringArray("image", "title", "blurb", "result", "profit", "scammed", "helped")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,6 +60,10 @@ script = ExtResource("1_ei8so")
 image = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/TextureRect")
 title = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/Label")
 blurb = NodePath("HBoxContainer/Panel/HBoxContainer/VBoxContainer/Label2")
+result = NodePath("HBoxContainer2/VBoxContainer/Label")
+profit = NodePath("HBoxContainer2/VBoxContainer/Label2")
+scammed = NodePath("HBoxContainer2/VBoxContainer/Label3")
+helped = NodePath("HBoxContainer2/VBoxContainer/Label4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

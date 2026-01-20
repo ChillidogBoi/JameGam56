@@ -1,6 +1,6 @@
 extends Control
 
-func _ready():
+func _ready(): 
 	Settings.helped = 0
 	Settings.profit = 0.0
 	Settings.scammed = []

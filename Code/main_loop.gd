@@ -75,8 +75,8 @@ func dialogue(id:String, txt: String):
 	
 	dialogue_box.reset(id)
 	dialogue_box.label.text = txt
-	dialogue_box.speak()
 	dialogue_box.visible = true
+	await dialogue_box.speak()
 	await dialogue_box.next
 	dialogue_box.visible = false
 	await get_tree().create_timer(0.01).timeout
