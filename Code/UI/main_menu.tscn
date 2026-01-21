@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b4epndv7qifxu"]
+[gd_scene load_steps=53 format=3 uid="uid://b4epndv7qifxu"]
 
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://xv3uxjg48t4w" path="res://Art/UI/menu_background.jpg" id="23_8svqv"]
 [ext_resource type="Texture2D" uid="uid://0kc17kp3wdvd" path="res://Art/UI/menu_backmagazines.png" id="24_y6b3o"]
 [ext_resource type="Texture2D" uid="uid://didra1bx6mdf8" path="res://Art/UI/menu_frontmagazines.png" id="25_86i17"]
+[ext_resource type="AudioStream" uid="uid://wrowqfpphqrb" path="res://Sound/page_turn_01.wav" id="25_bb43h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qa5s"]
 
@@ -706,6 +707,9 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_78oio")
 layout_mode = 2
 theme_override_constants/separation = 350
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bb43h")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_bb43h")
 
 [connection signal="mouse_entered" from="Main/start" to="Main" method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="Main/start" to="Main" method="_on_start_mouse_exited"]

@@ -17,7 +17,9 @@ const selected = [
 ]
 
 func hover(i:int, m:bool):
-	if m: nodes[i].texture = selected[i]
+	if m:
+		nodes[i].texture =selected[i]
+		$"../sfx".play(0.3)
 	else: nodes[i].texture = gray[i]
 
 func _on_start_mouse_entered():

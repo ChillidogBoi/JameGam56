@@ -36,7 +36,7 @@ func _on_m_vol_changed(value):
 
 func _on_s_vol_changed(value):
 	$"../sfx".volume_db = value - 50
-	$"../Dialogue/beltese".volume_db = $"../sfx".volume_db
+	$"../Dialogue/beltese".volume_db = value - 65
 	Settings.s_vol = $"../sfx".volume_db
 
 func _on_button_4_pressed():
