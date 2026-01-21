@@ -43,6 +43,7 @@ func _ready():
 func run_customer():
 	fix_buttons[1].tooltip_text = str("Replace -$", cust.replace_price)
 	await customer_walkup()
+	$"../bg/Control3".visible = false
 	
 	if cust.my_belt:
 		cust_belt.texture = cust.my_belt
@@ -116,7 +117,7 @@ func customer_walkaway():
 
 func _on_knife_pressed():
 	if not cust.allowed.has(5):
-		cust.end_dia_setup(false, false)
+		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/fail".visible = true
 	
 	elif cust.wants != 5:
@@ -133,6 +134,7 @@ func _on_knife_pressed():
 
 
 func change_price(type:int):
+	$"../bg/Control".visible = false
 	price_d.get_child(1).get_child(0).value =\
 		float(sell_buttons[type].tooltip_text.get_slice("$", 1))
 	price_d.get_child(1).get_child(0).max_value =\
@@ -147,11 +149,12 @@ func change_price(type:int):
 	sell_buttons[type].tooltip_text = str(sell_buttons[type].tooltip_text.get_slice("$", 0),\
 		"$", price_d.get_child(1).get_child(0).value)
 	price_d.visible = false
+	$"../bg/Control".visible = true
 
 
 func sell(type:int):
 	if not cust.allowed.has(type):
-		cust.end_dia_setup(false, false)
+		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/fail".visible = true
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
@@ -180,6 +183,7 @@ func end_cust():
 	$"../Node2D/Player/Face/fail".visible = false
 	$"../Node2D/Player/Face/joy".visible = false
 	if paused: await resume
+	$"../bg/Control3".visible = true
 	await customer_walkaway()
 	
 	if customer_order.is_empty(): end_game()
@@ -209,6 +213,7 @@ func _process(delta):
 
 
 func _on_timer_timeout():
+	price_d.visible = false
 	timer.visible = false
 	cust.end_dia_setup(false, false, 2)
 	end_cust()

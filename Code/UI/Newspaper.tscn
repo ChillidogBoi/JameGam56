@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://hqdui0hrk7r3"]
+[gd_scene load_steps=25 format=3 uid="uid://hqdui0hrk7r3"]
 
 [ext_resource type="Script" uid="uid://c31amembk852q" path="res://Code/UI/newspaper.gd" id="1_ei8so"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_ck7w1"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
 [ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="5_kg0mq"]
+[ext_resource type="AudioStream" uid="uid://cn1c8ijipdvng" path="res://Sound/beltgame_title_01.ogg" id="6_iockq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ck7w1"]
 
@@ -266,6 +267,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("5_kg0mq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_iockq")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="HBoxContainer/Panel/HBoxContainer/Button" to="." method="_on_button1_pressed"]
 [connection signal="pressed" from="HBoxContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]

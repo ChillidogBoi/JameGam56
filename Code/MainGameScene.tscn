@@ -325,9 +325,9 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Cheap Belt"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
+offset_left = 13.0
 offset_top = 1.0
-offset_right = 71.0
+offset_right = 77.0
 offset_bottom = 65.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
@@ -351,10 +351,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Solid Belt"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 84.0
+offset_bottom = 67.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -377,10 +377,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Retro Belt"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 73.0
+offset_bottom = 72.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -403,10 +403,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Fancy Belt"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 77.0
+offset_bottom = 73.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -429,10 +429,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Gold Belt"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = 104.0
+offset_bottom = 92.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -461,10 +461,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/knife"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 26.0
+offset_top = 9.0
+offset_right = 90.0
+offset_bottom = 73.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -488,10 +488,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/price_marker"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 78.0
+offset_bottom = 73.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -551,6 +551,7 @@ text = "$0"
 
 [node name="Price Change" type="VBoxContainer" parent="UI"]
 visible = false
+z_index = 1
 layout_mode = 0
 offset_left = 493.0
 offset_top = 79.0
@@ -841,6 +842,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="track" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(890, 374)
 
 [node name="Customer" parent="track" instance=ExtResource("4_l8phu")]
@@ -856,6 +858,55 @@ end_dialogue_no_exp = "Oh, dear...&Belts sure are expensive these days..."
 end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
 end_dialogue_no_tim = "I'll just go to another shop while I wait."
 news_scammed = "Local Blind Woman Swindled! &\"I thought that nice young lady was helping me,\" says ninety-seven-year-old grandmother of seven, Example Name, \"She seemed very nice, why would she do something like this?\" Why indeed? Is this what it has come to? Taking advantage of the elderly and disabled? What a sad world."
+
+[node name="Control" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -78.0
+offset_top = -133.99998
+offset_right = -38.0
+offset_bottom = -93.999985
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Blind as a bat,
+the old bat. lol"
+theme = ExtResource("4_5pefq")
+
+[node name="Control2" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -8.0
+offset_top = -48.0
+offset_right = 32.0
+offset_bottom = -8.0
+scale = Vector2(1.76, 1.7963582)
+tooltip_text = "Expensive purse,
+but old-fashioned."
+theme = ExtResource("4_5pefq")
+
+[node name="Control3" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -68.0
+offset_top = 125.999985
+offset_right = -28.0
+offset_bottom = 165.99998
+rotation = -0.6219217
+scale = Vector2(1.9646512, 3.1572356)
+tooltip_text = "Doesn't have to
+wear loafers, lucky!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control4" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0000076
+offset_top = -194.0
+offset_right = 37.999992
+offset_bottom = -154.0
+scale = Vector2(1.8633199, 1.7366034)
+tooltip_text = "Knitting needle bun. Not
+as messy as my pigtails."
+theme = ExtResource("4_5pefq")
 
 [node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("19_8o1ig")
@@ -875,6 +926,63 @@ end_dialogue_no_wrng = "You're trippin' man, who's got that kinda cash?&Later, d
 end_dialogue_no_tim = "Uhh... Like, I'm gonna step outside real quick."
 news_scammed = "Reviews for Example Belt Store: &4/10: Came in for a repair and got upsold to a new one. I was able to fix the old belt at home! Terrible service."
 
+[node name="Control" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -68.0
+offset_top = -202.0
+offset_right = -36.125
+offset_bottom = -183.76787
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Scruffy"
+theme = ExtResource("4_5pefq")
+
+[node name="Control2" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -10.202457
+offset_top = -288.39948
+offset_right = 16.12875
+offset_bottom = -263.33035
+rotation = 0.4811473
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Bald"
+theme = ExtResource("4_5pefq")
+
+[node name="Control3" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -62.999996
+offset_top = -288.99997
+offset_right = -28.624996
+offset_bottom = -263.93085
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Bald"
+theme = ExtResource("4_5pefq")
+
+[node name="Control4" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -21.999996
+offset_top = -160.99998
+offset_right = 14.875004
+offset_bottom = 7.6470947
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Extremely skinny.
+Somewhat well dressed."
+theme = ExtResource("4_5pefq")
+
+[node name="Control5" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -45.999996
+offset_top = 186.99998
+offset_right = 30.250004
+offset_bottom = 269.8042
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Loafers."
+theme = ExtResource("4_5pefq")
+
 [node name="Customer3" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("20_a4ng5")
 id = "Rich-looking Guy"
@@ -887,9 +995,85 @@ end_dialogue_yes = "Gorgeous! Just gorgeous! I love it!&Toodaloo!"
 end_dialogue_no_exp = "Gaudy looking gold is soooo out.& Invest in some fashion sense, darling. &Toodaloo!"
 end_dialogue_no_wrng = "You call that fancy?
 Disgusting! &Toodaloo!"
-end_dialogue_no_tim = "Thanks to you, I'm \"fashionably\" late...
-Nevermind it, darling. &Toodaloo!"
+end_dialogue_no_tim = "Thanks to you, I'm \"fashionably\" late...&Nevermind it, darling. &Toodaloo!"
 news_scammed = "Male Model Fired for \"Ugly Belt\" &\"It's his fault for coming on [the set] wearing THAT. Ugh, I get shivers just thinking about it,\" says Example Name. When asked for a comment the model only had this to say: \"That's [the fashion industry] for you. [You] go looking for styles in new places, sometimes [they're] good, sometimes [you get] fired.\""
+
+[node name="Control5" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -16.999996
+offset_top = 186.99998
+offset_right = 29.250004
+offset_bottom = 269.8042
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Boots with the fur"
+theme = ExtResource("4_5pefq")
+
+[node name="Control6" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -192.99998
+offset_right = -77.5
+offset_bottom = -156.53575
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Feathers everywhere"
+theme = ExtResource("4_5pefq")
+
+[node name="Control7" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = -178.0
+offset_right = 91.875
+offset_bottom = -133.17938
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Feathers everywhere"
+theme = ExtResource("4_5pefq")
+
+[node name="Control8" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -120.99998
+offset_right = 44.375
+offset_bottom = -42.753838
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Very fancy clothes."
+theme = ExtResource("4_5pefq")
+
+[node name="Control9" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -47.0
+offset_top = -26.99997
+offset_right = 73.625
+offset_bottom = 37.572083
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Very fancy clothes."
+theme = ExtResource("4_5pefq")
+
+[node name="Control10" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -219.0
+offset_right = 8.875
+offset_bottom = -165.82298
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Attractive"
+theme = ExtResource("4_5pefq")
+
+[node name="Control11" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -48.0
+offset_top = -270.0
+offset_right = 20.75
+offset_bottom = -238.85342
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Fancy styled hair"
+theme = ExtResource("4_5pefq")
 
 [node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("21_a4ng5")
@@ -908,6 +1092,51 @@ end_dialogue_no_wrng = "Why would I want that?!"
 end_dialogue_no_tim = "You're lucky I can't wait around all day to catch you in the act."
 news_scammed = "Local Belt Store Closed Due to Police Investigation. &The police have declined to comment or allow the press to speak with the owner who is in prison. One local says \"Yeah, they...overcharge for [bad] belts, who [cares]? You gonna...arrest the [people who are] paying [those] prices next? This is [crazy]!\""
 
+[node name="Control11" type="Control" parent="track/Customer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -49.0
+offset_top = -252.0
+offset_right = -22.125
+offset_bottom = -210.97774
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Upset"
+theme = ExtResource("4_5pefq")
+
+[node name="Control12" type="Control" parent="track/Customer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -83.0
+offset_top = -205.0
+offset_right = -56.125
+offset_bottom = -189.04689
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Eww. The Tobacco
+smell's really strong."
+theme = ExtResource("4_5pefq")
+
+[node name="Control13" type="Control" parent="track/Customer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -104.0
+offset_top = -186.99997
+offset_right = 22.875
+offset_bottom = -86.72334
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Police uniform"
+theme = ExtResource("4_5pefq")
+
+[node name="Control14" type="Control" parent="track/Customer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -61.0
+offset_top = 205.00003
+offset_right = 37.75
+offset_bottom = 261.2157
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Loafers"
+theme = ExtResource("4_5pefq")
+
 [node name="bg" type="TextureRect" parent="."]
 z_index = -1
 anchors_preset = 15
@@ -917,6 +1146,161 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("42_ckaag")
+
+[node name="Control" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 508.0
+offset_top = 7.0
+offset_right = 663.0
+offset_bottom = 181.0
+tooltip_text = "Snacks I can't afford, but
+I'm not hungry anyway."
+theme = ExtResource("4_5pefq")
+
+[node name="Control2" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 267.058
+offset_top = 12.27339
+offset_right = 337.36273
+offset_bottom = 282.27432
+rotation = -0.32069817
+tooltip_text = "Drinks I can't afford, but
+I'm not thirsty anyway."
+theme = ExtResource("4_5pefq")
+
+[node name="Control3" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 778.0
+offset_top = 62.0
+offset_right = 861.0
+offset_bottom = 235.0
+tooltip_text = "I got in trouble last
+time I tried on glasses."
+theme = ExtResource("4_5pefq")
+
+[node name="Control4" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 914.0
+offset_top = 50.0
+offset_right = 1030.0
+offset_bottom = 199.0
+tooltip_text = "Costume Jewelry: cute,
+but very expensive here."
+theme = ExtResource("4_5pefq")
+
+[node name="Control5" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 1003.0
+offset_top = 318.0
+offset_right = 1096.0
+offset_bottom = 368.0
+tooltip_text = "It's a doormat."
+theme = ExtResource("4_5pefq")
+
+[node name="Control6" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 1042.0
+offset_top = 367.0
+offset_right = 1096.0
+offset_bottom = 427.0
+tooltip_text = "It's a doormat."
+theme = ExtResource("4_5pefq")
+
+[node name="Control7" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = -100.0
+offset_top = 157.0
+offset_right = 2.136589
+offset_bottom = 313.779
+rotation = -0.54860556
+tooltip_text = "Various keys. I only know
+what a couple go to."
+theme = ExtResource("4_5pefq")
+
+[node name="Control8" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 191.0
+offset_top = 130.0
+offset_right = 293.1366
+offset_bottom = 269.0
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control10" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 269.96716
+offset_top = 239.77467
+offset_right = 308.17877
+offset_bottom = 297.8059
+rotation = -0.59922236
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control13" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 330.0
+offset_top = 312.0
+offset_right = 368.2116
+offset_bottom = 419.26373
+rotation = -1.0407414
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control14" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 435.90628
+offset_top = 379.57782
+offset_right = 474.1179
+offset_bottom = 451.14758
+rotation = -1.4156599
+tooltip_text = "That's just my hand!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control9" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 202.0
+offset_top = 268.0
+offset_right = 351.0
+offset_bottom = 429.0
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control11" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 254.0
+offset_top = 426.0
+offset_right = 359.0
+offset_bottom = 474.0
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control12" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 228.0
+offset_top = 469.0
+offset_right = 354.0
+offset_bottom = 647.0
+tooltip_text = "That's just me!"
+theme = ExtResource("4_5pefq")
+
+[node name="Control15" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 551.0
+offset_right = 200.0
+offset_bottom = 652.0
+tooltip_text = "The store's
+profits today."
+theme = ExtResource("4_5pefq")
+
+[node name="Control16" type="Control" parent="bg"]
+anchors_preset = 0
+offset_left = 460.0
+offset_top = 579.0
+offset_right = 586.0
+offset_bottom = 647.0
+tooltip_text = "Just my doodles."
+theme = ExtResource("4_5pefq")
 
 [connection signal="pressed" from="UI/Belts/Cheap Belt" to="UI/Belts" method="_on_cheap_belt_pressed"]
 [connection signal="pressed" from="UI/Belts/Solid Belt" to="UI/Belts" method="_on_red_belt_pressed"]
