@@ -115,10 +115,16 @@ func customer_walkaway():
 
 
 func _on_knife_pressed():
-	if not cust.allowed.has(5): cust.end_dia_setup(false, false)
+	if not cust.allowed.has(5):
+		cust.end_dia_setup(false, false)
+		$"../Node2D/Player/Face/fail".visible = true
 	
-	elif cust.wants != 5: cust.end_dia_setup(true, true)
-	else: cust.end_dia_setup(true, false)
+	elif cust.wants != 5:
+		cust.end_dia_setup(true, true)
+		$"../Node2D/Player/Face/joy".visible = true
+	else:
+		cust.end_dia_setup(true, false)
+		$"../Node2D/Player/Face/joy".visible = true
 	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
 		float(fix_buttons[0].tooltip_text.get_slice("$", 1)))
 	Settings.profit = float(profit.text.get_slice("$", 1))
@@ -144,9 +150,12 @@ func change_price(type:int):
 
 
 func sell(type:int):
-	if not cust.allowed.has(type): cust.end_dia_setup(false, false)
+	if not cust.allowed.has(type):
+		cust.end_dia_setup(false, false)
+		$"../Node2D/Player/Face/fail".visible = true
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
+		$"../Node2D/Player/Face/joy".visible = true
 		if cust.wants == type or cust.wants == 6: cust.end_dia_setup(true, false)
 		else:  cust.end_dia_setup(true, true)
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
@@ -154,7 +163,9 @@ func sell(type:int):
 		Settings.profit = float(profit.text.get_slice("$", 1))
 		sound.stream = MONEY_SOUND
 		sound.play()
-	else: cust.end_dia_setup(false, false)
+	else:
+		cust.end_dia_setup(false, false)
+		$"../Node2D/Player/Face/fail".visible = true
 	
 	end_cust()
 
@@ -165,7 +176,9 @@ func end_cust():
 	if paused: await resume
 	for n in cust.dialogue_seperated:
 		await dialogue(cust.id, cust.request_next_dialogue())
-		
+	
+	$"../Node2D/Player/Face/fail".visible = false
+	$"../Node2D/Player/Face/joy".visible = false
 	if paused: await resume
 	await customer_walkaway()
 	

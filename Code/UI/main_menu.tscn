@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b4epndv7qifxu"]
+[gd_scene load_steps=52 format=3 uid="uid://b4epndv7qifxu"]
 
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_mvdb3"]
 [ext_resource type="Script" uid="uid://dycgrqbcryruc" path="res://Code/UI/hover_lift.gd" id="4_7s2w4"]
 [ext_resource type="Script" uid="uid://bxviuufjio06" path="res://Code/UI/main_menu_set.gd" id="4_q0h1s"]
+[ext_resource type="Texture2D" uid="uid://b37ou75pw3ck2" path="res://Art/UI/logo.png" id="5_7qa5s"]
 [ext_resource type="Texture2D" uid="uid://c0a7n0ms7361" path="res://Art/UI/settings_gray.png" id="5_78oio"]
 [ext_resource type="Script" uid="uid://js6eod83v61l" path="res://Code/UI/gallery.gd" id="5_jc5cr"]
 [ext_resource type="Texture2D" uid="uid://hupjayq1cerp" path="res://Art/Concept/image2.png" id="5_kpf2y"]
@@ -275,6 +276,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("25_86i17")
+
+[node name="bg4" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -726.0
+offset_bottom = -271.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_7qa5s")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Main" type="Control" parent="."]
 layout_mode = 1
