@@ -32,10 +32,16 @@ const beltese = [
 	preload("res://Sound/Beltese/Z_1.wav"),
 ]
 
-func reset(id: String):
-	label.visible_characters = id.length()
+func reset():
+	label.visible_characters = 0
 
 func speak():
+	if label.text.begins_with("You:"):
+		$Polygon2D2.visible = false
+		$Polygon2D3.visible = true
+	else:
+		$Polygon2D3.visible = false
+		$Polygon2D2.visible = true
 	for n in label.text.length():
 		if get_parent().paused: await get_parent().resume
 		label.visible_characters += 1

@@ -13,7 +13,7 @@ const cust_start_pos = Vector2(1368, 374)
 @export var fix_buttons: Array[BaseButton]
 var cust: Customer
 const MONEY_SOUND = preload("res://Sound/coin_drop_01.ogg")
-const BOSS_DIA1 = "Make $300 by the end of the day. Or you're fired."
+const BOSS_DIA1 = "Boss: \nMake $300 by the end of the day. Or you're fired."
 const BOSS_DIA2 =  "I don't care if you have to cheat an OLD LADY out of her Social Security Check"
 var paused = false
 signal resume
@@ -32,8 +32,8 @@ func _ready():
 		n.disabled = true
 		n.get_child(0).visible = true
 	
-	await dialogue("Boss", BOSS_DIA1)
-	await dialogue("Boss", BOSS_DIA2)
+	await dialogue(BOSS_DIA1)
+	await dialogue(BOSS_DIA2)
 	
 	cust = customer_order.pop_front()
 	
@@ -49,7 +49,7 @@ func run_customer():
 		cust_belt.texture = cust.my_belt
 		cust_belt.visible = true
 	for n in cust.dialogue_seperated:
-		await dialogue(cust.id, cust.request_next_dialogue())
+		await dialogue(cust.request_next_dialogue())
 	
 	timer.get_child(0).stop()
 	if cust.wait_time != 0.0:
@@ -66,7 +66,7 @@ func run_customer():
 			n.get_child(0).visible = false
 
 
-func dialogue(id:String, txt: String):
+func dialogue(txt: String):
 	for n in sell_buttons:
 		n.disabled = true
 		n.get_child(0).visible = true
@@ -74,7 +74,7 @@ func dialogue(id:String, txt: String):
 		n.disabled = true
 		n.get_child(0).visible = true
 	
-	dialogue_box.reset(id)
+	dialogue_box.reset()
 	dialogue_box.label.text = txt
 	dialogue_box.visible = true
 	await dialogue_box.speak()
@@ -159,7 +159,9 @@ func sell(type:int):
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
 		$"../Node2D/Player/Face/joy".visible = true
-		if cust.wants == type or cust.wants == 6: cust.end_dia_setup(true, false)
+		if cust.wants == type or cust.wants == 6:
+			cust.end_dia_setup(true, false)
+			profit.text = str("$", float(profit.text.get_slice("$", 1)) + cust.tip)
 		else:  cust.end_dia_setup(true, true)
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
 			float(sell_buttons[type].tooltip_text.get_slice("$", 1)))
@@ -178,7 +180,7 @@ func end_cust():
 	timer.get_child(0).stop()
 	if paused: await resume
 	for n in cust.dialogue_seperated:
-		await dialogue(cust.id, cust.request_next_dialogue())
+		await dialogue(cust.request_next_dialogue())
 	
 	$"../Node2D/Player/Face/fail".visible = false
 	$"../Node2D/Player/Face/joy".visible = false

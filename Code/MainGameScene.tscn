@@ -848,15 +848,31 @@ position = Vector2(890, 374)
 [node name="Customer" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("18_jc405")
 id = "Granny"
-wallet = 150
+wallet = 100.0
+tip = 1.5
 wants = 2
 allowed = Array[int]([0, 1, 2, 3, 4])
 wait_time = 45.0
-start_dialogue = "Oh...honey, do you have a red belt?&I can't see."
-end_dialogue_yes = "Thanks bunches sweetie."
-end_dialogue_no_exp = "Oh, dear...&Belts sure are expensive these days..."
+start_dialogue = "The Grandma:
+Oh, hello, dearie. I'm sorry to be a bother, &The Grandma:
+but could you please find me a red belt?&The Grandma:
+My eyes just don’t seem to work as they used to. & You:
+Sure, let's take a look."
+end_dialogue_yes = "The Grandma:
+Oh my! This is just perfect! You have mighty good taste, dear &The Grandma:
+Here, take this—a little something extra for your trouble. &You:
+(That’s retail, baby!)
+"
+end_dialogue_scam = "The Grandma:
+Thank you, dear, this will do just fine. &You:
+(Either she didn't notice or she didn't care.) &You:
+(Either way money's money.)"
+end_dialogue_no_exp = "The Grandma:
+My goodness, dear... I fear I'll have to pass on that one."
 end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
-end_dialogue_no_tim = "I'll just go to another shop while I wait."
+end_dialogue_no_tim = "Grandma:
+That's alright, dear. I'll come back another time. & You: 
+(Scammed by time itself. I hate when that happens.)"
 news_scammed = "Local Blind Woman Swindled! &\"I thought that nice young lady was helping me,\" says ninety-seven-year-old grandmother of seven, Example Name, \"She seemed very nice, why would she do something like this?\" Why indeed? Is this what it has come to? Taking advantage of the elderly and disabled? What a sad world."
 
 [node name="Control" type="Control" parent="track/Customer"]
@@ -867,8 +883,8 @@ offset_top = -133.99998
 offset_right = -38.0
 offset_bottom = -93.999985
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Blind as a bat,
-the old bat. lol"
+tooltip_text = "Wow, those frames are thick…
+can she see… through me?"
 theme = ExtResource("4_5pefq")
 
 [node name="Control2" type="Control" parent="track/Customer"]
@@ -879,8 +895,8 @@ offset_top = -48.0
 offset_right = 32.0
 offset_bottom = -8.0
 scale = Vector2(1.76, 1.7963582)
-tooltip_text = "Expensive purse,
-but old-fashioned."
+tooltip_text = "I've seen vending machines
+with higher spending power."
 theme = ExtResource("4_5pefq")
 
 [node name="Control3" type="Control" parent="track/Customer"]
@@ -892,8 +908,7 @@ offset_right = -28.0
 offset_bottom = 165.99998
 rotation = -0.6219217
 scale = Vector2(1.9646512, 3.1572356)
-tooltip_text = "Doesn't have to
-wear loafers, lucky!"
+tooltip_text = "Nice kicks."
 theme = ExtResource("4_5pefq")
 
 [node name="Control4" type="Control" parent="track/Customer"]
@@ -904,14 +919,115 @@ offset_top = -194.0
 offset_right = 37.999992
 offset_bottom = -154.0
 scale = Vector2(1.8633199, 1.7366034)
-tooltip_text = "Knitting needle bun. Not
-as messy as my pigtails."
+tooltip_text = "Shes really selling
+that old lady look."
+theme = ExtResource("4_5pefq")
+
+[node name="Control5" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -113.00001
+offset_top = -337.0
+offset_right = -73.00001
+offset_bottom = -297.0
+scale = Vector2(1.1909703, 1.2966031)
+tooltip_text = "She’s got a lot of time on her
+hands. Unfortunately, I do not.
+Let's make this quick."
+theme = ExtResource("4_5pefq")
+
+[node name="inner" type="Control" parent="track/Customer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -673.0
+offset_top = -21.0
+offset_right = -633.0
+offset_bottom = 19.0
+
+[node name="Control8" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = -27.0
+offset_top = -221.0
+offset_right = 75.1366
+offset_bottom = -82.0
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control10" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = 51.967163
+offset_top = -111.22533
+offset_right = 90.17877
+offset_bottom = -53.19409
+rotation = -0.59922236
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control13" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = 112.0
+offset_top = -39.0
+offset_right = 150.21161
+offset_bottom = 68.26373
+rotation = -1.0407414
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control14" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = 217.90625
+offset_top = 28.57779
+offset_right = 256.11786
+offset_bottom = 100.14755
+rotation = -1.4156599
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control9" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -83.0
+offset_right = 133.0
+offset_bottom = 78.0
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control11" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = 36.0
+offset_top = 75.0
+offset_right = 141.0
+offset_bottom = 123.0
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
+theme = ExtResource("4_5pefq")
+
+[node name="Control12" type="Control" parent="track/Customer/inner"]
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 118.0
+offset_right = 136.0
+offset_bottom = 296.0
+tooltip_text = "She won't notice details.
+Price tags, though? She’ll
+for sure notice those."
 theme = ExtResource("4_5pefq")
 
 [node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("19_8o1ig")
 id = "Very Thin Man"
-wallet = 30
+wallet = 0.0
 wants = 5
 allowed = Array[int]([0, 1, 2, 3, 5, 6])
 my_belt = ExtResource("4_0o8lh")
@@ -986,7 +1102,7 @@ theme = ExtResource("4_5pefq")
 [node name="Customer3" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("20_a4ng5")
 id = "Rich-looking Guy"
-wallet = 200
+wallet = 0.0
 wants = 3
 allowed = Array[int]([2, 3])
 wait_time = 15.0
@@ -1078,7 +1194,7 @@ theme = ExtResource("4_5pefq")
 [node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
 texture = ExtResource("21_a4ng5")
 id = "Policeman"
-wallet = 30
+wallet = 0.0
 wants = 5
 allowed = Array[int]([0, 1, 5, 6])
 my_belt = ExtResource("4_0o8lh")
@@ -1215,72 +1331,6 @@ offset_bottom = 313.779
 rotation = -0.54860556
 tooltip_text = "Various keys. I only know
 what a couple go to."
-theme = ExtResource("4_5pefq")
-
-[node name="Control8" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 191.0
-offset_top = 130.0
-offset_right = 293.1366
-offset_bottom = 269.0
-tooltip_text = "That's just me!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control10" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 269.96716
-offset_top = 239.77467
-offset_right = 308.17877
-offset_bottom = 297.8059
-rotation = -0.59922236
-tooltip_text = "That's just me!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control13" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 330.0
-offset_top = 312.0
-offset_right = 368.2116
-offset_bottom = 419.26373
-rotation = -1.0407414
-tooltip_text = "That's just me!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control14" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 435.90628
-offset_top = 379.57782
-offset_right = 474.1179
-offset_bottom = 451.14758
-rotation = -1.4156599
-tooltip_text = "That's just my hand!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control9" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 202.0
-offset_top = 268.0
-offset_right = 351.0
-offset_bottom = 429.0
-tooltip_text = "That's just me!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control11" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 254.0
-offset_top = 426.0
-offset_right = 359.0
-offset_bottom = 474.0
-tooltip_text = "That's just me!"
-theme = ExtResource("4_5pefq")
-
-[node name="Control12" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 228.0
-offset_top = 469.0
-offset_right = 354.0
-offset_bottom = 647.0
-tooltip_text = "That's just me!"
 theme = ExtResource("4_5pefq")
 
 [node name="Control15" type="Control" parent="bg"]

@@ -3,7 +3,8 @@ class_name Customer
 
 @export var id: String
 ## How much the customer is willing to pay
-@export_custom(PROPERTY_HINT_NONE, "suffix:$") var wallet: int
+@export_custom(PROPERTY_HINT_NONE, "suffix:$") var wallet: float
+@export_custom(PROPERTY_HINT_NONE, "suffix:$") var tip: float
 @export_enum("Cheap Belt", "Solid Belt", "Retro Belt", "Fancy Belt", "Gold Belt", "Fix", "Replacement", "Any") \
 	var wants: int = 6
 @export_enum("Cheap Belt", "Solid Belt", "Retro Belt", "Fancy Belt", "Gold Belt", "Fix", "Replacement", "Any") \
@@ -16,6 +17,7 @@ class_name Customer
 ## Seperated by &
 @export_multiline var start_dialogue: String
 @export_multiline var end_dialogue_yes: String
+@export_multiline var end_dialogue_scam: String
 @export_multiline var end_dialogue_no_exp: String
 @export_multiline var end_dialogue_no_wrng: String
 @export_multiline var end_dialogue_no_tim: String
@@ -39,16 +41,20 @@ func request_next_dialogue() -> String:
 		return ""
 	
 	last_line_delivered += 1
-	return str(id, "\n", dialogue_seperated[last_line_delivered -1])
+	return str(dialogue_seperated[last_line_delivered -1])
 
 func end_dia_setup(answer: bool, scam: bool, reason: int = 0):
 	dialogue_seperated = []
 	last_line_delivered = 0
-	if scam:
+	if scam and answer:
 		Settings.scammed.append(news_scammed)
 		Settings.scammed_pic.append(news_pic)
-	else: Settings.helped += 1
-	if answer:
+		for n:int in end_dialogue_scam.count("&") + 1:
+			dialogue_seperated.append(end_dialogue_scam.get_slice("&", n))
+		return
+		
+	elif answer:
+		Settings.helped += 1
 		for n:int in end_dialogue_yes.count("&") + 1:
 			dialogue_seperated.append(end_dialogue_yes.get_slice("&", n))
 		return
