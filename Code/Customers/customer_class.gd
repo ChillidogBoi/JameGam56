@@ -26,8 +26,18 @@ class_name Customer
 @export var anims: AnimationPlayer
 var last_line_delivered: int = 0
 var dialogue_seperated: Array = []
+const FOOTSTEPS = [
+	preload("res://Sound/Footsteps/step_01.wav"),
+	preload("res://Sound/Footsteps/step_02.wav"),
+	preload("res://Sound/Footsteps/step_03.wav"),
+	preload("res://Sound/Footsteps/step_04.wav"),
+	preload("res://Sound/Footsteps/step_05.wav"),
+]
 
 
+func step_sound():
+	$"../../UI/sfx".stream = FOOTSTEPS[randi_range(0,4)]
+	$"../../UI/sfx".play()
 
 func _ready():
 	last_line_delivered = 0
@@ -36,9 +46,7 @@ func _ready():
 		dialogue_seperated.append(start_dialogue.get_slice("&", n))
 
 func request_next_dialogue() -> String:
-	if dialogue_seperated.size() == last_line_delivered:
-		print(dialogue_seperated)
-		return ""
+	if dialogue_seperated.size() == last_line_delivered: return ""
 	
 	last_line_delivered += 1
 	return str(dialogue_seperated[last_line_delivered -1])

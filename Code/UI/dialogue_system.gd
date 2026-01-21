@@ -54,3 +54,8 @@ func speak():
 
 func _on_continue_pressed():
 	if label.visible_characters > label.text.length() - 4: next.emit()
+
+func _input(event):
+	if not event is InputEventMouseButton: return
+	if event.button_index > 1 or event.pressed == false: return
+	_on_continue_pressed()

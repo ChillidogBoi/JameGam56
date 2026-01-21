@@ -13,6 +13,7 @@ const cust_start_pos = Vector2(1368, 374)
 @export var fix_buttons: Array[BaseButton]
 var cust: Customer
 const MONEY_SOUND = preload("res://Sound/coin_drop_01.ogg")
+const AWW_01 = preload("uid://5styh0l528dh")
 const BOSS_DIA1 = "Boss: \nMake $300 by the end of the day. Or you're fired."
 const BOSS_DIA2 =  "I don't care if you have to cheat an OLD LADY out of her Social Security Check"
 var paused = false
@@ -31,6 +32,9 @@ func _ready():
 	for n in fix_buttons:
 		n.disabled = true
 		n.get_child(0).visible = true
+	
+	$"../Sprite2D/AnimationPlayer".play("grow")
+	await $"../Sprite2D/AnimationPlayer".animation_finished
 	
 	await dialogue(BOSS_DIA1)
 	await dialogue(BOSS_DIA2)
@@ -89,11 +93,11 @@ func customer_walkup():
 	cust.flip_h = false
 	cust.visible = true
 	cust.anims.play("hop")
-	var adder = 0.001
+	var adder = 0.0001
 	while track.position.x > 900:
 		if paused: await resume
 		track.position.x = lerp(track.position.x, 890.0, adder)
-		adder += 0.000275
+		adder += 0.0001
 		await get_tree().create_timer(0.01).timeout
 	cust.anims.play("stop")
 	return
@@ -125,7 +129,7 @@ func _on_knife_pressed():
 		$"../Node2D/Player/Face/joy".visible = true
 	else:
 		cust.end_dia_setup(true, false)
-		$"../Node2D/Player/Face/joy".visible = true
+		$"../Node2D/Player/Face/kind".visible = true
 	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
 		float(fix_buttons[0].tooltip_text.get_slice("$", 1)))
 	Settings.profit = float(profit.text.get_slice("$", 1))
@@ -156,13 +160,18 @@ func sell(type:int):
 	if not cust.allowed.has(type):
 		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/fail".visible = true
+		sound.stream = AWW_01
+		sound.play()
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
-		$"../Node2D/Player/Face/joy".visible = true
+		
 		if cust.wants == type or cust.wants == 6:
 			cust.end_dia_setup(true, false)
+			$"../Node2D/Player/Face/kind".visible = true
 			profit.text = str("$", float(profit.text.get_slice("$", 1)) + cust.tip)
-		else:  cust.end_dia_setup(true, true)
+		else: 
+			cust.end_dia_setup(true, true)
+			$"../Node2D/Player/Face/joy".visible = true
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) + \
 			float(sell_buttons[type].tooltip_text.get_slice("$", 1)))
 		Settings.profit = float(profit.text.get_slice("$", 1))
@@ -171,6 +180,8 @@ func sell(type:int):
 	else:
 		cust.end_dia_setup(false, false)
 		$"../Node2D/Player/Face/fail".visible = true
+		sound.stream = AWW_01
+		sound.play()
 	
 	end_cust()
 
@@ -184,6 +195,8 @@ func end_cust():
 	
 	$"../Node2D/Player/Face/fail".visible = false
 	$"../Node2D/Player/Face/joy".visible = false
+	$"../Node2D/Player/Face/sad".visible = false
+	$"../Node2D/Player/Face/kind".visible = false
 	if paused: await resume
 	$"../bg/Control3".visible = true
 	await customer_walkaway()
@@ -196,6 +209,8 @@ func end_cust():
 
 
 func end_game():
+	$"../Sprite2D/AnimationPlayer".play("shrink")
+	await $"../Sprite2D/AnimationPlayer".animation_finished
 	get_tree().change_scene_to_file("res://Code/UI/Newspaper.tscn")
 
 
@@ -215,6 +230,9 @@ func _process(delta):
 
 
 func _on_timer_timeout():
+	sound.stream = AWW_01
+	sound.play()
+	$"../Node2D/Player/Face/sad".visible = true
 	price_d.visible = false
 	timer.visible = false
 	cust.end_dia_setup(false, false, 2)

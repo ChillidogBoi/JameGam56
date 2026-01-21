@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhnlryk1dnv6u"
-path="res://.godot/imported/index.512x512.png-7065f886f30244076432fa9ad08c8cdf.ctex"
+uid="uid://byjdevhmx2v3m"
+path="res://.godot/imported/emotion_success_sketch.png-dcda7c965398b13ea908efd1e57c071c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://exports/index.512x512.png"
-dest_files=["res://.godot/imported/index.512x512.png-7065f886f30244076432fa9ad08c8cdf.ctex"]
+source_file="res://Art/Placeholder/emotion_success_sketch.png"
+dest_files=["res://.godot/imported/emotion_success_sketch.png-dcda7c965398b13ea908efd1e57c071c.ctex"]
 
 [params]
 

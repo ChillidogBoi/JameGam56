@@ -2,7 +2,6 @@ extends Button
 
 
 func _ready():
-	print(Settings.m_vol)
 	_on_m_vol_changed(Settings.m_vol + 50)
 	_on_s_vol_changed(Settings.s_vol + 50)
 	$HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider.value = \
@@ -11,9 +10,12 @@ func _ready():
 		Settings.s_vol + 50
 
 func _on_pressed():
-	get_parent().paused = true
-	$HBoxContainer.visible = true
-	$AnimationPlayer.play("open")
+	if $HBoxContainer.visible == false:
+		$"../TextureProgressBar/Timer".paused = true
+		get_parent().paused = true
+		$HBoxContainer.visible = true
+		$AnimationPlayer.play("open")
+	else: _on_button_pressed()
 
 func _on_button_pressed():
 	$AnimationPlayer.play("close")
@@ -21,7 +23,7 @@ func _on_button_pressed():
 	get_parent().paused = false
 	get_parent().resume.emit()
 	$HBoxContainer.visible = false
-	print(0)
+	$"../TextureProgressBar/Timer".paused = false
 
 func _on_button_2_pressed():
 	$HBoxContainer/VBoxContainer/Control/VBoxContainer.visible = false

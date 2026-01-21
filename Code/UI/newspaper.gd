@@ -15,6 +15,8 @@ func _ready():
 	profit.text = str("Money Made: $", Settings.profit)
 	scammed.text = str("Customers Scammed: ", Settings.scammed.size())
 	helped.text = str("Customers Helped: ", Settings.helped)
+	$Sprite2D/AnimationPlayer.play("grow")
+	await $Sprite2D/AnimationPlayer.animation_finished
 	_on_button1_pressed()
 
 func news_blurb():
@@ -28,9 +30,12 @@ func news_blurb():
 
 
 func _on_button_pressed():
+	$Sprite2D/AnimationPlayer.play("shrink")
+	await $Sprite2D/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://Code/UI/main_menu.tscn")
 
 func _on_button1_pressed():
+	$sfx.play()
 	if Settings.scammed.is_empty():
 		$HBoxContainer.visible = false
 		$HBoxContainer2.visible = true
