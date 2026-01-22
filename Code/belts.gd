@@ -15,7 +15,11 @@ func belt_pressed(type: int):
 	if marker.button_pressed:
 		await main.change_price(type)
 		marker.button_pressed = false
-	else: main.sell(type)
+	else:
+		if main.boss:
+			main.boss_sell(type)
+			return
+		main.sell(type)
 
 func _on_cheap_belt_pressed():
 	belt_pressed(0)

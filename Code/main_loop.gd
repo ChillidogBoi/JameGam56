@@ -17,6 +17,7 @@ const AWW_01 = preload("uid://5styh0l528dh")
 const BOSS_DIA1 = "Boss:Make $300 by the end of the day. Or you're fired."
 const BOSS_DIA2 =  "Boss:I don't care if you have to cheat an OLD LADY out of her Social Security Check"
 var paused = false
+var boss = true
 signal resume
 
 
@@ -36,13 +37,8 @@ func _ready():
 	$"../Sprite2D/AnimationPlayer".play("grow")
 	await $"../Sprite2D/AnimationPlayer".animation_finished
 	
-	await dialogue(BOSS_DIA1, true)
-	await dialogue(BOSS_DIA2, true)
-	
-	cust = customer_order.pop_front()
-	
+	cust = $"../track/Boss"
 	run_customer()
-
 
 func run_customer():
 	fix_buttons[1].tooltip_text = str("Replace -$", cust.replace_price)
@@ -68,8 +64,29 @@ func run_customer():
 			n.disabled = false
 			n.get_child(0).visible = false
 
+func run_boss_again():
+	if cust.my_belt:
+		cust_belt.texture = cust.my_belt
+		cust_belt.visible = true
+	
+	timer.get_child(0).stop()
+	if cust.wait_time != 0.0:
+		timer.get_child(0).wait_time = cust.wait_time
+		timer.visible = true
+		timer.get_child(0).start()
+	
+	for n in sell_buttons:
+		n.disabled = false
+		n.get_child(0).visible = false
+	for n in fix_buttons:
+		if cust.fix_works:
+			n.disabled = false
+			n.get_child(0).visible = false
+
 
 func dialogue(txt: String, male: bool):
+	if txt == "":
+		return
 	for n in sell_buttons:
 		n.disabled = true
 		n.get_child(0).visible = true
@@ -156,6 +173,57 @@ func change_price(type:int):
 		"$", price_d.get_child(1).get_child(0).value)
 	price_d.visible = false
 
+func boss_sell(type:int):
+	
+	if not cust.allowed.has(type):
+		cust.end_dia_setup(false, false, 1)
+		$"../Node2D/Player/Face/sad".visible = true
+		sound.stream = AWW_01
+		sound.play()
+
+	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
+		if cust.wants == type or cust.wants == 6:
+			cust.end_dia_setup(true, false)
+			$"../Node2D/Player/Face/fail".visible = true
+			sound.stream = AWW_01
+			sound.play()
+		else: 
+			if type == 3: cust.end_dialogue_scam = "Boss:Not my style.\nSomething flashier.&Boss:Let's try that one more time."
+			else: if type == 3: cust.end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
+			cust.end_dia_setup(true, true)
+			$"../Node2D/Player/Face/sad".visible = true
+			sound.stream = AWW_01
+			sound.play()
+	else:
+		cust.end_dia_setup(false, false)
+		$"../Node2D/Player/Face/joy".visible = true
+		boss = false
+		
+	profit.text = "$0"
+	
+	end_boss()
+
+func end_boss():
+	Settings.scammed = []
+	Settings.scammed_pic = []
+	Settings.helped = 0
+	if not boss:
+		end_cust()
+		return
+	
+	timer.visible = false
+	timer.get_child(0).stop()
+	if paused: await resume
+	for n in cust.dialogue_seperated:
+		await dialogue(cust.request_next_dialogue(), cust.male)
+	
+	$"../Node2D/Player/Face/fail".visible = false
+	$"../Node2D/Player/Face/joy".visible = false
+	$"../Node2D/Player/Face/sad".visible = false
+	$"../Node2D/Player/Face/kind".visible = false
+	if paused: await resume
+	
+	run_boss_again()
 
 func sell(type:int):
 	if not cust.allowed.has(type):
@@ -165,11 +233,10 @@ func sell(type:int):
 		sound.play()
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
-		
 		if cust.wants == type or cust.wants == 6:
 			cust.end_dia_setup(true, false)
 			$"../Node2D/Player/Face/kind".visible = true
-			profit.text = str("$", float(profit.text.get_slice("$", 1)) + cust.tip)
+			profit.text = str("$", clamp(float(profit.text.get_slice("$", 1)) + cust.tip, 0, 5000000))
 		else: 
 			cust.end_dia_setup(true, true)
 			$"../Node2D/Player/Face/joy".visible = true
@@ -180,12 +247,11 @@ func sell(type:int):
 		sound.play()
 	else:
 		cust.end_dia_setup(false, false)
-		$"../Node2D/Player/Face/fail".visible = true
+		$"../Node2D/Player/Face/sad".visible = true
 		sound.stream = AWW_01
 		sound.play()
 	
 	end_cust()
-
 
 func end_cust():
 	timer.visible = false

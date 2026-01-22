@@ -57,7 +57,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_03j0k")
 theme_override_font_sizes/font_size = 18
-text = "This is a test of the dialogue system. If you are seeing this the dialogue system is probably broken."
+text = "You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason."
 autowrap_mode = 2
 
 [node name="beltese" type="AudioStreamPlayer" parent="."]

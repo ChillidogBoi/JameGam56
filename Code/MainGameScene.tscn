@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=104 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
@@ -10,16 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/Customers/customer_base.tscn" id="4_l8phu"]
 [ext_resource type="Script" uid="uid://beho3oqau2631" path="res://Code/belts.gd" id="4_pwe3t"]
 [ext_resource type="Texture2D" uid="uid://dsys6xqsakeir" path="res://Art/Characters/emotion_joy_final.png" id="5_4kypb"]
-[ext_resource type="Texture2D" uid="uid://h8bx8n4lflqq" path="res://Art/Placeholder/knife_sketch.png" id="6_5pefq"]
 [ext_resource type="Texture2D" uid="uid://bvpdh6ydvfow2" path="res://Art/Characters/emotion_tension_final.png" id="6_s4pq6"]
 [ext_resource type="Script" uid="uid://bdgwk6sax46p8" path="res://Code/nametag.gd" id="7_4ldi7"]
-[ext_resource type="Texture2D" uid="uid://c7nilceq7jed7" path="res://Art/Placeholder/selected_newbelt_sketch.png" id="7_18c1v"]
-[ext_resource type="Texture2D" uid="uid://yo3yvinua0lt" path="res://Art/Placeholder/marker_sketch.png" id="7_pwe3t"]
 [ext_resource type="Texture2D" uid="uid://df602ot8qc7dv" path="res://Art/Characters/emotion_sad_final.png" id="7_y1hvh"]
 [ext_resource type="Texture2D" uid="uid://lmb3efivxvhj" path="res://Art/Characters/emotion_success_final.png" id="8_31006"]
 [ext_resource type="Texture2D" uid="uid://c00ecsuf0hb2s" path="res://Art/Placeholder/unavailable.png" id="8_bsujd"]
-[ext_resource type="Texture2D" uid="uid://cy5wydy2vydkr" path="res://Art/Placeholder/selected_knife_sketch.png" id="9_71nik"]
-[ext_resource type="Texture2D" uid="uid://cqnpk06kyrtny" path="res://Art/Placeholder/selected_marker_sketch.png" id="11_jc405"]
 [ext_resource type="Texture2D" uid="uid://bwflpjo7umtal" path="res://Art/Placeholder/timer_empty.png" id="11_vbamx"]
 [ext_resource type="Texture2D" uid="uid://bygl4rt5b8cjl" path="res://Art/Placeholder/timer_full.png" id="12_71nik"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
@@ -37,6 +32,12 @@
 [ext_resource type="Texture2D" uid="uid://biuaa2m1c3nlc" path="res://Art/Characters/police_sketch.png" id="21_a4ng5"]
 [ext_resource type="Texture2D" uid="uid://b6daq50rl33t5" path="res://Art/Environment/5belt_final.png" id="22_0rr7d"]
 [ext_resource type="Texture2D" uid="uid://bv46q0x5o2jgc" path="res://Art/Environment/5belt_selected_final.png" id="23_c2f7l"]
+[ext_resource type="Texture2D" uid="uid://bold4pew4bidf" path="res://Art/Environment/knife_final.png" id="24_kb3bb"]
+[ext_resource type="Texture2D" uid="uid://behbdtgj788ok" path="res://Art/Environment/knife_selected_final.png" id="25_4kypb"]
+[ext_resource type="Texture2D" uid="uid://cyj538jgot73u" path="res://Art/Environment/marker_final.png" id="26_s4pq6"]
+[ext_resource type="Texture2D" uid="uid://bihv1v0tcgel7" path="res://Art/Environment/marker_selected_final.png" id="27_y1hvh"]
+[ext_resource type="Texture2D" uid="uid://dyqwuh7w13np2" path="res://Art/Environment/belt_final.png" id="28_31006"]
+[ext_resource type="Texture2D" uid="uid://d01wtmcavctu4" path="res://Art/Environment/belt_selected_final.png" id="29_sdk8k"]
 [ext_resource type="Texture2D" uid="uid://cm2nk5h4lu0fu" path="res://Art/UI/notebook_final.png" id="31_0rr7d"]
 [ext_resource type="AudioStream" uid="uid://kj616lj5gif5" path="res://Sound/beltgame_gameloop_01.ogg" id="31_77qlp"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="31_xdvx7"]
@@ -47,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="35_qla06"]
 [ext_resource type="Texture2D" uid="uid://hq8svfguxb6r" path="res://Art/UI/thoughtbubble.png" id="42_c2f7l"]
 [ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="42_ckaag"]
+[ext_resource type="Texture2D" uid="uid://1duhyj6u2g4u" path="res://Art/Characters/boss.png" id="43_s4pq6"]
+[ext_resource type="Script" uid="uid://rmhgcp2uoo8w" path="res://Code/Customers/customer_class.gd" id="44_y1hvh"]
 
 [sub_resource type="Gradient" id="Gradient_c2f7l"]
 offsets = PackedFloat32Array(0.5884615, 0.61923075)
@@ -381,6 +384,73 @@ TooltipLabel/constants/line_spacing = -4
 TooltipLabel/fonts/font = ExtResource("13_mfmbs")
 TooltipPanel/styles/panel = SubResource("StyleBoxTexture_kb3bb")
 
+[sub_resource type="Animation" id="Animation_j6yxq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m4602"]
+resource_name = "hop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 0), Vector2(0, -50)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"step_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nnyrb"]
+resource_name = "stop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnyrb"]
+_data = {
+&"RESET": SubResource("Animation_j6yxq"),
+&"hop": SubResource("Animation_m4602"),
+&"stop": SubResource("Animation_nnyrb")
+}
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rr7d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2f7l"]
@@ -555,8 +625,8 @@ base_font = ExtResource("13_mfmbs")
 spacing_top = -4
 spacing_bottom = -8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qla06"]
-bg_color = Color(0.9607843, 0.72156864, 0.72156864, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2f7l"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ldi7"]
 
@@ -669,13 +739,14 @@ texture = ExtResource("8_31006")
 z_index = 4
 offset_left = 362.0
 offset_top = 331.00003
-offset_right = 386.0
-offset_bottom = 342.00003
-rotation = -0.9104627
-theme_override_colors/font_color = Color(0.48235294, 0.28235295, 0.28235295, 1)
+offset_right = 390.64883
+offset_bottom = 347.47223
+rotation = -0.756267
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_mfmbs")
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 7
 text = " MC"
+text_overrun_behavior = 1
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("sound", "timer", "cust_belt", "profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
 layout_mode = 3
@@ -711,9 +782,10 @@ offset_left = 610.0
 offset_top = 180.0
 offset_right = 714.0
 offset_bottom = 249.0
-tooltip_text = "* Cheap Brown
-* Poor quality
-* Will break easily
+tooltip_text = "Super cheap, but
+barely working
+belt. Will break
+down easily.
 +$10"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("13_qla06")
@@ -737,9 +809,9 @@ offset_left = 614.0
 offset_top = 254.0
 offset_right = 711.0
 offset_bottom = 318.0
-tooltip_text = "* Simple Black
-* Solid and reliable
-* A bit boring
+tooltip_text = "Simple, boring,
+but reliable.
+Good belt.
 +$30"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("16_c2f7l")
@@ -763,9 +835,9 @@ offset_left = 608.0
 offset_top = 352.0
 offset_right = 681.0
 offset_bottom = 406.0
-tooltip_text = "* Retro Red
-* Classic look
-* Pretty
+tooltip_text = "Classic, thin and
+red. Looks like a
+woman's belt.
 +$50"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("18_4kypb")
@@ -789,9 +861,9 @@ offset_left = 664.0
 offset_top = 410.0
 offset_right = 786.0
 offset_bottom = 514.0
-tooltip_text = "* Fancy Blue
-* Real leather
-* Cool brand
+tooltip_text = "Crocodile leather
+belt. It looks very
+stylish...
 +$100"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("20_y1hvh")
@@ -815,9 +887,9 @@ offset_left = 613.0
 offset_top = 523.0
 offset_right = 774.0
 offset_bottom = 647.0
-tooltip_text = "* Gold w/ Big Buckle
-* Cheap gold paint
-* Weird design
+tooltip_text = "Cheap looking belt,
+painted in gold.
+Looks ridiculous
 +$300"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("22_0rr7d")
@@ -852,8 +924,8 @@ tooltip_text = "Try to Fix
 It Yourself
 -$5"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("6_5pefq")
-texture_hover = ExtResource("9_71nik")
+texture_normal = ExtResource("24_kb3bb")
+texture_hover = ExtResource("25_4kypb")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/knife"]
@@ -878,9 +950,9 @@ Item's Price
 -$30"
 theme = ExtResource("4_5pefq")
 toggle_mode = true
-texture_normal = ExtResource("7_pwe3t")
-texture_pressed = ExtResource("11_jc405")
-texture_hover = ExtResource("11_jc405")
+texture_normal = ExtResource("26_s4pq6")
+texture_pressed = ExtResource("27_y1hvh")
+texture_hover = ExtResource("27_y1hvh")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/price_marker"]
@@ -903,8 +975,8 @@ offset_bottom = 533.0
 tooltip_text = "Replace
 Belt -$10"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("4_0o8lh")
-texture_hover = ExtResource("7_18c1v")
+texture_normal = ExtResource("28_31006")
+texture_hover = ExtResource("29_sdk8k")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/replacement"]
@@ -1113,6 +1185,7 @@ for sure notice those."
 theme = SubResource("Theme_4kypb")
 
 [node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
+visible = false
 texture = ExtResource("19_8o1ig")
 id = "Very Thin Man"
 wallet = 30.0
@@ -1340,6 +1413,85 @@ offset_bottom = 261.2157
 scale = Vector2(1.6, 1.3163583)
 tooltip_text = "Loafers"
 theme = ExtResource("4_5pefq")
+
+[node name="Boss" type="Sprite2D" parent="track" node_paths=PackedStringArray("anims")]
+texture = ExtResource("43_s4pq6")
+script = ExtResource("44_y1hvh")
+id = "Boss"
+male = true
+wallet = 200.0
+tip = -200.0
+wants = 1
+allowed = Array[int]([2, 3, 1, 4])
+wait_time = 45.0
+start_dialogue = "Boss:Hiya lass! First day, huh...
+Well let's see you sell me a belt, then."
+end_dialogue_yes = "Boss:Not bad, but try hovering over a customer with your mouse for helpful info.&Boss:Let's try that one more time."
+end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
+end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $250 today. Just a little test to see if we keep you.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss: If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can."
+end_dialogue_no_wrng = "Boss:The cheapest one? I might fall for it... if I didn't know where it came from.&Boss:Let's try that one more time."
+end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
+anims = NodePath("AnimationPlayer")
+metadata/_custom_type_script = "uid://rmhgcp2uoo8w"
+
+[node name="Control" type="Control" parent="track/Boss"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -57.0
+offset_top = -52.000008
+offset_right = -30.75
+offset_bottom = -23.132484
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Big fake gold chain.
+He likes looking rich."
+theme = ExtResource("4_5pefq")
+
+[node name="Control2" type="Control" parent="track/Boss"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -47.0
+offset_top = -125.00001
+offset_right = -27.0
+offset_bottom = -88.535774
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Moustache...
+Not helpful."
+theme = ExtResource("4_5pefq")
+
+[node name="Control3" type="Control" parent="track/Boss"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -98.0
+offset_top = 92.00002
+offset_right = -17.375
+offset_bottom = 171.00586
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Once nice loafers,
+now old and worn."
+theme = ExtResource("4_5pefq")
+
+[node name="inner" type="Control" parent="track/Boss"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="track/Boss/inner"]
+anchors_preset = 0
+offset_left = -707.0
+offset_top = -197.99997
+offset_right = -627.625
+offset_bottom = -99.24268
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "I've gotta impress
+my new boss."
+theme = ExtResource("4_5pefq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="track/Boss"]
+libraries = {
+&"": SubResource("AnimationLibrary_nnyrb")
+}
+playback_default_blend_time = 0.5
 
 [node name="Button" type="Button" parent="."]
 z_index = 2
@@ -1575,17 +1727,18 @@ libraries = {
 
 [node name="button" type="Button" parent="."]
 z_index = 3
-offset_left = 276.0
-offset_top = 327.0
-offset_right = 296.91547
-offset_bottom = 333.6991
-rotation = -0.9368799
+offset_left = 277.7384
+offset_top = 329.63083
+offset_right = 304.77676
+offset_bottom = 346.49216
+rotation = -0.77686065
 tooltip_text = "Change Name"
 theme_override_fonts/font = SubResource("FontVariation_yxcn7")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_qla06")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qla06")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qla06")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2f7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c2f7l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c2f7l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_c2f7l")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ldi7")
 script = ExtResource("7_4ldi7")
 
