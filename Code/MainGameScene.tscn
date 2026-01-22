@@ -1,49 +1,51 @@
-[gd_scene load_steps=93 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=97 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
-[ext_resource type="Texture2D" uid="uid://j8d5l8t11peg" path="res://Art/Placeholder/mc_sketch.png" id="2_1mmhx"]
-[ext_resource type="Texture2D" uid="uid://3f5hyr8ugfc0" path="res://Art/Placeholder/table_sketch.png" id="2_hsik6"]
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
-[ext_resource type="Texture2D" uid="uid://q0mg04cd3wjx" path="res://Art/Placeholder/emotion_fail_sketch.png" id="3_uc6o2"]
+[ext_resource type="Texture2D" uid="uid://dquvxcmvq3dkg" path="res://Art/Environment/table_final.png" id="2_qla06"]
+[ext_resource type="Texture2D" uid="uid://c5bov2pm68m2b" path="res://Art/Characters/mc_final.png" id="3_c2f7l"]
 [ext_resource type="Texture2D" uid="uid://dgotf6chm0hfw" path="res://Art/Placeholder/newbelt_sketch.png" id="4_0o8lh"]
 [ext_resource type="Theme" uid="uid://cm5aw08cq41n8" path="res://Code/UI/ToolTip.tres" id="4_5pefq"]
-[ext_resource type="Texture2D" uid="uid://bx0jj5147nt0m" path="res://Art/Placeholder/emotion_joy_sketch.png" id="4_77qlp"]
+[ext_resource type="Texture2D" uid="uid://l1v8gey54jd0" path="res://Art/Characters/emotion_fail_final.png" id="4_kb3bb"]
 [ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/Customers/customer_base.tscn" id="4_l8phu"]
 [ext_resource type="Script" uid="uid://beho3oqau2631" path="res://Code/belts.gd" id="4_pwe3t"]
-[ext_resource type="Texture2D" uid="uid://b4g0pawqetdd8" path="res://Art/Placeholder/emotion_tension_sketch.png" id="5_m3nyn"]
+[ext_resource type="Texture2D" uid="uid://dsys6xqsakeir" path="res://Art/Characters/emotion_joy_final.png" id="5_4kypb"]
 [ext_resource type="Texture2D" uid="uid://h8bx8n4lflqq" path="res://Art/Placeholder/knife_sketch.png" id="6_5pefq"]
+[ext_resource type="Texture2D" uid="uid://bvpdh6ydvfow2" path="res://Art/Characters/emotion_tension_final.png" id="6_s4pq6"]
 [ext_resource type="Script" uid="uid://bdgwk6sax46p8" path="res://Code/nametag.gd" id="7_4ldi7"]
 [ext_resource type="Texture2D" uid="uid://c7nilceq7jed7" path="res://Art/Placeholder/selected_newbelt_sketch.png" id="7_18c1v"]
 [ext_resource type="Texture2D" uid="uid://yo3yvinua0lt" path="res://Art/Placeholder/marker_sketch.png" id="7_pwe3t"]
+[ext_resource type="Texture2D" uid="uid://df602ot8qc7dv" path="res://Art/Characters/emotion_sad_final.png" id="7_y1hvh"]
+[ext_resource type="Texture2D" uid="uid://lmb3efivxvhj" path="res://Art/Characters/emotion_success_final.png" id="8_31006"]
 [ext_resource type="Texture2D" uid="uid://c00ecsuf0hb2s" path="res://Art/Placeholder/unavailable.png" id="8_bsujd"]
-[ext_resource type="Texture2D" uid="uid://dvy5i8m58uhjd" path="res://Art/Placeholder/emotion_sad_sketch.png" id="8_qla06"]
-[ext_resource type="Texture2D" uid="uid://byjdevhmx2v3m" path="res://Art/Placeholder/emotion_success_sketch.png" id="9_0rr7d"]
 [ext_resource type="Texture2D" uid="uid://cy5wydy2vydkr" path="res://Art/Placeholder/selected_knife_sketch.png" id="9_71nik"]
-[ext_resource type="Texture2D" uid="uid://xeyld1n72un4" path="res://Art/Placeholder/1belt_sketch.png" id="9_qs6di"]
-[ext_resource type="Texture2D" uid="uid://fc86elyv8mol" path="res://Art/Placeholder/1belt_selected_sketch.png" id="10_sneso"]
 [ext_resource type="Texture2D" uid="uid://cqnpk06kyrtny" path="res://Art/Placeholder/selected_marker_sketch.png" id="11_jc405"]
 [ext_resource type="Texture2D" uid="uid://bwflpjo7umtal" path="res://Art/Placeholder/timer_empty.png" id="11_vbamx"]
-[ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="12_10sgt"]
 [ext_resource type="Texture2D" uid="uid://bygl4rt5b8cjl" path="res://Art/Placeholder/timer_full.png" id="12_71nik"]
-[ext_resource type="Texture2D" uid="uid://dgogk40bup37w" path="res://Art/Placeholder/2belt_sketch.png" id="12_bj75x"]
 [ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
-[ext_resource type="Texture2D" uid="uid://bv7dtff050nku" path="res://Art/Placeholder/2belt_selected_sketch.png" id="13_xdvx7"]
-[ext_resource type="Texture2D" uid="uid://lw33nhkiepat" path="res://Art/Placeholder/3belt_sketch.png" id="14_ckaag"]
-[ext_resource type="Texture2D" uid="uid://n217o4xk6fth" path="res://Art/Placeholder/3belt_selected_sketch.png" id="15_4ldi7"]
-[ext_resource type="Texture2D" uid="uid://dh52q8lq66e8u" path="res://Art/Placeholder/4belt_sketch.png" id="16_yxcn7"]
-[ext_resource type="Texture2D" uid="uid://bnl335n3epw5g" path="res://Art/Placeholder/4belt_selected_sketch.png" id="17_qla06"]
-[ext_resource type="Texture2D" uid="uid://b4i8i08jct320" path="res://Art/Placeholder/5belt_sketch.png" id="18_0rr7d"]
+[ext_resource type="Texture2D" uid="uid://b1xkwgw0wewm6" path="res://Art/Environment/1belt_final.png" id="13_qla06"]
+[ext_resource type="Texture2D" uid="uid://bwb8niaplosb2" path="res://Art/Environment/1belt_selected_final.png" id="14_0rr7d"]
+[ext_resource type="Texture2D" uid="uid://cygpd0dg0au41" path="res://Art/Environment/2belt_final.png" id="16_c2f7l"]
+[ext_resource type="Texture2D" uid="uid://cechaate71gk3" path="res://Art/Environment/2belt_selected_final.png" id="17_kb3bb"]
+[ext_resource type="Texture2D" uid="uid://im4h5o8ctvan" path="res://Art/Environment/3belt_final.png" id="18_4kypb"]
 [ext_resource type="Texture2D" uid="uid://8ggu0oepg4fy" path="res://Art/Characters/granny_sketch.png" id="18_jc405"]
 [ext_resource type="Texture2D" uid="uid://dma5dxkiw72h6" path="res://Art/Characters/thin_sketch.png" id="19_8o1ig"]
-[ext_resource type="Texture2D" uid="uid://bhrdjqnjdht1d" path="res://Art/Placeholder/5belt_selected_sketch.png" id="19_c2f7l"]
+[ext_resource type="Texture2D" uid="uid://vy3s0drnaqao" path="res://Art/Environment/3belt_selected_final.png" id="19_s4pq6"]
 [ext_resource type="Texture2D" uid="uid://mjc35xoopd8q" path="res://Art/Characters/richguy_sketch.png" id="20_a4ng5"]
+[ext_resource type="Texture2D" uid="uid://chbm2ihvbafdw" path="res://Art/Environment/4belt_final.png" id="20_y1hvh"]
+[ext_resource type="Texture2D" uid="uid://d01k8v3rvtfx" path="res://Art/Environment/4belt_selected_final.png" id="21_31006"]
 [ext_resource type="Texture2D" uid="uid://biuaa2m1c3nlc" path="res://Art/Characters/police_sketch.png" id="21_a4ng5"]
+[ext_resource type="Texture2D" uid="uid://b6daq50rl33t5" path="res://Art/Environment/5belt_final.png" id="22_0rr7d"]
+[ext_resource type="Texture2D" uid="uid://bv46q0x5o2jgc" path="res://Art/Environment/5belt_selected_final.png" id="23_c2f7l"]
+[ext_resource type="Texture2D" uid="uid://cm2nk5h4lu0fu" path="res://Art/UI/notebook_final.png" id="31_0rr7d"]
 [ext_resource type="AudioStream" uid="uid://kj616lj5gif5" path="res://Sound/beltgame_gameloop_01.ogg" id="31_77qlp"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="31_xdvx7"]
 [ext_resource type="Script" uid="uid://xvayjbr77bty" path="res://Code/UI/pause.gd" id="32_ckaag"]
 [ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="33_4ldi7"]
+[ext_resource type="AudioStream" uid="uid://5styh0l528dh" path="res://Sound/aww_01.wav" id="34_c2f7l"]
 [ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="34_yxcn7"]
 [ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="35_qla06"]
+[ext_resource type="Texture2D" uid="uid://hq8svfguxb6r" path="res://Art/UI/thoughtbubble.png" id="42_c2f7l"]
 [ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="42_ckaag"]
 
 [sub_resource type="Gradient" id="Gradient_c2f7l"]
@@ -366,6 +368,19 @@ button_index = 1
 [sub_resource type="Shortcut" id="Shortcut_pwe3t"]
 events = [SubResource("InputEventKey_qk3tw"), SubResource("InputEventKey_n63qp"), SubResource("InputEventKey_0qjhe"), SubResource("InputEventScreenTouch_03j0k"), SubResource("InputEventMouseButton_2qdf1"), SubResource("InputEventMouseButton_wmp2k"), SubResource("InputEventJoypadButton_8vn8r"), SubResource("InputEventJoypadButton_yf5t1")]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kb3bb"]
+texture = ExtResource("42_c2f7l")
+texture_margin_left = 35.0
+texture_margin_top = 35.0
+texture_margin_right = 25.0
+texture_margin_bottom = 29.0
+
+[sub_resource type="Theme" id="Theme_4kypb"]
+TooltipLabel/colors/font_color = Color(0, 0, 0, 1)
+TooltipLabel/constants/line_spacing = -4
+TooltipLabel/fonts/font = ExtResource("13_mfmbs")
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_kb3bb")
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rr7d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2f7l"]
@@ -554,6 +569,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -750.0
+offset_right = 750.0
+offset_bottom = 750.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_yxcn7")
@@ -567,32 +586,28 @@ libraries = {
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D"]
 layout_mode = 0
-offset_left = -1495.0
-offset_top = -750.0
-offset_right = 5.0
-offset_bottom = 750.0
+offset_left = -1500.0
+offset_top = -1500.0
 texture = SubResource("GradientTexture1D_0rr7d")
 
 [node name="TextureRect2" type="TextureRect" parent="Sprite2D"]
 layout_mode = 0
-offset_left = -5.0
-offset_top = -750.0
-offset_right = 1495.0015
-offset_bottom = 750.0
+offset_left = 1500.0
+offset_right = 3000.0015
+offset_bottom = 1500.0
 texture = SubResource("GradientTexture1D_0rr7d")
 
 [node name="TextureRect3" type="TextureRect" parent="Sprite2D"]
 layout_mode = 0
-offset_top = -1495.0
+offset_top = -1500.0
 offset_right = 1500.0005
-offset_bottom = 5.0
 texture = SubResource("GradientTexture1D_0rr7d")
 
 [node name="TextureRect4" type="TextureRect" parent="Sprite2D"]
 layout_mode = 0
-offset_top = -5.0
+offset_top = 1500.0
 offset_right = 1500.0005
-offset_bottom = 1495.0059
+offset_bottom = 3000.0059
 texture = SubResource("GradientTexture1D_0rr7d")
 
 [node name="bg" type="TextureRect" parent="."]
@@ -605,95 +620,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("42_ckaag")
 
-[node name="Control" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 508.0
-offset_top = 7.0
-offset_right = 663.0
-offset_bottom = 181.0
-tooltip_text = "Snacks I can't afford, but
-I'm not hungry anyway."
-theme = ExtResource("4_5pefq")
-
-[node name="Control2" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 267.058
-offset_top = 12.27339
-offset_right = 337.36273
-offset_bottom = 282.27432
-rotation = -0.32069817
-tooltip_text = "Drinks I can't afford, but
-I'm not thirsty anyway."
-theme = ExtResource("4_5pefq")
-
-[node name="Control3" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 778.0
-offset_top = 62.0
-offset_right = 861.0
-offset_bottom = 235.0
-tooltip_text = "I got in trouble last
-time I tried on glasses."
-theme = ExtResource("4_5pefq")
-
-[node name="Control4" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 914.0
-offset_top = 50.0
-offset_right = 1030.0
-offset_bottom = 199.0
-tooltip_text = "Costume Jewelry: cute,
-but very expensive here."
-theme = ExtResource("4_5pefq")
-
-[node name="Control5" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 1003.0
-offset_top = 318.0
-offset_right = 1096.0
-offset_bottom = 368.0
-tooltip_text = "It's a doormat."
-theme = ExtResource("4_5pefq")
-
-[node name="Control6" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 1042.0
-offset_top = 367.0
-offset_right = 1096.0
-offset_bottom = 427.0
-tooltip_text = "It's a doormat."
-theme = ExtResource("4_5pefq")
-
-[node name="Control7" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = -100.0
-offset_top = 157.0
-offset_right = 2.136589
-offset_bottom = 313.779
-rotation = -0.54860556
-tooltip_text = "Various keys. I only know
-what a couple go to."
-theme = ExtResource("4_5pefq")
-
-[node name="Control15" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 551.0
-offset_right = 200.0
-offset_bottom = 652.0
-tooltip_text = "The store's
-profits today."
-theme = ExtResource("4_5pefq")
-
-[node name="Control16" type="Control" parent="bg"]
-anchors_preset = 0
-offset_left = 460.0
-offset_top = 579.0
-offset_right = 586.0
-offset_bottom = 647.0
-tooltip_text = "Just my doodles."
-theme = ExtResource("4_5pefq")
-
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Table" type="Node2D" parent="Node2D"]
@@ -701,43 +627,43 @@ position = Vector2(-34, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Table"]
 position = Vector2(641, 422)
-texture = ExtResource("2_hsik6")
+texture = ExtResource("2_qla06")
 
 [node name="Player" type="Node2D" parent="Node2D"]
 position = Vector2(-85, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Player"]
 position = Vector2(430, 386)
-texture = ExtResource("2_1mmhx")
+texture = ExtResource("3_c2f7l")
 
 [node name="Face" type="Node2D" parent="Node2D/Player"]
 
 [node name="fail" type="Sprite2D" parent="Node2D/Player/Face"]
 visible = false
 z_index = 1
-position = Vector2(342.5, 207)
-texture = ExtResource("3_uc6o2")
+position = Vector2(348.5, 212)
+texture = ExtResource("4_kb3bb")
 
 [node name="joy" type="Sprite2D" parent="Node2D/Player/Face"]
 visible = false
 z_index = 1
-position = Vector2(342.5, 207)
-texture = ExtResource("4_77qlp")
+position = Vector2(348.5, 212)
+texture = ExtResource("5_4kypb")
 
 [node name="tense" type="Sprite2D" parent="Node2D/Player/Face"]
 visible = false
-position = Vector2(342.5, 207)
-texture = ExtResource("5_m3nyn")
+position = Vector2(348.5, 212)
+texture = ExtResource("6_s4pq6")
 
 [node name="sad" type="Sprite2D" parent="Node2D/Player/Face"]
 visible = false
-position = Vector2(341, 207)
-texture = ExtResource("8_qla06")
+position = Vector2(348.5, 212)
+texture = ExtResource("7_y1hvh")
 
 [node name="kind" type="Sprite2D" parent="Node2D/Player/Face"]
 visible = false
-position = Vector2(341, 207)
-texture = ExtResource("9_0rr7d")
+position = Vector2(348.5, 212)
+texture = ExtResource("8_31006")
 
 [node name="Label" type="Label" parent="Node2D/Player"]
 z_index = 4
@@ -781,17 +707,17 @@ marker = NodePath("../Fix/price_marker")
 
 [node name="Cheap Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 595.0
-offset_top = 202.0
-offset_right = 657.0
-offset_bottom = 268.0
+offset_left = 610.0
+offset_top = 180.0
+offset_right = 714.0
+offset_bottom = 249.0
 tooltip_text = "* Cheap Brown
 * Poor quality
 * Will break easily
 +$10"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("9_qs6di")
-texture_hover = ExtResource("10_sneso")
+texture_normal = ExtResource("13_qla06")
+texture_hover = ExtResource("14_0rr7d")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Cheap Belt"]
@@ -807,17 +733,17 @@ stretch_mode = 3
 
 [node name="Solid Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 635.0
-offset_top = 240.0
-offset_right = 705.0
-offset_bottom = 298.0
+offset_left = 614.0
+offset_top = 254.0
+offset_right = 711.0
+offset_bottom = 318.0
 tooltip_text = "* Simple Black
 * Solid and reliable
 * A bit boring
 +$30"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("12_bj75x")
-texture_hover = ExtResource("13_xdvx7")
+texture_normal = ExtResource("16_c2f7l")
+texture_hover = ExtResource("17_kb3bb")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Solid Belt"]
@@ -833,17 +759,17 @@ stretch_mode = 3
 
 [node name="Retro Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 696.0
-offset_top = 366.0
-offset_right = 759.0
-offset_bottom = 447.0
+offset_left = 608.0
+offset_top = 352.0
+offset_right = 681.0
+offset_bottom = 406.0
 tooltip_text = "* Retro Red
 * Classic look
 * Pretty
 +$50"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("14_ckaag")
-texture_hover = ExtResource("15_4ldi7")
+texture_normal = ExtResource("18_4kypb")
+texture_hover = ExtResource("19_s4pq6")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Retro Belt"]
@@ -859,17 +785,17 @@ stretch_mode = 3
 
 [node name="Fancy Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 649.0
-offset_top = 461.0
-offset_right = 747.0
-offset_bottom = 536.0
+offset_left = 664.0
+offset_top = 410.0
+offset_right = 786.0
+offset_bottom = 514.0
 tooltip_text = "* Fancy Blue
 * Real leather
 * Cool brand
 +$100"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("16_yxcn7")
-texture_hover = ExtResource("17_qla06")
+texture_normal = ExtResource("20_y1hvh")
+texture_hover = ExtResource("21_31006")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Fancy Belt"]
@@ -885,17 +811,17 @@ stretch_mode = 3
 
 [node name="Gold Belt" type="TextureButton" parent="UI/Belts"]
 layout_mode = 0
-offset_left = 701.0
-offset_top = 542.0
-offset_right = 805.0
-offset_bottom = 654.0
+offset_left = 613.0
+offset_top = 523.0
+offset_right = 774.0
+offset_bottom = 647.0
 tooltip_text = "* Gold w/ Big Buckle
 * Cheap gold paint
 * Weird design
 +$300"
 theme = ExtResource("4_5pefq")
-texture_normal = ExtResource("18_0rr7d")
-texture_hover = ExtResource("19_c2f7l")
+texture_normal = ExtResource("22_0rr7d")
+texture_hover = ExtResource("23_c2f7l")
 stretch_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Gold Belt"]
@@ -918,10 +844,10 @@ offset_bottom = 39.0
 
 [node name="knife" type="TextureButton" parent="UI/Fix"]
 layout_mode = 0
-offset_left = 457.0
-offset_top = 392.0
-offset_right = 549.0
-offset_bottom = 459.0
+offset_left = 499.0
+offset_top = 404.0
+offset_right = 591.0
+offset_bottom = 471.0
 tooltip_text = "Try to Fix
 It Yourself
 -$5"
@@ -943,10 +869,10 @@ stretch_mode = 3
 
 [node name="price_marker" type="TextureButton" parent="UI/Fix"]
 layout_mode = 0
-offset_left = 561.0
-offset_top = 431.0
-offset_right = 620.0
-offset_bottom = 503.0
+offset_left = 537.0
+offset_top = 307.0
+offset_right = 596.0
+offset_bottom = 379.0
 tooltip_text = "Change an
 Item's Price
 -$30"
@@ -995,8 +921,9 @@ stretch_mode = 3
 [node name="Dialogue" parent="UI" instance=ExtResource("1_kgnas")]
 visible = false
 layout_mode = 1
-offset_left = -222.0
-offset_right = 250.0
+offset_left = -253.0
+offset_right = 227.0
+offset_bottom = 217.0
 
 [node name="GUI" type="VBoxContainer" parent="UI"]
 layout_mode = 0
@@ -1007,7 +934,7 @@ offset_bottom = 650.0
 
 [node name="profits" type="TextureRect" parent="UI/GUI"]
 layout_mode = 2
-texture = ExtResource("12_10sgt")
+texture = ExtResource("31_0rr7d")
 
 [node name="Num" type="Label" parent="UI/GUI/profits"]
 custom_minimum_size = Vector2(90, 0)
@@ -1054,13 +981,14 @@ text = " Submit "
 
 [node name="CustBelt" type="TextureRect" parent="UI"]
 layout_mode = 0
-offset_left = 587.0
-offset_top = 308.0
-offset_right = 657.4889
-offset_bottom = 369.0
+offset_left = 660.0
+offset_top = 316.0
+offset_right = 730.4889
+offset_bottom = 377.0
 texture = ExtResource("4_0o8lh")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = 774.0
 offset_top = 37.0
@@ -1074,240 +1002,8 @@ texture_progress = ExtResource("12_71nik")
 
 [node name="Timer" type="Timer" parent="UI/TextureProgressBar"]
 
-[node name="Button" type="Button" parent="UI"]
-z_index = 2
-layout_mode = 0
-offset_top = 6.0
-offset_right = 41.0
-offset_bottom = 40.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0rr7d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_c2f7l")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_kb3bb")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4kypb")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_s4pq6")
-text = " II "
-script = ExtResource("32_ckaag")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Button"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -6.0
-offset_right = 1140.0
-offset_bottom = 586.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VSeparator" type="VSeparator" parent="UI/Button/HBoxContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/separation = 350
-theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Button/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Control" type="PanelContainer" parent="UI/Button/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_31006")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HSeparator" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 72
-theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
-
-[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 48
-text = "Pause"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="HSeparator2" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
-
-[node name="Button" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
-text = "1. continue              ->"
-
-[node name="HSeparator3" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
-
-[node name="Button2" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
-text = "2. settings              ->"
-
-[node name="HSeparator4" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
-
-[node name="Button3" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
-text = "3. quit                   ->"
-
-[node name="HSeparator5" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 166
-theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HSeparator" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 72
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
-
-[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 48
-text = "Settings"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="HSeparator2" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 64
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
-
-[node name="Button" type="HBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-text = "1. music volume:"
-
-[node name="HSlider" type="HSlider" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
-custom_minimum_size = Vector2(112, 0)
-layout_mode = 2
-theme_override_icons/grabber = ExtResource("34_yxcn7")
-theme_override_icons/grabber_highlight = ExtResource("35_qla06")
-theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
-max_value = 60.0
-value = 50.0
-
-[node name="HSeparator3" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
-
-[node name="Button4" type="HBoxContainer" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-text = "2. sfx volume:   "
-
-[node name="HSlider" type="HSlider" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
-custom_minimum_size = Vector2(112, 0)
-layout_mode = 2
-theme_override_icons/grabber = ExtResource("34_yxcn7")
-theme_override_icons/grabber_highlight = ExtResource("35_qla06")
-theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
-max_value = 60.0
-value = 50.0
-
-[node name="HSeparator4" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
-
-[node name="Button3" type="Button" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
-theme_override_fonts/font = ExtResource("31_xdvx7")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qla06")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_31006")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_rtoos")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_owyh2")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yw65d")
-text = "3. back                  ->"
-
-[node name="HSeparator5" type="HSeparator" parent="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 166
-theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
-
-[node name="VSeparator2" type="VSeparator" parent="UI/Button/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 350
-theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Button"]
-libraries = {
-&"": SubResource("AnimationLibrary_534gl")
-}
-
 [node name="sfx" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("34_c2f7l")
 
 [node name="music" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("31_77qlp")
@@ -1321,31 +1017,18 @@ position = Vector2(890, 374)
 [node name="Customer" parent="track" instance=ExtResource("4_l8phu")]
 visible = false
 texture = ExtResource("18_jc405")
-id = "Granny"
+id = "The Grandma"
 wallet = 100.0
 tip = 1.5
 wants = 2
 allowed = Array[int]([0, 1, 2, 3, 4])
 wait_time = 45.0
-start_dialogue = "The Grandma:
-Oh, hello, dearie. I'm sorry to be a bother, &The Grandma:
-but could you please find me a red belt?&The Grandma:
-My eyes just don’t seem to work as they used to. & You:
-Sure, let's take a look."
-end_dialogue_yes = "The Grandma:
-Oh my! This is just perfect! You have mighty good taste, dear &The Grandma:
-Here, take this—a little something extra for your trouble. &You:
-(That’s retail, baby!)"
-end_dialogue_scam = "The Grandma:
-Thank you, dear, this will do just fine. &You:
-(Either she didn't notice or she didn't care.) &You:
-(Either way money's money.)"
-end_dialogue_no_exp = "The Grandma:
-My goodness, dear... I fear I'll have to pass on that one."
-end_dialogue_no_wrng = "That won't do dearie... &Sorry to be a bother."
-end_dialogue_no_tim = "Grandma:
-That's alright, dear. I'll come back another time. &You: 
-(Scammed by time itself. I hate when that happens.)"
+start_dialogue = "Old Lady:Oh, hello, dearie. I'm sorry to be a bother, but could you please find me a red belt?&Old Lady:My eyes just don’t seem to work as they used to. &You:Sure, let's take a look."
+end_dialogue_yes = "Old Lady:Oh my! This is just perfect! You have mighty good taste, dear &Old Lady:Here, take this- a little something extra for your trouble. &You:(That’s retail, baby!)"
+end_dialogue_scam = "Old Lady:Thank you, dear, this will do just fine. &You:(Either she didn't notice or she didn't care. Either way money's money.)"
+end_dialogue_no_exp = "Old Lady:My goodness, dear... I fear I'll have to pass on that one."
+end_dialogue_no_wrng = "Old Lady:That won't do dearie... Sorry to be a bother."
+end_dialogue_no_tim = "Old Lady:That's alright, dear. I'll come back another time. &You:(Scammed by time itself. I hate when that happens.)"
 news_scammed = "Local Blind Woman Swindled! &\"I thought that nice young lady was helping me,\" says ninety-seven-year-old grandmother of seven, Example Name, \"She seemed very nice, why would she do something like this?\" Why indeed? Is this what it has come to? Taking advantage of the elderly and disabled? What a sad world."
 
 [node name="Control" type="Control" parent="track/Customer"]
@@ -1356,8 +1039,8 @@ offset_top = -133.99998
 offset_right = -38.0
 offset_bottom = -93.999985
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Wow, those frames are thick…
-can she see… through me?"
+tooltip_text = "Wow, those frames are thick...
+can she see... through me?"
 theme = ExtResource("4_5pefq")
 
 [node name="Control2" type="Control" parent="track/Customer"]
@@ -1410,98 +1093,29 @@ Let's make this quick."
 theme = ExtResource("4_5pefq")
 
 [node name="inner" type="Control" parent="track/Customer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -673.0
 offset_top = -21.0
-offset_right = -633.0
-offset_bottom = 19.0
+offset_right = -673.0
+offset_bottom = -21.0
 
 [node name="Control8" type="Control" parent="track/Customer/inner"]
 anchors_preset = 0
 offset_left = -29.0
 offset_top = -221.0
-offset_right = 73.1366
-offset_bottom = -82.0
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control10" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = 51.967163
-offset_top = -111.22533
-offset_right = 90.17877
-offset_bottom = -53.19409
-rotation = -0.59922236
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control13" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = 112.0
-offset_top = -39.0
-offset_right = 150.21161
-offset_bottom = 68.26373
-rotation = -1.0407414
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control14" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = 217.90625
-offset_top = 28.57779
-offset_right = 256.11786
-offset_bottom = 100.14755
-rotation = -1.4156599
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control9" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = -16.0
-offset_top = -83.0
-offset_right = 133.0
-offset_bottom = 78.0
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control11" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = 36.0
-offset_top = 75.0
-offset_right = 141.0
-offset_bottom = 123.0
-tooltip_text = "She won't notice details.
-Price tags, though? She’ll
-for sure notice those."
-theme = ExtResource("4_5pefq")
-
-[node name="Control12" type="Control" parent="track/Customer/inner"]
-anchors_preset = 0
-offset_left = 10.0
-offset_top = 118.0
-offset_right = 136.0
+offset_right = 138.0
 offset_bottom = 296.0
 tooltip_text = "She won't notice details.
 Price tags, though? She’ll
 for sure notice those."
-theme = ExtResource("4_5pefq")
+theme = SubResource("Theme_4kypb")
 
 [node name="Customer4" parent="track" instance=ExtResource("4_l8phu")]
-visible = false
 texture = ExtResource("19_8o1ig")
 id = "Very Thin Man"
-wants = 5
+wallet = 30.0
 allowed = Array[int]([0, 1, 2, 3, 5, 6])
 my_belt = ExtResource("4_0o8lh")
 wait_time = 45.0
@@ -1576,6 +1190,7 @@ theme = ExtResource("4_5pefq")
 visible = false
 texture = ExtResource("20_a4ng5")
 id = "Rich-looking Guy"
+wallet = 200.0
 wants = 3
 allowed = Array[int]([2, 3])
 wait_time = 15.0
@@ -1668,8 +1283,8 @@ theme = ExtResource("4_5pefq")
 visible = false
 texture = ExtResource("21_a4ng5")
 id = "Policeman"
-wants = 5
-allowed = Array[int]([0, 1, 5, 6])
+wallet = 30.0
+allowed = Array[int]([0, 1, 6])
 my_belt = ExtResource("4_0o8lh")
 wait_time = 20.0
 fix_works = 100
@@ -1726,6 +1341,238 @@ scale = Vector2(1.6, 1.3163583)
 tooltip_text = "Loafers"
 theme = ExtResource("4_5pefq")
 
+[node name="Button" type="Button" parent="."]
+z_index = 2
+offset_top = 6.0
+offset_right = 41.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0rr7d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c2f7l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kb3bb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4kypb")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s4pq6")
+text = " II "
+script = ExtResource("32_ckaag")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_right = 1140.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="Button/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="PanelContainer" parent="Button/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31006")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Button/HBoxContainer/VBoxContainer/Control"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 72
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Label" type="Label" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 48
+text = "Pause"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button" type="Button" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "1. continue              ->"
+
+[node name="HSeparator3" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button2" type="Button" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "2. settings              ->"
+
+[node name="HSeparator4" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="Button3" type="Button" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ypuxb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kmfym")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ep8q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_66rcu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ip7ob")
+text = "3. quit                   ->"
+
+[node name="HSeparator5" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 166
+theme_override_styles/separator = SubResource("StyleBoxEmpty_sdk8k")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Button/HBoxContainer/VBoxContainer/Control"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 72
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Label" type="Label" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button" type="HBoxContainer" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+text = "1. music volume:"
+
+[node name="HSlider" type="HSlider" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("34_yxcn7")
+theme_override_icons/grabber_highlight = ExtResource("35_qla06")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator3" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button4" type="HBoxContainer" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+text = "2. sfx volume:   "
+
+[node name="HSlider" type="HSlider" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4"]
+custom_minimum_size = Vector2(112, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("34_yxcn7")
+theme_override_icons/grabber_highlight = ExtResource("35_qla06")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ckaag")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_4ldi7")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_yxcn7")
+max_value = 60.0
+value = 50.0
+
+[node name="HSeparator4" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="Button3" type="Button" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7019608, 0.7019608, 0, 1)
+theme_override_fonts/font = ExtResource("31_xdvx7")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qla06")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_31006")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rtoos")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_owyh2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yw65d")
+text = "3. back                  ->"
+
+[node name="HSeparator5" type="HSeparator" parent="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 166
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xdvx7")
+
+[node name="VSeparator2" type="VSeparator" parent="Button/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+theme_override_styles/separator = SubResource("StyleBoxEmpty_y1hvh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_534gl")
+}
+
 [node name="button" type="Button" parent="."]
 z_index = 3
 offset_left = 276.0
@@ -1775,6 +1622,7 @@ text = "OK"
 [connection signal="mouse_exited" from="UI/Belts/Gold Belt" to="UI/Belts" method="_on_gold_belt_mouse_exited"]
 [connection signal="pressed" from="UI/Belts/Gold Belt" to="UI/Belts" method="_on_gold_belt_pressed"]
 [connection signal="mouse_entered" from="UI/Fix/knife" to="UI/Belts" method="_on_knife_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Fix/knife" to="UI/Belts" method="_on_knife_mouse_exited"]
 [connection signal="pressed" from="UI/Fix/knife" to="UI" method="_on_knife_pressed"]
 [connection signal="mouse_entered" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_mouse_exited"]
@@ -1782,12 +1630,12 @@ text = "OK"
 [connection signal="mouse_entered" from="UI/Fix/replacement" to="UI/Belts" method="_on_replacement_mouse_entered"]
 [connection signal="pressed" from="UI/Fix/replacement" to="UI" method="_on_replacement_pressed"]
 [connection signal="timeout" from="UI/TextureProgressBar/Timer" to="UI" method="_on_timer_timeout"]
-[connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
-[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button" to="UI/Button" method="_on_button_pressed"]
-[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button2" to="UI/Button" method="_on_button_2_pressed"]
-[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button3" to="UI/Button" method="_on_button_3_pressed"]
-[connection signal="value_changed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="UI/Button" method="_on_m_vol_changed"]
-[connection signal="value_changed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="UI/Button" method="_on_s_vol_changed"]
-[connection signal="pressed" from="UI/Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="UI/Button" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button" to="Button" method="_on_button_pressed"]
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button2" to="Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer/Button3" to="Button" method="_on_button_3_pressed"]
+[connection signal="value_changed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button/HSlider" to="Button" method="_on_m_vol_changed"]
+[connection signal="value_changed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button4/HSlider" to="Button" method="_on_s_vol_changed"]
+[connection signal="pressed" from="Button/HBoxContainer/VBoxContainer/Control/VBoxContainer3/Button3" to="Button" method="_on_button_4_pressed"]
 [connection signal="pressed" from="button" to="button" method="_on_pressed"]
 [connection signal="pressed" from="button/PanelContainer/HBoxContainer/Button" to="button" method="_on_button_pressed"]

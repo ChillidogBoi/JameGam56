@@ -14,8 +14,8 @@ const cust_start_pos = Vector2(1368, 374)
 var cust: Customer
 const MONEY_SOUND = preload("res://Sound/coin_drop_01.ogg")
 const AWW_01 = preload("uid://5styh0l528dh")
-const BOSS_DIA1 = "Boss: \nMake $300 by the end of the day. Or you're fired."
-const BOSS_DIA2 =  "I don't care if you have to cheat an OLD LADY out of her Social Security Check"
+const BOSS_DIA1 = "Boss:Make $300 by the end of the day. Or you're fired."
+const BOSS_DIA2 =  "Boss:I don't care if you have to cheat an OLD LADY out of her Social Security Check"
 var paused = false
 signal resume
 
@@ -36,8 +36,8 @@ func _ready():
 	$"../Sprite2D/AnimationPlayer".play("grow")
 	await $"../Sprite2D/AnimationPlayer".animation_finished
 	
-	await dialogue(BOSS_DIA1)
-	await dialogue(BOSS_DIA2)
+	await dialogue(BOSS_DIA1, true)
+	await dialogue(BOSS_DIA2, true)
 	
 	cust = customer_order.pop_front()
 	
@@ -47,13 +47,12 @@ func _ready():
 func run_customer():
 	fix_buttons[1].tooltip_text = str("Replace -$", cust.replace_price)
 	await customer_walkup()
-	$"../bg/Control3".visible = false
 	
 	if cust.my_belt:
 		cust_belt.texture = cust.my_belt
 		cust_belt.visible = true
 	for n in cust.dialogue_seperated:
-		await dialogue(cust.request_next_dialogue())
+		await dialogue(cust.request_next_dialogue(), cust.male)
 	
 	timer.get_child(0).stop()
 	if cust.wait_time != 0.0:
@@ -70,7 +69,7 @@ func run_customer():
 			n.get_child(0).visible = false
 
 
-func dialogue(txt: String):
+func dialogue(txt: String, male: bool):
 	for n in sell_buttons:
 		n.disabled = true
 		n.get_child(0).visible = true
@@ -79,9 +78,10 @@ func dialogue(txt: String):
 		n.get_child(0).visible = true
 	
 	dialogue_box.reset()
-	dialogue_box.label.text = txt
+	dialogue_box.label.text = txt.get_slice(":", 1)
+	dialogue_box.nam.text = str(txt.get_slice(":", 0), ":")
 	dialogue_box.visible = true
-	await dialogue_box.speak()
+	dialogue_box.speak(male)
 	await dialogue_box.next
 	dialogue_box.visible = false
 	await get_tree().create_timer(0.01).timeout
@@ -100,6 +100,9 @@ func customer_walkup():
 		adder += 0.0001
 		await get_tree().create_timer(0.01).timeout
 	cust.anims.play("stop")
+	cust.find_child("inner").visible = true
+	for n in cust.find_child("inner").get_children():
+		n.mouse_entered.connect($Belts._on_inner_mouse_entered)
 	return
 
 
@@ -138,7 +141,6 @@ func _on_knife_pressed():
 
 
 func change_price(type:int):
-	$"../bg/Control".visible = false
 	price_d.get_child(1).get_child(0).value =\
 		float(sell_buttons[type].tooltip_text.get_slice("$", 1))
 	price_d.get_child(1).get_child(0).max_value =\
@@ -153,7 +155,6 @@ func change_price(type:int):
 	sell_buttons[type].tooltip_text = str(sell_buttons[type].tooltip_text.get_slice("$", 0),\
 		"$", price_d.get_child(1).get_child(0).value)
 	price_d.visible = false
-	$"../bg/Control".visible = true
 
 
 func sell(type:int):
@@ -191,14 +192,13 @@ func end_cust():
 	timer.get_child(0).stop()
 	if paused: await resume
 	for n in cust.dialogue_seperated:
-		await dialogue(cust.request_next_dialogue())
+		await dialogue(cust.request_next_dialogue(), cust.male)
 	
 	$"../Node2D/Player/Face/fail".visible = false
 	$"../Node2D/Player/Face/joy".visible = false
 	$"../Node2D/Player/Face/sad".visible = false
 	$"../Node2D/Player/Face/kind".visible = false
 	if paused: await resume
-	$"../bg/Control3".visible = true
 	await customer_walkaway()
 	
 	if customer_order.is_empty(): end_game()

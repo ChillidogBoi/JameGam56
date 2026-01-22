@@ -719,7 +719,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_t3k1a")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_htynf")
 
 [node name="Gallery" type="HBoxContainer" parent="."]
-visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 15

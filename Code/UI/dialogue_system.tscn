@@ -1,35 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmgug8w8kn385"]
+[gd_scene load_steps=9 format=3 uid="uid://bmgug8w8kn385"]
 
+[ext_resource type="StyleBox" uid="uid://b5n6k2ft3v2fc" path="res://Code/UI/dialogue_system_flipped.tres" id="1_03j0k"]
 [ext_resource type="Script" uid="uid://d1qpkg1enkxf7" path="res://Code/UI/dialogue_system.gd" id="1_jw2xp"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_n63qp"]
+[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="4_03j0k"]
+[ext_resource type="Texture2D" uid="uid://pat5n2nahlo6" path="res://Art/UI/arrow.png" id="5_2qdf1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63qp"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 128
-corner_radius_top_right = 128
-corner_radius_bottom_right = 128
-corner_radius_bottom_left = 128
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jw2xp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_476vb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n63qp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gaqqe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qjhe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2qdf1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03j0k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmp2k"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lvv3"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_n63qp"]
 action = &"continue"
@@ -37,105 +14,63 @@ action = &"continue"
 [sub_resource type="Shortcut" id="Shortcut_gaqqe"]
 events = [SubResource("InputEventAction_n63qp")]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lvv3"]
-
-[node name="Dialogue" type="PanelContainer" node_paths=PackedStringArray("label")]
+[node name="Dialogue" type="PanelContainer" node_paths=PackedStringArray("label", "nam")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -311.0
 offset_right = 161.0
-offset_bottom = 159.0
+offset_bottom = 148.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_n63qp")
+theme_override_styles/panel = ExtResource("1_03j0k")
 script = ExtResource("1_jw2xp")
-label = NodePath("HBoxContainer/VBoxContainer/Label")
+label = NodePath("HBoxContainer/VBoxContainer/HBoxContainer/Label")
+nam = NodePath("HBoxContainer/VBoxContainer/Label2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
-theme_override_styles/separator = SubResource("StyleBoxEmpty_jw2xp")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 8
-theme_override_styles/separator = SubResource("StyleBoxEmpty_476vb")
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(400, 100)
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_n63qp")
 theme_override_font_sizes/font_size = 20
-text = "This is a test of the dialogue system. If you are seeing this the dialogue system is probably broken."
-autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
+text = "Name:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="Continue" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_n63qp")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_n63qp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_gaqqe")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0qjhe")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2qdf1")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_03j0k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wmp2k")
-shortcut = SubResource("Shortcut_gaqqe")
-text = " v "
-
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 16
 theme_override_styles/separator = SubResource("StyleBoxEmpty_8lvv3")
 
-[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 65)
 layout_mode = 2
-theme_override_constants/separation = 8
-theme_override_styles/separator = SubResource("StyleBoxEmpty_476vb")
-
-[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
-theme_override_styles/separator = SubResource("StyleBoxEmpty_jw2xp")
-
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(-103, -64)
-scale = Vector2(1.375, 1.3)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(329.45456, 174.6154, 330.90912, 186.15387, 335.27274, 194.6154, 344.00003, 204.6154, 357.0909, 214.6154, 370.18182, 219.23079, 383.27274, 220.76926, 394.18182, 220.00003, 386.18182, 211.53848, 378.90912, 201.53848, 376.7273, 188.46156, 380.36365, 173.07693)
-
-[node name="Polygon2D" type="Polygon2D" parent="Polygon2D2"]
-position = Vector2(96, 43.846157)
-scale = Vector2(0.72727275, 0.76923084)
-polygon = PackedVector2Array(330, 163, 331, 179, 337, 192, 346, 202, 358, 213, 371, 219, 395, 224, 386, 214, 379, 205, 376, 192, 377, 180, 382, 165)
-
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(588, -66.00001)
-scale = Vector2(-1.375, 1.3)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(329.45456, 174.6154, 330.90912, 186.15387, 335.27274, 194.6154, 344.00003, 204.6154, 357.0909, 214.6154, 370.18182, 219.23079, 383.27274, 220.76926, 394.18182, 220.00003, 386.18182, 211.53848, 378.90912, 201.53848, 376.7273, 188.46156, 380.36365, 173.07693)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Polygon2D3"]
-position = Vector2(96, 43.846157)
-scale = Vector2(0.72727275, 0.76923084)
-polygon = PackedVector2Array(330, 163, 331, 179, 337, 192, 346, 202, 358, 213, 371, 219, 395, 224, 386, 214, 379, 205, 376, 192, 377, 180, 382, 165)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_03j0k")
+theme_override_font_sizes/font_size = 18
+text = "This is a test of the dialogue system. If you are seeing this the dialogue system is probably broken."
+autowrap_mode = 2
 
 [node name="beltese" type="AudioStreamPlayer" parent="."]
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[node name="Continue" type="TextureButton" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+shortcut = SubResource("Shortcut_gaqqe")
+texture_normal = ExtResource("5_2qdf1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

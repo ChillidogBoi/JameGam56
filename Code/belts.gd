@@ -6,6 +6,9 @@ const MARKER_SOUND_01 = preload("uid://dx4q81vsyt7r")
 const BELT_SOUND_01 = preload("uid://da6nfjo2q3pu8")
 const CLICK_SOUND_01 = preload("uid://cc5dvjl4wqkse")
 const KNIFE_SCRAPE_SOUND_01 = preload("uid://c28pdom7qnhhv")
+const HMM_01 = preload("uid://cr2miv5bh2g6m")
+const HMM_2 = preload("uid://00new2ujbjgy")
+var inner: bool = false
 
 
 func belt_pressed(type: int):
@@ -61,11 +64,18 @@ func _on_replacement_mouse_entered():
 	$"../sfx".stream = BELT_SOUND_01
 	$"../sfx".play()
 func _on_knife_mouse_entered():
+	$"../../Node2D/Player/Face/tense".visible = true
 	$"../sfx".stream = KNIFE_SCRAPE_SOUND_01
 	$"../sfx".play()
+func _on_knife_mouse_exited():
+	$"../../Node2D/Player/Face/tense".visible = false
 
 func _input(event):
 	if not event is InputEventMouseButton: return
 	if event.button_index > 1 or event.pressed == false: return
 	$"../sfx".stream = CLICK_SOUND_01
+	$"../sfx".play()
+
+func _on_inner_mouse_entered():
+	$"../sfx".stream = HMM_2
 	$"../sfx".play()

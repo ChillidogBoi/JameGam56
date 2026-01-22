@@ -2,6 +2,7 @@ extends Sprite2D
 class_name Customer
 
 @export var id: String
+@export var male: bool = false
 ## How much the customer is willing to pay
 @export_custom(PROPERTY_HINT_NONE, "suffix:$") var wallet: float
 @export_custom(PROPERTY_HINT_NONE, "suffix:$") var tip: float

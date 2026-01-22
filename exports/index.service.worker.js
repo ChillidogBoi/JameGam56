@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1769015095|1867797378';
+const CACHE_VERSION = '1769016405|264375711';
 /** @type {string} */
 const CACHE_PREFIX = 'Jame Gam 56-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
