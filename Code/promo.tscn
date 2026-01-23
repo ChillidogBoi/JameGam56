@@ -1,0 +1,230 @@
+[gd_scene load_steps=18 format=3 uid="uid://dj0e05lx7a0x"]
+
+[ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="1_4db2t"]
+[ext_resource type="Texture2D" uid="uid://b37ou75pw3ck2" path="res://Art/UI/logo.png" id="2_lbofv"]
+[ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="3_ou4sa"]
+[ext_resource type="Texture2D" uid="uid://dquvxcmvq3dkg" path="res://Art/Environment/table_final.png" id="4_u8f2n"]
+[ext_resource type="Texture2D" uid="uid://c5bov2pm68m2b" path="res://Art/Characters/mc_final.png" id="5_07fmj"]
+[ext_resource type="Texture2D" uid="uid://b1xkwgw0wewm6" path="res://Art/Environment/1belt_final.png" id="5_xfav4"]
+[ext_resource type="Texture2D" uid="uid://dyqwuh7w13np2" path="res://Art/Environment/belt_final.png" id="6_ci6qe"]
+[ext_resource type="Texture2D" uid="uid://1duhyj6u2g4u" path="res://Art/Characters/boss.png" id="6_s57u3"]
+[ext_resource type="Texture2D" uid="uid://b6daq50rl33t5" path="res://Art/Environment/5belt_final.png" id="9_xfiem"]
+[ext_resource type="Texture2D" uid="uid://chbm2ihvbafdw" path="res://Art/Environment/4belt_final.png" id="10_0cvug"]
+[ext_resource type="Texture2D" uid="uid://cygpd0dg0au41" path="res://Art/Environment/2belt_final.png" id="11_jopbk"]
+[ext_resource type="Texture2D" uid="uid://im4h5o8ctvan" path="res://Art/Environment/3belt_final.png" id="12_xywfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rapj7"]
+atlas = ExtResource("6_ci6qe")
+region = Rect2(0, 25.83841, 90, 46.16159)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7b0e"]
+atlas = ExtResource("9_xfiem")
+region = Rect2(0, 50.5, 161, 73.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvph4"]
+atlas = ExtResource("10_0cvug")
+region = Rect2(0, 50.5, 121.95946, 53.88124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1583"]
+atlas = ExtResource("11_jopbk")
+region = Rect2(0, 19.456507, 97, 44.543495)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0sg3"]
+atlas = ExtResource("12_xywfq")
+region = Rect2(-0.30459213, 13.029539, 73.17766, 41.1257)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("1_4db2t")
+
+[node name="bg4" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = 35.0
+offset_right = -310.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_lbofv")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 52.999985
+offset_top = 387.0
+offset_right = 491.0
+offset_bottom = 437.0
+rotation = 0.23368804
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_ou4sa")
+theme_override_font_sizes/font_size = 36
+text = "The Scammer's"
+
+[node name="Label5" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 351.5667
+offset_top = 455.11075
+offset_right = 453.5667
+offset_bottom = 505.11075
+rotation = 0.071394384
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_ou4sa")
+theme_override_font_sizes/font_size = 36
+text = "I"
+
+[node name="Label3" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 364.5667
+offset_top = 454.11072
+offset_right = 466.5667
+offset_bottom = 504.11072
+rotation = -0.08341128
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_ou4sa")
+theme_override_font_sizes/font_size = 36
+text = "ll"
+
+[node name="Label2" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 387.5667
+offset_top = 456.11063
+offset_right = 489.5667
+offset_bottom = 506.11063
+rotation = -0.23505354
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_ou4sa")
+theme_override_font_sizes/font_size = 36
+text = "us"
+
+[node name="Label4" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 423.5667
+offset_top = 446.11075
+offset_right = 525.56665
+offset_bottom = 496.11075
+rotation = -0.5476626
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("3_ou4sa")
+theme_override_font_sizes/font_size = 36
+text = "ion"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 202.0
+offset_right = 840.0
+offset_bottom = 648.0
+texture = ExtResource("4_u8f2n")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 549.0
+offset_top = 53.0
+offset_right = 653.0
+offset_bottom = 122.0
+texture = ExtResource("5_xfav4")
+stretch_mode = 3
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 541.0
+offset_top = 97.0
+offset_right = 631.0
+offset_bottom = 143.0
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_rapj7")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 115.0
+offset_right = 502.0
+offset_bottom = 649.0
+texture = ExtResource("5_07fmj")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 227.0
+offset_right = 1007.0
+offset_bottom = 621.0
+texture = ExtResource("6_s57u3")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 742.0
+offset_top = 131.0
+offset_right = 903.0
+offset_bottom = 204.0
+rotation = 3.1415927
+texture = SubResource("AtlasTexture_h7b0e")
+stretch_mode = 3
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 610.00006
+offset_top = 130.0
+offset_right = 731.00006
+offset_bottom = 183.0
+rotation = 3.2555516
+texture = SubResource("AtlasTexture_fvph4")
+stretch_mode = 3
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 461.99997
+offset_top = 114.99999
+offset_right = 559.0
+offset_bottom = 159.0
+rotation = 3.3082201
+texture = SubResource("AtlasTexture_s1583")
+stretch_mode = 3
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 489.99997
+offset_top = 117.0
+offset_right = 563.0
+offset_bottom = 158.0
+rotation = 3.2613459
+texture = SubResource("AtlasTexture_r0sg3")
+stretch_mode = 3

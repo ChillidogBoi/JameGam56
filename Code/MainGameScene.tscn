@@ -412,7 +412,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -50), Vector2(0, 0), Vector2(0, -50)]
+"values": [Vector2(0, 0), Vector2(0, 50), Vector2(0, 0)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -441,7 +441,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 50)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nnyrb"]
@@ -795,10 +795,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Cheap Belt"]
 visible = false
 layout_mode = 0
-offset_left = 13.0
-offset_top = 1.0
-offset_right = 77.0
-offset_bottom = 65.0
+offset_left = 36.0
+offset_top = 5.0
+offset_right = 100.0
+offset_bottom = 69.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -847,10 +847,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Retro Belt"]
 visible = false
 layout_mode = 0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 73.0
-offset_bottom = 72.0
+offset_left = 12.0
+offset_top = 1.0
+offset_right = 76.0
+offset_bottom = 65.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -873,10 +873,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Belts/Fancy Belt"]
 visible = false
 layout_mode = 0
-offset_left = 13.0
-offset_top = 9.0
-offset_right = 77.0
-offset_bottom = 73.0
+offset_left = 36.0
+offset_top = 17.0
+offset_right = 100.0
+offset_bottom = 81.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -931,10 +931,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/knife"]
 visible = false
 layout_mode = 0
-offset_left = 26.0
-offset_top = 9.0
-offset_right = 90.0
-offset_bottom = 73.0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 85.0
+offset_bottom = 71.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -982,10 +982,10 @@ stretch_mode = 3
 [node name="TextureRect" type="TextureRect" parent="UI/Fix/replacement"]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 71.0
-offset_bottom = 65.0
+offset_left = 22.0
+offset_top = 10.0
+offset_right = 86.0
+offset_bottom = 74.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_bsujd")
 stretch_mode = 3
@@ -1415,6 +1415,7 @@ tooltip_text = "Loafers"
 theme = ExtResource("4_5pefq")
 
 [node name="Boss" type="Sprite2D" parent="track" node_paths=PackedStringArray("anims")]
+visible = false
 texture = ExtResource("43_s4pq6")
 script = ExtResource("44_y1hvh")
 id = "Boss"

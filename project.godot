@@ -14,9 +14,8 @@ config/name="Jame Gam 56"
 run/main_scene="uid://b4epndv7qifxu"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 run/max_fps=60
-boot_splash/bg_color=Color(0.107406296, 0.10345336, 0.4317201, 1)
-boot_splash/fullsize=false
-boot_splash/image="uid://b37ou75pw3ck2"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://mjnxkgrlbu0m"
 config/icon="uid://b37ou75pw3ck2"
 
 [autoload]

@@ -576,14 +576,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
 offset_top = 12.0
-offset_right = -726.0
-offset_bottom = -271.0
+offset_right = -640.0
+offset_bottom = -157.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 mouse_filter = 2
 texture = ExtResource("5_7qa5s")
 expand_mode = 1
-stretch_mode = 5
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 52.999985
+offset_top = 387.0
+offset_right = 491.0
+offset_bottom = 437.0
+rotation = 0.23368804
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 36
+text = "The Scammer's"
+
+[node name="Label5" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 351.5667
+offset_top = 455.11075
+offset_right = 453.5667
+offset_bottom = 505.11075
+rotation = 0.071394384
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 36
+text = "I"
+
+[node name="Label3" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 364.5667
+offset_top = 454.11072
+offset_right = 466.5667
+offset_bottom = 504.11072
+rotation = -0.08341128
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 36
+text = "ll"
+
+[node name="Label2" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 387.5667
+offset_top = 456.11063
+offset_right = 489.5667
+offset_bottom = 506.11063
+rotation = -0.23505354
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 36
+text = "us"
+
+[node name="Label4" type="Label" parent="bg4"]
+z_index = 1
+layout_mode = 0
+offset_left = 423.5667
+offset_top = 446.11075
+offset_right = 525.56665
+offset_bottom = 496.11075
+rotation = -0.5476626
+theme_override_colors/font_color = Color(0.9490196, 0.94509804, 0.84313726, 1)
+theme_override_colors/font_outline_color = Color(0.11764706, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("1_f5tht")
+theme_override_font_sizes/font_size = 36
+text = "ion"
 
 [node name="Main" type="Control" parent="."]
 layout_mode = 1

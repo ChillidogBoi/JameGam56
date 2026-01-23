@@ -188,15 +188,15 @@ func boss_sell(type:int):
 			sound.stream = AWW_01
 			sound.play()
 		else: 
-			if type == 3: cust.end_dialogue_scam = "Boss:Not my style.\nSomething flashier.&Boss:Let's try that one more time."
-			else: if type == 3: cust.end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
+			if type == 2: cust.end_dialogue_scam = "Boss:Not my style.\nSomething flashier.&Boss:Let's try that one more time."
+			else: cust.end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
 			cust.end_dia_setup(true, true)
 			$"../Node2D/Player/Face/sad".visible = true
 			sound.stream = AWW_01
 			sound.play()
 	else:
 		cust.end_dia_setup(false, false)
-		$"../Node2D/Player/Face/joy".visible = true
+		$"../Node2D/Player/Face/kind".visible = true
 		boss = false
 		
 	profit.text = "$0"
