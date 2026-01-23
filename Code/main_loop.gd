@@ -281,7 +281,7 @@ func end_game():
 
 
 func _on_replacement_pressed():
-	if not cust.allowed.has(6): cust.end_dia_setup(false, false)
+	if not cust.allowed.has(6): cust.end_dia_setup(true, true)
 	
 	else:
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) - cust.replace_price)
