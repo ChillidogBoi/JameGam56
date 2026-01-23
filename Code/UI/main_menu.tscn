@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qoy7yc71vo87" path="res://Code/UI/main_menu.gd" id="1_6vt4s"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="1_f5tht"]
 [ext_resource type="Texture2D" uid="uid://joyh7crd4ft6" path="res://Art/UI/start_gray.png" id="3_bb43h"]
-[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_mvdb3"]
+[ext_resource type="FontFile" uid="uid://bwyxlun8i52do" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_mvdb3"]
 [ext_resource type="Script" uid="uid://dycgrqbcryruc" path="res://Code/UI/hover_lift.gd" id="4_7s2w4"]
 [ext_resource type="Script" uid="uid://bxviuufjio06" path="res://Code/UI/main_menu_set.gd" id="4_q0h1s"]
 [ext_resource type="Texture2D" uid="uid://b37ou75pw3ck2" path="res://Art/UI/logo.png" id="5_7qa5s"]
@@ -687,18 +687,20 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_mvdb3")
 theme_override_font_sizes/font_size = 24
 text = "Lead Artist: Lullady
-with Story and Additional Art by: Nullnae
-Music and SFX by: Austin Lytle
+with Story and Additional Art by: Nullnaé
+Music and Sound FX by: Austin Lytle
 and Programming by: ChillidogBoi"
 vertical_alignment = 2
 
 [node name="Polygon2D2" type="Polygon2D" parent="Main"]
+visible = false
 z_index = 1
 position = Vector2(166, 0)
 color = Color(1, 1, 0.5294118, 1)
 polygon = PackedVector2Array(303, 547, 307, 547, 310, 545, 310, 542, 307, 543, 303, 544.5)
 
 [node name="Polygon2D" type="Polygon2D" parent="Main"]
+visible = false
 z_index = 1
 position = Vector2(166, 0)
 color = Color(0.11764706, 0.2509804, 0.50980395, 1)

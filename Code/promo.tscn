@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj0e05lx7a0x"]
+[gd_scene load_steps=19 format=3 uid="uid://dj0e05lx7a0x"]
 
 [ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="1_4db2t"]
 [ext_resource type="Texture2D" uid="uid://b37ou75pw3ck2" path="res://Art/UI/logo.png" id="2_lbofv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://chbm2ihvbafdw" path="res://Art/Environment/4belt_final.png" id="10_0cvug"]
 [ext_resource type="Texture2D" uid="uid://cygpd0dg0au41" path="res://Art/Environment/2belt_final.png" id="11_jopbk"]
 [ext_resource type="Texture2D" uid="uid://im4h5o8ctvan" path="res://Art/Environment/3belt_final.png" id="12_xywfq"]
+[ext_resource type="FontFile" uid="uid://bwyxlun8i52do" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_ci6qe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rapj7"]
 atlas = ExtResource("6_ci6qe")
@@ -228,3 +229,12 @@ offset_bottom = 158.0
 rotation = 3.2613459
 texture = SubResource("AtlasTexture_r0sg3")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 537.0
+offset_right = 1234.0
+offset_bottom = 708.0
+theme_override_fonts/font = ExtResource("13_ci6qe")
+theme_override_font_sizes/font_size = 64

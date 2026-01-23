@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=105 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c00ecsuf0hb2s" path="res://Art/Placeholder/unavailable.png" id="8_bsujd"]
 [ext_resource type="Texture2D" uid="uid://bwflpjo7umtal" path="res://Art/Placeholder/timer_empty.png" id="11_vbamx"]
 [ext_resource type="Texture2D" uid="uid://bygl4rt5b8cjl" path="res://Art/Placeholder/timer_full.png" id="12_71nik"]
-[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
+[ext_resource type="FontFile" uid="uid://bwyxlun8i52do" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="13_mfmbs"]
 [ext_resource type="Texture2D" uid="uid://b1xkwgw0wewm6" path="res://Art/Environment/1belt_final.png" id="13_qla06"]
 [ext_resource type="Texture2D" uid="uid://bwb8niaplosb2" path="res://Art/Environment/1belt_selected_final.png" id="14_0rr7d"]
 [ext_resource type="Texture2D" uid="uid://cygpd0dg0au41" path="res://Art/Environment/2belt_final.png" id="16_c2f7l"]
@@ -340,6 +340,13 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_0rr7d"]
 gradient = SubResource("Gradient_kb3bb")
+
+[sub_resource type="FontVariation" id="FontVariation_s4pq6"]
+base_font = ExtResource("13_mfmbs")
+spacing_glyph = -1
+spacing_space = -1
+spacing_top = -6
+spacing_bottom = -2
 
 [sub_resource type="Theme" id="Theme_f71xg"]
 default_font = ExtResource("13_mfmbs")
@@ -737,16 +744,20 @@ texture = ExtResource("8_31006")
 
 [node name="Label" type="Label" parent="Node2D/Player"]
 z_index = 4
-offset_left = 362.0
-offset_top = 331.00003
-offset_right = 390.64883
-offset_bottom = 347.47223
+offset_left = 364.00006
+offset_top = 334.00003
+offset_right = 395.55865
+offset_bottom = 350.01913
 rotation = -0.756267
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("13_mfmbs")
-theme_override_font_sizes/font_size = 7
-text = " MC"
-text_overrun_behavior = 1
+theme_override_fonts/font = SubResource("FontVariation_s4pq6")
+theme_override_font_sizes/font_size = 8
+text = "
+ MC"
+autowrap_mode = 1
+justification_flags = 161
+ellipsis_char = "-"
+max_lines_visible = 3
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("sound", "timer", "cust_belt", "profit", "dialogue_box", "track", "customer_order", "price_d", "sell_buttons", "fix_buttons")]
 layout_mode = 3
@@ -1755,9 +1766,10 @@ rotation = 0.9372418
 [node name="HBoxContainer" type="HBoxContainer" parent="button/PanelContainer"]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="button/PanelContainer/HBoxContainer"]
+[node name="LineEdit" type="TextEdit" parent="button/PanelContainer/HBoxContainer"]
 layout_mode = 2
-max_length = 8
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("13_mfmbs")
 
 [node name="Button" type="Button" parent="button/PanelContainer/HBoxContainer"]
 layout_mode = 2

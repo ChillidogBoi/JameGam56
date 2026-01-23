@@ -2,7 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://fyrbik48eiw7"
+uid="uid://bwyxlun8i52do"
 path="res://.godot/imported/ashcanbb_reg.otf-70e478e28ffd47e4b630d66076aca38c.fontdata"
 
 [deps]
@@ -16,7 +16,7 @@ Rendering=null
 antialiasing=1
 generate_mipmaps=false
 disable_embedded_bitmaps=true
-multichannel_signed_distance_field=false
+multichannel_signed_distance_field=true
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
@@ -27,10 +27,18 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[]
+fallbacks=[Object(FontVariation,"resource_local_to_scene":false,"resource_name":"","fallbacks":Array[Font]([]),"base_font":Resource("uid://k1y0wnktmoq6", "res://Art/UI/ashcanbb_ot/fallbacks/Marker Felt.ttf"),"variation_opentype":{},"variation_face_index":0,"variation_embolden":0.0,"variation_transform":Transform2D(0.85, 0, 0, 0.85, 0, 0),"opentype_features":{},"spacing_glyph":-3,"spacing_space":2,"spacing_top":-2,"spacing_bottom":-2,"baseline_offset":0.0,"script":null)
+, Object(FontVariation,"resource_local_to_scene":false,"resource_name":"","fallbacks":Array[Font]([]),"base_font":Resource("uid://bgdf6ddadmcbm", "res://Art/UI/ashcanbb_ot/fallbacks/Excalifont-Regular.ttf"),"variation_opentype":{},"variation_face_index":0,"variation_embolden":0.5,"variation_transform":Transform2D(0.85, 0, 0, 1, 0, 0),"opentype_features":{},"spacing_glyph":-2,"spacing_space":-2,"spacing_top":-2,"spacing_bottom":-2,"baseline_offset":0.0,"script":null)
+]
 Compress=null
-compress=true
-preload=[]
+compress=false
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+&"variation_embolden": 0.0
+}]
 language_support={}
 script_support={}
 opentype_features={}
