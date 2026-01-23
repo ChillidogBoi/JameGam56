@@ -1,10 +1,9 @@
-[gd_scene load_steps=109 format=3 uid="uid://258gob48pfr5"]
+[gd_scene load_steps=108 format=3 uid="uid://258gob48pfr5"]
 
 [ext_resource type="PackedScene" uid="uid://bmgug8w8kn385" path="res://Code/UI/dialogue_system.tscn" id="1_kgnas"]
 [ext_resource type="Script" uid="uid://mia226xwf2dj" path="res://Code/main_loop.gd" id="2_l8phu"]
 [ext_resource type="Texture2D" uid="uid://dquvxcmvq3dkg" path="res://Art/Environment/table_final.png" id="2_qla06"]
 [ext_resource type="Texture2D" uid="uid://c5bov2pm68m2b" path="res://Art/Characters/mc_final.png" id="3_c2f7l"]
-[ext_resource type="Texture2D" uid="uid://dgotf6chm0hfw" path="res://Art/Placeholder/newbelt_sketch.png" id="4_0o8lh"]
 [ext_resource type="Theme" uid="uid://cm5aw08cq41n8" path="res://Code/UI/ToolTip.tres" id="4_5pefq"]
 [ext_resource type="Texture2D" uid="uid://l1v8gey54jd0" path="res://Art/Characters/emotion_fail_final.png" id="4_kb3bb"]
 [ext_resource type="PackedScene" uid="uid://cqrftpgctohm7" path="res://Code/Customers/customer_base.tscn" id="4_l8phu"]
@@ -777,10 +776,18 @@ cust_belt = NodePath("CustBelt")
 profit = NodePath("GUI/profits/Num")
 dialogue_box = NodePath("Dialogue")
 track = NodePath("../track")
-customer_order = [NodePath("../track/Customer"), NodePath("../track/Customer4"), NodePath("../track/Customer3"), NodePath("../track/Customer2")]
+customer_order = [NodePath("../track/Customer"), NodePath("../track/Customer4"), NodePath("../track/Customer3"), NodePath("../track/Customer5"), NodePath("../track/Customer2")]
 price_d = NodePath("Price Change")
 sell_buttons = [NodePath("Belts/Cheap Belt"), NodePath("Belts/Solid Belt"), NodePath("Belts/Retro Belt"), NodePath("Belts/Fancy Belt"), NodePath("Belts/Gold Belt"), NodePath("Fix/price_marker")]
 fix_buttons = [NodePath("Fix/knife"), NodePath("Fix/replacement")]
+
+[node name="CustBelt" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 309.0
+offset_right = 716.0
+offset_bottom = 382.0
+texture = ExtResource("46_yw65d")
 
 [node name="Belts" type="Control" parent="UI" node_paths=PackedStringArray("marker")]
 anchors_preset = 0
@@ -937,7 +944,7 @@ offset_right = 591.0
 offset_bottom = 471.0
 tooltip_text = "Try to Fix
 It Yourself
--$5"
+-$0"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("24_kb3bb")
 texture_hover = ExtResource("25_4kypb")
@@ -1065,14 +1072,6 @@ layout_mode = 2
 theme = SubResource("Theme_f71xg")
 shortcut = SubResource("Shortcut_pwe3t")
 text = " Submit "
-
-[node name="CustBelt" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 316.0
-offset_right = 730.4889
-offset_bottom = 377.0
-texture = ExtResource("4_0o8lh")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
 visible = false
@@ -1505,6 +1504,7 @@ he's already suspicous."
 theme = SubResource("Theme_4kypb")
 
 [node name="Customer5" parent="track" instance=ExtResource("4_l8phu")]
+visible = false
 texture = ExtResource("45_owyh2")
 id = "Skater Girl"
 wallet = 750.0
@@ -1630,6 +1630,25 @@ scale = Vector2(1.6, 1.3163583)
 tooltip_text = "Are all her belts gold?"
 theme = ExtResource("4_5pefq")
 
+[node name="inner" type="Control" parent="track/Customer5"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -673.0
+offset_top = -21.0
+offset_right = -673.0
+offset_bottom = -21.0
+
+[node name="Control8" type="Control" parent="track/Customer5/inner"]
+anchors_preset = 0
+offset_left = -29.0
+offset_top = -221.0
+offset_right = 138.0
+offset_bottom = 296.0
+tooltip_text = "She's rude, she's probably
+goth... but she's kinda cool."
+theme = SubResource("Theme_4kypb")
+
 [node name="Boss" type="Sprite2D" parent="track" node_paths=PackedStringArray("anims")]
 visible = false
 texture = ExtResource("43_s4pq6")
@@ -1645,7 +1664,7 @@ start_dialogue = "Boss:Hiya lass! First day, huh...
 Well let's see you sell me a belt, then."
 end_dialogue_yes = "Boss:Not bad, but try hovering over a customer with your mouse for helpful info.&Boss:Let's try that one more time."
 end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
-end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $250 today. Just a little test to see if we keep you.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss: If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can."
+end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $250 today. Just a little test to see if we keep you.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss:If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can. &You:Got it boss!"
 end_dialogue_no_wrng = "Boss:The cheapest one? I might fall for it... if I didn't know where it came from.&Boss:Let's try that one more time."
 end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
 anims = NodePath("AnimationPlayer")
@@ -1716,11 +1735,14 @@ texture = ExtResource("43_s4pq6")
 script = ExtResource("44_y1hvh")
 id = "Boss"
 male = true
-wants = 1
-allowed = Array[int]([0, 1, 5, 6])
+wants = 5
+allowed = Array[int]([0, 1, 5])
+my_belt = ExtResource("22_0rr7d")
 wait_time = 45.0
-start_dialogue = "Boss:Alright, alright I'll tell you about repairs and replacements. Here's what you need to know: Always repair if you can. &Boss:Su"
-end_dialogue_yes = "Boss:Right. You can use the knife for a quick fix. Some customers may also be willing to buy cheaper belts. &Boss:If you think they can afford it, you can try to upsell them on a cheaper belt, but if they get mad and leave, that's on you, you lose that sale."
+fix_works = 100
+replace_price = 30
+start_dialogue = "Boss:Alright, alright I'll tell you about repairs and replacements. Here's what you need to know, always repair if you can. &Boss:All the customers want replacements, don't give 'em to 'em! Everything you replace comes outta your paycheck."
+end_dialogue_yes = "Boss:Right. You can use the knife for a quick fix. Some customers may also be willing to buy cheaper belts. &Boss:If you think they can afford it, you can try to upsell them on a cheaper belt, but if they get mad and leave, that's on you, you lose that sale. &You:Got it boss!"
 end_dialogue_scam = "Boss:What?! Are you tryin' to put me out of business?! We can't just give away belts for free, that costs us money.&Boss:Don't let me catch you doing that in front of the customers or you'll pay the difference. &Boss: Let's try one more time. The knife please."
 end_dialogue_no_exp = "Boss:You might be able sell a cheaper belt to someone who wants a repair, but go ahead and fix this one, huh. &Boss:Sometimes it's best to cut your losses. Let's try one more time"
 end_dialogue_no_wrng = "Boss:You're not gonna sell an expensive belt to someone who wants a repair. &Boss:Sometimes it's best to cut your losses. Let's try one more time"

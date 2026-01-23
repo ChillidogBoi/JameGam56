@@ -174,7 +174,9 @@ func change_price(type:int):
 	price_d.visible = false
 
 func boss_sell(type:int):
-	
+	if cust == $"../track/Boss2":
+		await sell_boss2(type)
+		end_boss()
 	if not cust.allowed.has(type):
 		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/sad".visible = true
@@ -203,7 +205,57 @@ func boss_sell(type:int):
 	
 	end_boss()
 
+func sell_boss2(type:int):
+	if not cust.allowed.has(type):
+		cust.end_dia_setup(false, false, 1)
+		$"../Node2D/Player/Face/sad".visible = true
+		sound.stream = AWW_01
+		sound.play()
+
+	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
+		if cust.wants == type or cust.wants == 6:
+			cust.end_dia_setup(true, false)
+			$"../Node2D/Player/Face/kind".visible = true
+			sound.stream = AWW_01
+			sound.play()
+			boss = false
+		else: 
+			cust.end_dia_setup(true, true)
+			$"../Node2D/Player/Face/fail".visible = true
+			sound.stream = AWW_01
+			sound.play()
+	else:
+		cust.end_dia_setup(false, false)
+		$"../Node2D/Player/Face/sad".visible = true
+		
+	profit.text = "$0"
+	
+	end_boss2()
+
 func end_boss():
+	Settings.scammed = []
+	Settings.scammed_pic = []
+	Settings.helped = 0
+	
+	timer.visible = false
+	timer.get_child(0).stop()
+	if paused: await resume
+	for n in cust.dialogue_seperated:
+		await dialogue(cust.request_next_dialogue(), cust.male)
+	
+	$"../Node2D/Player/Face/fail".visible = false
+	$"../Node2D/Player/Face/joy".visible = false
+	$"../Node2D/Player/Face/sad".visible = false
+	$"../Node2D/Player/Face/kind".visible = false
+	if paused: await resume
+	
+	if not boss:
+		boss2()
+		return
+	
+	run_boss_again()
+
+func end_boss2():
 	Settings.scammed = []
 	Settings.scammed_pic = []
 	Settings.helped = 0
@@ -224,6 +276,12 @@ func end_boss():
 	if paused: await resume
 	
 	run_boss_again()
+
+func boss2():
+	await customer_walkaway()
+	boss = true
+	cust = $"../track/Boss2"
+	run_customer()
 
 func sell(type:int):
 	if not cust.allowed.has(type):
@@ -281,7 +339,10 @@ func end_game():
 
 
 func _on_replacement_pressed():
-	if not cust.allowed.has(6): cust.end_dia_setup(true, true)
+	if not cust.allowed.has(6):
+		cust.end_dia_setup(true, true)
+		end_boss2()
+		return
 	
 	else:
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) - cust.replace_price)
