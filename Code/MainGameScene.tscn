@@ -2096,7 +2096,7 @@ text = "OK"
 [connection signal="pressed" from="UI/Fix/knife" to="UI" method="_on_knife_pressed"]
 [connection signal="mouse_entered" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_mouse_exited"]
-[connection signal="pressed" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_pressed"]
+[connection signal="toggled" from="UI/Fix/price_marker" to="UI/Belts" method="_on_price_marker_toggled"]
 [connection signal="mouse_entered" from="UI/Fix/replacement" to="UI/Belts" method="_on_replacement_mouse_entered"]
 [connection signal="pressed" from="UI/Fix/replacement" to="UI" method="_on_replacement_pressed"]
 [connection signal="timeout" from="UI/TextureProgressBar/Timer" to="UI" method="_on_timer_timeout"]

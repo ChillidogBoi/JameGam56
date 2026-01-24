@@ -13,7 +13,13 @@ var inner: bool = false
 
 func belt_pressed(type: int):
 	if marker.button_pressed:
+		main.paused = true
+		$"../TextureProgressBar/Timer".paused = true
+		print(0)
 		await main.change_price(type)
+		main.paused = false
+		$"../TextureProgressBar/Timer".paused = false
+		main.resume.emit()
 		marker.button_pressed = false
 	else:
 		if main.boss:
@@ -31,10 +37,6 @@ func _on_expensive_belt_pressed():
 	belt_pressed(3)
 func _on_gold_belt_pressed():
 	belt_pressed(4)
-
-func _on_price_marker_pressed():
-	$"../sfx".stream = MARKER_SOUND_01
-	$"../sfx".play()
 
 func _on_cheap_belt_mouse_entered():
 	$"../../Node2D/Player/Face/tense".visible = true
@@ -83,3 +85,12 @@ func _input(event):
 func _on_inner_mouse_entered():
 	$"../sfx".stream = HMM_2
 	$"../sfx".play()
+
+func _on_price_marker_toggled(toggled_on):
+	$"../sfx".stream = MARKER_SOUND_01
+	$"../sfx".play()
+	if toggled_on: return
+	$"../Price Change".visible = false
+	main.paused = false
+	$"../TextureProgressBar/Timer".paused = false
+	main.resume.emit()

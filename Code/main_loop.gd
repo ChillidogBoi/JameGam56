@@ -150,6 +150,7 @@ func _on_knife_pressed():
 	else:
 		cust.end_dia_setup(true, false)
 		$"../Node2D/Player/Face/kind".visible = true
+		if cust == $"../track/Boss2": boss = false
 	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
 		float(fix_buttons[0].tooltip_text.get_slice("$", 1)))
 	Settings.profit = float(profit.text.get_slice("$", 1))
@@ -218,7 +219,6 @@ func sell_boss2(type:int):
 			$"../Node2D/Player/Face/kind".visible = true
 			sound.stream = AWW_01
 			sound.play()
-			boss = false
 		else: 
 			cust.end_dia_setup(true, true)
 			$"../Node2D/Player/Face/fail".visible = true
