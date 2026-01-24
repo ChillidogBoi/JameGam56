@@ -9,6 +9,8 @@ extends Control
 @export var helped: Label
 
 func _ready():
+	$AudioStreamPlayer.volume_db = Settings.m_vol
+	$sfx.volume_db = Settings.s_vol
 	if Settings.profit < 0: result.text = "You're In Debt!"
 	elif Settings.profit < 300: result.text = "You Got Fired!"
 	else: result.text = "You Survived The Day!"
