@@ -70,6 +70,7 @@ func reset():
 func speak(male:bool):
 	if nam.text == "You:":
 		add_theme_stylebox_override("panel", DIALOGUE_SYSTEM_FLIPPED)
+		male = false
 	else:
 		add_theme_stylebox_override("panel", DIALOGUE_SYSTEM)
 	for n in label.text.length():

@@ -912,7 +912,7 @@ offset_bottom = 647.0
 tooltip_text = "Cheap looking belt,
 painted in gold.
 Looks ridiculous
-+$150"
++$200"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("22_0rr7d")
 texture_hover = ExtResource("23_c2f7l")
@@ -1202,6 +1202,7 @@ theme = SubResource("Theme_4kypb")
 visible = false
 texture = ExtResource("40_kmfym")
 id = "Very Thin Man"
+male = true
 wallet = 20.0
 wants = 5
 allowed = Array[int]([0, 1, 2, 3, 5, 6])
