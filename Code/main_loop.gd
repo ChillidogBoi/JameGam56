@@ -165,7 +165,6 @@ func change_price(type:int):
 		float(sell_buttons[type].tooltip_text.get_slice("$", 1)) * 1.5
 	price_d.visible = true
 	price_d.get_child(0).get_child(0).text = str("Enter New Price For: ", sell_buttons[type].name)
-	if paused: await resume
 	await price_d.get_child(1).get_child(1).pressed
 	profit.text = str("$", float(profit.text.get_slice("$", 1)) - \
 		float(sell_buttons[5].tooltip_text.get_slice("$", 1)))
