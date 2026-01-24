@@ -912,7 +912,7 @@ offset_bottom = 647.0
 tooltip_text = "Cheap looking belt,
 painted in gold.
 Looks ridiculous
-+$300"
++$150"
 theme = ExtResource("4_5pefq")
 texture_normal = ExtResource("22_0rr7d")
 texture_hover = ExtResource("23_c2f7l")
@@ -969,7 +969,7 @@ offset_right = 596.0
 offset_bottom = 379.0
 tooltip_text = "Change an
 Item's Price
--$30"
+-$15"
 theme = ExtResource("4_5pefq")
 toggle_mode = true
 texture_normal = ExtResource("26_s4pq6")
@@ -1202,13 +1202,13 @@ theme = SubResource("Theme_4kypb")
 visible = false
 texture = ExtResource("40_kmfym")
 id = "Very Thin Man"
-wallet = 30.0
+wallet = 20.0
 wants = 5
 allowed = Array[int]([0, 1, 2, 3, 5, 6])
 my_belt = ExtResource("41_5ep8q")
 wait_time = 45.0
 fix_works = 100
-replace_price = 30
+replace_price = 20
 start_dialogue = "Very Thin Man:Excuse me, miss, this belt I bought here's much too long. Is there any way I can trade it for a shorter one?&You: Well... (My boss said not to do replacements and I can't resell his belt...)"
 end_dialogue_yes = "You:Sure, here you are, sir. &Very Thin Man:Nice, it fits. Thank you miss."
 end_dialogue_scam = "You:Sorry sir I can't accept a trade, would you like to purchase a new belt? This one seems like the right size. &Very Thin Man:Well, I do need a belt that actually fits. Okay."
@@ -1413,7 +1413,7 @@ texture = ExtResource("43_ip7ob")
 id = "Police Officer"
 male = true
 wallet = 30.0
-allowed = Array[int]([6, 5, 7])
+allowed = Array[int]([6, 5, 0, 1])
 my_belt = ExtResource("44_rtoos")
 wait_time = 20.0
 fix_works = 100
@@ -1614,8 +1614,9 @@ offset_right = -28.92749
 offset_bottom = -113.41318
 rotation = 0.9633789
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "A gold arm band, like she
-thinks she's Cleopatra."
+tooltip_text = "A gold arm band, like she thinks
+she's Cleopatra. She must be rich
+as Cleopatra to afford all this gold."
 theme = ExtResource("4_5pefq")
 
 [node name="Control14" type="Control" parent="track/Customer5"]
@@ -1627,7 +1628,8 @@ offset_right = -24.26109
 offset_bottom = -12.114132
 rotation = 0.32809496
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Are all her belts gold?"
+tooltip_text = "Are all her belts gold?
+She can afford gold belts."
 theme = ExtResource("4_5pefq")
 
 [node name="inner" type="Control" parent="track/Customer5"]
@@ -1664,7 +1666,7 @@ start_dialogue = "Boss:Hiya lass! First day, huh...
 Well let's see you sell me a belt, then."
 end_dialogue_yes = "Boss:Not bad, but try hovering over a customer with your mouse for helpful info.&Boss:Let's try that one more time."
 end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
-end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $250 today. Just a little test to see if we keep you.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss:If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can. &You:Got it boss!"
+end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $300 today. Just a little test to see if we keep you.&Boss:Shouldn't be too hard for you considering you can change prices with that marker if you want.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss:If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can. &Boss:Let me grab a spare belt for you to practice with."
 end_dialogue_no_wrng = "Boss:The cheapest one? I might fall for it... if I didn't know where it came from.&Boss:Let's try that one more time."
 end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
 anims = NodePath("AnimationPlayer")
@@ -1737,15 +1739,15 @@ id = "Boss"
 male = true
 wants = 5
 allowed = Array[int]([0, 1, 5])
-my_belt = ExtResource("22_0rr7d")
+my_belt = ExtResource("41_5ep8q")
 wait_time = 45.0
 fix_works = 100
 replace_price = 30
 start_dialogue = "Boss:Alright, alright I'll tell you about repairs and replacements. Here's what you need to know, always repair if you can. &Boss:All the customers want replacements, don't give 'em to 'em! Everything you replace comes outta your paycheck."
 end_dialogue_yes = "Boss:Right. You can use the knife for a quick fix. Some customers may also be willing to buy cheaper belts. &Boss:If you think they can afford it, you can try to upsell them on a cheaper belt, but if they get mad and leave, that's on you, you lose that sale. &You:Got it boss!"
 end_dialogue_scam = "Boss:What?! Are you tryin' to put me out of business?! We can't just give away belts for free, that costs us money.&Boss:Don't let me catch you doing that in front of the customers or you'll pay the difference. &Boss: Let's try one more time. The knife please."
-end_dialogue_no_exp = "Boss:You might be able sell a cheaper belt to someone who wants a repair, but go ahead and fix this one, huh. &Boss:Sometimes it's best to cut your losses. Let's try one more time"
-end_dialogue_no_wrng = "Boss:You're not gonna sell an expensive belt to someone who wants a repair. &Boss:Sometimes it's best to cut your losses. Let's try one more time"
+end_dialogue_no_exp = "Boss:You might be able sell a cheaper belt to someone who wants a repair, but go ahead and fix this one, huh. &Boss:Sometimes it's best to cut your losses. Let's try one more time."
+end_dialogue_no_wrng = "Boss:You're not gonna sell an expensive belt to someone who wants a repair. &Boss:Sometimes it's best to cut your losses. Let's try one more time."
 end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
 anims = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://rmhgcp2uoo8w"

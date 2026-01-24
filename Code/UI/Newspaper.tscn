@@ -1,10 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://hqdui0hrk7r3"]
+[gd_scene load_steps=35 format=3 uid="uid://hqdui0hrk7r3"]
 
 [ext_resource type="Script" uid="uid://c31amembk852q" path="res://Code/UI/newspaper.gd" id="1_ei8so"]
 [ext_resource type="Texture2D" uid="uid://oarlhwyn2yfd" path="res://Art/UI/notebook_sketch.png" id="1_hiqo3"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_ck7w1"]
-[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
-[ext_resource type="Texture2D" uid="uid://da7ixs52slixg" path="res://Art/Environment/background_bw.jpg" id="5_kg0mq"]
+[ext_resource type="FontFile" uid="uid://bwyxlun8i52do" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="3_5ut7l"]
 [ext_resource type="AudioStream" uid="uid://cn1c8ijipdvng" path="res://Sound/beltgame_title_01.ogg" id="6_iockq"]
 [ext_resource type="AudioStream" uid="uid://wrowqfpphqrb" path="res://Sound/page_turn_01.wav" id="7_3c3wi"]
 
@@ -51,6 +50,12 @@ events = [SubResource("InputEventAction_ei8so")]
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nbgoa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cepd"]
+
+[sub_resource type="Gradient" id="Gradient_iockq"]
+colors = PackedColorArray(0, 0, 0, 1, 0.7162962, 0.7162962, 0.7162962, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3c3wi"]
+gradient = SubResource("Gradient_iockq")
 
 [sub_resource type="Gradient" id="Gradient_4ldi7"]
 offsets = PackedFloat32Array(0.5884615, 0.61923075)
@@ -359,6 +364,7 @@ scammed = NodePath("HBoxContainer2/VBoxContainer/Label3")
 helped = NodePath("HBoxContainer2/VBoxContainer/Label4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -441,7 +447,6 @@ theme_override_constants/separation = 200
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ck7w1")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,7 +537,8 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_sngg5")
 [node name="Button" type="Button" parent="HBoxContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/outline_size = 12
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("3_5ut7l")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wqv4v")
@@ -557,7 +563,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("5_kg0mq")
+texture = SubResource("GradientTexture1D_3c3wi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_iockq")

@@ -19,6 +19,7 @@ func _ready():
 	helped.text = str("Customers Helped: ", Settings.helped)
 	$Sprite2D/AnimationPlayer.play("grow")
 	await $Sprite2D/AnimationPlayer.animation_finished
+	Settings.scammed = []
 	_on_button1_pressed()
 
 func news_blurb():
