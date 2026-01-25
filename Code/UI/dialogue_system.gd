@@ -83,13 +83,13 @@ func speak(male:bool):
 			if flip_bit:
 				if male: $beltese.stream = beltese_male[randi_range(0,beltese.size() - 1)]
 				else: $beltese.stream = beltese[randi_range(0,beltese.size() - 1)]
-				$beltese.play()
+			elif $beltese.stream: $beltese.play()
 				
 			await get_tree().create_timer(0.05).timeout
 	return
 
 func _on_continue_pressed():
-	next.emit()
+	if label.visible_characters > label.text.length() - 4: next.emit()
 
 func _input(event):
 	if not event is InputEventMouseButton: return

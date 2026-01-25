@@ -248,6 +248,7 @@ func end_boss():
 	$"../Node2D/Player/Face/joy".visible = false
 	$"../Node2D/Player/Face/sad".visible = false
 	$"../Node2D/Player/Face/kind".visible = false
+	cust.find_child("inner").visible = false
 	if paused: await resume
 	
 	if not boss:
@@ -274,6 +275,7 @@ func end_boss2():
 	$"../Node2D/Player/Face/joy".visible = false
 	$"../Node2D/Player/Face/sad".visible = false
 	$"../Node2D/Player/Face/kind".visible = false
+	cust.find_child("inner").visible = false
 	if paused: await resume
 	
 	run_boss_again()
@@ -325,6 +327,7 @@ func end_cust():
 	$"../Node2D/Player/Face/joy".visible = false
 	$"../Node2D/Player/Face/sad".visible = false
 	$"../Node2D/Player/Face/kind".visible = false
+	cust.find_child("inner").visible = false
 	if paused: await resume
 	await customer_walkaway()
 	

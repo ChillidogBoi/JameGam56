@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://b5n6k2ft3v2fc" path="res://Code/UI/dialogue_system_flipped.tres" id="1_03j0k"]
 [ext_resource type="Script" uid="uid://d1qpkg1enkxf7" path="res://Code/UI/dialogue_system.gd" id="1_jw2xp"]
 [ext_resource type="FontFile" uid="uid://uyhihvj6xqj2" path="res://Art/UI/ashcanbb_ot/ashcanbb_bold.otf" id="2_n63qp"]
-[ext_resource type="FontFile" uid="uid://fyrbik48eiw7" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="4_03j0k"]
+[ext_resource type="FontFile" uid="uid://bwyxlun8i52do" path="res://Art/UI/ashcanbb_ot/ashcanbb_reg.otf" id="4_03j0k"]
 [ext_resource type="Texture2D" uid="uid://pat5n2nahlo6" path="res://Art/UI/arrow.png" id="5_2qdf1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8lvv3"]
@@ -61,6 +61,8 @@ text = "You've gotta work faster than that, lass. Don't let the timer run out, i
 autowrap_mode = 2
 
 [node name="beltese" type="AudioStreamPlayer" parent="."]
+max_polyphony = 10000000
+playback_type = 1
 
 [node name="Continue" type="TextureButton" parent="."]
 z_index = 1

@@ -1089,6 +1089,7 @@ texture_progress = ExtResource("12_71nik")
 
 [node name="sfx" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("34_c2f7l")
+max_polyphony = 10000000
 
 [node name="music" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("31_77qlp")
@@ -1605,7 +1606,7 @@ tip = -150.0
 wants = 1
 allowed = Array[int]([2, 3, 1, 4])
 wait_time = 45.0
-start_dialogue = "Boss:Welcome to yer first day, lass. Alright then, let’s get started. I wanna see what you're made of.&Boss:Sell me a belt. C’mon now dont have all day."
+start_dialogue = "Boss:Welcome to yer first day, lass. Alright then, let’s get started. I wanna see what you're made of.&Boss:Sell me a belt. C’mon now, don't have all day."
 end_dialogue_yes = "Boss:Not bad… but you’ve got to get inside the customer’s head. Try hovering your cursor over them. Try again."
 end_dialogue_scam = "Boss:Open yer eyes, lass. Do I really look like some fastinista to you? Try again."
 end_dialogue_no_exp = "Boss:Hmm… I see a bright future for you, kid. Maybe even a hefty paycheck.&Boss:Today I want you aiming for at least 300. Consider it my wee test to see if you’re worth keeping around.&Boss:Shouldn’t be hard for you, with that little marker on your desk. One click and you can raise the price on any belt.&Boss:Those suckers won’t know the difference.&Boss:And don’t forget- sales is all about observation. Watch people. Study them.&Boss:Some customers tell you what they want. Most don’t. But they’ll take what you give them if they can afford it.&Boss:If you want to survive in this business, you give the illusion of good service while taking everything they’ve got.&Boss:I’ve got another test for you. Let me grab a spare belt."
