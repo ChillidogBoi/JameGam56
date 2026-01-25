@@ -141,10 +141,12 @@ func customer_walkaway():
 
 func _on_knife_pressed():
 	if not cust.allowed.has(5):
+		if cust == $"../track/Customer5": cust.end_dialogue_no_wrng = "Skater Goth:Ugh. No, not even close. Do i look like id wear this?"
 		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/fail".visible = true
 	
 	elif cust.wants != 5:
+		if cust == $"../track/Customer4": cust.end_dialogue_scam = "Very Thin Man:Oh, okay... If you think that'll help... Thanks."
 		cust.end_dia_setup(true, true)
 		$"../Node2D/Player/Face/joy".visible = true
 	else:
@@ -190,8 +192,8 @@ func boss_sell(type:int):
 			sound.stream = AWW_01
 			sound.play()
 		else: 
-			if type == 2: cust.end_dialogue_scam = "Boss:Not my style.\nSomething flashier.&Boss:Let's try that one more time."
-			else: cust.end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
+			if type == 2: cust.end_dialogue_scam = "Boss:Not my style, kid. I’ve got eyes. Try something flashier. Let’s go again."
+			else: cust.end_dialogue_scam = "Boss:Open yer eyes, lass. Do I really look like some fastinista to you? Try again."
 			cust.end_dia_setup(true, true)
 			$"../Node2D/Player/Face/sad".visible = true
 			sound.stream = AWW_01
@@ -284,6 +286,7 @@ func boss2():
 
 func sell(type:int):
 	if not cust.allowed.has(type):
+		if cust == $"../track/Customer5": cust.end_dialogue_no_wrng = "Skater Goth:Fix it? No. Just give a new one. Are you slow or something?.."
 		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/fail".visible = true
 		sound.stream = AWW_01
@@ -295,6 +298,7 @@ func sell(type:int):
 			$"../Node2D/Player/Face/kind".visible = true
 			profit.text = str("$", clamp(float(profit.text.get_slice("$", 1)) + cust.tip, 0, 5000000))
 		else: 
+			if cust == $"../track/Customer4": cust.end_dialogue_scam = "Very Thin Man:Oh…thank you i guess this will work just fine."
 			cust.end_dia_setup(true, true)
 			$"../Node2D/Player/Face/joy".visible = true
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) + \

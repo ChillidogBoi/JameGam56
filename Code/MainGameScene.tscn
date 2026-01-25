@@ -1074,7 +1074,6 @@ shortcut = SubResource("Shortcut_pwe3t")
 text = " Submit "
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
-visible = false
 layout_mode = 0
 offset_left = 774.0
 offset_top = 37.0
@@ -1204,17 +1203,15 @@ texture = ExtResource("40_kmfym")
 id = "Very Thin Man"
 male = true
 wallet = 20.0
-wants = 5
-allowed = Array[int]([0, 1, 2, 3, 5, 6])
+allowed = Array[int]([0, 1, 2, 3, 5, 6, 4])
 my_belt = ExtResource("41_5ep8q")
 wait_time = 45.0
 fix_works = 100
 replace_price = 20
-start_dialogue = "Very Thin Man:Excuse me, miss, this belt I bought here's much too long. Is there any way I can trade it for a shorter one?&You: Well... (My boss said not to do replacements and I can't resell his belt...)"
-end_dialogue_yes = "You:Sure, here you are, sir. &Very Thin Man:Nice, it fits. Thank you miss."
-end_dialogue_scam = "You:Sorry sir I can't accept a trade, would you like to purchase a new belt? This one seems like the right size. &Very Thin Man:Well, I do need a belt that actually fits. Okay."
-end_dialogue_no_exp = "You:Sorry sir I can't accept a trade, would you like to purchase a new belt? This one seems like the right size. &Very Thin Man:I'm sorry, that one's much too expensive. I guess I'll just try to poking a new hole in this one. Have a nice day."
-end_dialogue_no_wrng = "You:Sorry sir I can't accept a trade, would you like to purchase a new belt? This one seems like the right size. &Very Thin Man:I don't think I could pull off that belt. Maybe if I was cooler. I guess I'll just try to poking a new hole in this one. Have a nice day."
+start_dialogue = "Very Thin Man:Uh… ‘scuse me… I bought a belt here. It’s…um, much too long. Is there any way I can trade for a shorter one?&You: Well... (My boss did say not to do replacements...)"
+end_dialogue_yes = "Very Thin Man:Oh! Would…would that really be possible? Thanks, man!"
+end_dialogue_scam = "Very Thin Man:Oh, okay... If you think that'll help... Thanks."
+end_dialogue_no_exp = "Very Thin Man:I dont think …I can afford this..sorry man."
 end_dialogue_no_tim = "Very Thin Man:Oh, sorry, I have to go. I'll just have to do without. I don't want to be late. &You:(Darn, too slow)"
 news_scammed = "Reviews for Example Belt Store: &4/10: Came in for a repair and got upsold to a new one. I was able to fix the old belt at home! Terrible service."
 
@@ -1227,8 +1224,19 @@ offset_right = 24.12875
 offset_bottom = -231.33038
 rotation = 0.4811473
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "He's bald, try
+tooltip_text = "Bald... try
 not to stare."
+theme = ExtResource("4_5pefq")
+
+[node name="Control6" type="Control" parent="track/Customer4"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -116.00001
+offset_top = -337.0
+offset_right = -84.12501
+offset_bottom = -297.49707
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "tick tock..."
 theme = ExtResource("4_5pefq")
 
 [node name="Control3" type="Control" parent="track/Customer4"]
@@ -1239,7 +1247,7 @@ offset_top = -257.0
 offset_right = -20.624996
 offset_bottom = -231.93088
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "He's bald, try
+tooltip_text = "Bald... try
 not to stare."
 theme = ExtResource("4_5pefq")
 
@@ -1251,8 +1259,8 @@ offset_top = -160.99998
 offset_right = 14.875004
 offset_bottom = 7.6470947
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Extremely skinny. Dressed like a teacher.
-I don't think he has much money."
+tooltip_text = "Looks like an Highschool teacher.
+How's that paycheck treating ya?"
 theme = ExtResource("4_5pefq")
 
 [node name="Control5" type="Control" parent="track/Customer4"]
@@ -1263,7 +1271,8 @@ offset_top = 169.00002
 offset_right = 23.375004
 offset_bottom = 235.8511
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Shoes are falling apart."
+tooltip_text = "Thin guy, thin wallet…and
+apparently thin soles too."
 theme = ExtResource("4_5pefq")
 
 [node name="inner" type="Control" parent="track/Customer4"]
@@ -1281,8 +1290,8 @@ offset_left = -29.0
 offset_top = -221.0
 offset_right = 138.0
 offset_bottom = 296.0
-tooltip_text = "He's light on cash and very polite.
-How does he stay so skinny?"
+tooltip_text = "He’s light in size and cash.
+Should I ask him his diet?"
 theme = SubResource("Theme_4kypb")
 
 [node name="Customer3" parent="track" instance=ExtResource("4_l8phu")]
@@ -1293,13 +1302,12 @@ wallet = 200.0
 wants = 3
 allowed = Array[int]([2, 3, 4])
 wait_time = 15.0
-start_dialogue = "Celebrity:I want something fancy for my photoshoot. Now. Money's no object, of course.&You:Don't worry, I know fancy. (I do NOT know fancy.)"
-end_dialogue_yes = "Celebrity:Gorgeous! It's just gorgeous! I love it! Toodaloo! &You:(I guess I did know fancy after all.)"
-end_dialogue_scam = "Celebrity:Cute! I like it! Toodaloo!&You:(It doesn't seem very fancy, but maybe it is?)"
-end_dialogue_no_exp = "Celebrity:Gaudy looking gold is soooo out. Invest in some fashion sense, darling. Toodaloo!&You:(Darn, I thought for sure gold was fancy. I guess I need to look at some fashion magazines.)"
-end_dialogue_no_wrng = "Celebrity:You call THAT fancy?!
-Disgusting! Toodaloo!&You:(It looks fancy to me? I guess I need to look at some fashion magazines.)"
-end_dialogue_no_tim = "Celebrity:Thanks to you, I'm \"fashion\"-ably late... Nevermind it, darling. Toodaloo!&You:(\"Great,\" she likes puns.)"
+start_dialogue = "Celebrity:I need something fancy for my photo shoot. Money's no object, of course. Let's make this quick.&You:Quick... got it."
+end_dialogue_yes = "Celebrity:Oh, this is just perfect, darling! This will be on the front cover of Vogue!"
+end_dialogue_scam = "Celebrity:Cute! I like it! Toodaloo!"
+end_dialogue_no_exp = "Celebrity:HA! Why would someone like me ever wear this?&You:Uh... maybe in an alternate universe where everyone loves cheap gold belts?"
+end_dialogue_no_wrng = "Celebrity:I would never even put this on my body."
+end_dialogue_no_tim = "How dare you keep a VIP waiting??!! My fans won't forgive this!"
 news_scammed = "Model Fired for \"Ugly Belt\" &\"It's her fault for coming on [the set] wearing THAT. Ugh, I get shivers just thinking about it,\" says Example Name. When asked for a comment the model only had this to say: \"That's [the fashion industry] for you. [You] go looking for styles in new places, sometimes [they're] good, sometimes [you get] fired.\""
 
 [node name="Control5" type="Control" parent="track/Customer3"]
@@ -1310,9 +1318,19 @@ offset_top = 168.0
 offset_right = -12.0
 offset_bottom = 236.37044
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Very fancy and
-uncomfortable
-looking shoes."
+tooltip_text = "Very fancy…very uncomfortable.
+The kind that screams money."
+theme = ExtResource("4_5pefq")
+
+[node name="Control7" type="Control" parent="track/Customer3"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -115.0
+offset_top = -337.0
+offset_right = -83.75
+offset_bottom = -298.25677
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Never keep a VIP waiting."
 theme = ExtResource("4_5pefq")
 
 [node name="Control6" type="Control" parent="track/Customer3"]
@@ -1323,32 +1341,8 @@ offset_top = -128.99998
 offset_right = 0.125
 offset_bottom = -105.45018
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Those jewels are probably
-worth what I make in a year."
-theme = ExtResource("4_5pefq")
-
-[node name="Control7" type="Control" parent="track/Customer3"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 24.0
-offset_top = -238.0
-offset_right = 49.0
-offset_bottom = -132.40564
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "I wish I could afford
-her hair stylist."
-theme = ExtResource("4_5pefq")
-
-[node name="Control8" type="Control" parent="track/Customer3"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -39.0
-offset_top = -241.0
-offset_right = 0.375
-offset_bottom = -209.85345
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "I wish I could afford
-her hair stylist."
+tooltip_text = "Probably worth more
+than I make in a year."
 theme = ExtResource("4_5pefq")
 
 [node name="Control9" type="Control" parent="track/Customer3"]
@@ -1360,8 +1354,8 @@ offset_right = -11.037415
 offset_bottom = -179.38489
 rotation = 0.35310858
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Weird color for glasses,
-but they match her jewelry."
+tooltip_text = "Interesting design, that
+matches her necklace."
 theme = ExtResource("4_5pefq")
 
 [node name="Control10" type="Control" parent="track/Customer3"]
@@ -1384,7 +1378,7 @@ offset_top = -8.9999695
 offset_right = 54.75
 offset_bottom = 76.08322
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "The shiniest, fanciest
+tooltip_text = "The shiniest, most expensive
 purse I've ever seen."
 theme = ExtResource("4_5pefq")
 
@@ -1403,9 +1397,8 @@ offset_left = -29.0
 offset_top = -221.0
 offset_right = 138.0
 offset_bottom = 296.0
-tooltip_text = "Oh my gosh, She's so famous!
-I can't believe she wants me to
-pick out a belt for her!"
+tooltip_text = "WOW, someone famous!!
+I gotta keep my cool."
 theme = SubResource("Theme_4kypb")
 
 [node name="Customer2" parent="track" instance=ExtResource("4_l8phu")]
@@ -1510,30 +1503,16 @@ texture = ExtResource("45_owyh2")
 id = "Skater Girl"
 wallet = 750.0
 wants = 4
-allowed = Array[int]([5, 4])
+allowed = Array[int]([4, 6])
 my_belt = ExtResource("46_yw65d")
 wait_time = 20.0
-fix_works = 100
 replace_price = 50
-start_dialogue = "Skater Girl:I bought this belt here like, last week and it already stopped being shiny. Gimme a new one or whatever. My dad's a cop. &You: (\"My dad's a cop.\" Yeah and I'm Abraham Lincoln.)"
-end_dialogue_yes = "Skater Girl:Okay, you talked me into it. I'm gonna look so badass with this bling. Yeah I am. Later new bestie. &You:Bye! (Does this make me one of the cool girls?)"
-end_dialogue_scam = "Skater Girl:Thanks, I guess. This place is a dump and I'm never coming back. Later. &You:(She's so rude.)"
-end_dialogue_no_exp = "Skater Girl:I'm telling my dad!.. Who's a cop!.. Like, for real!...&You:Yeah right! If your dad's a cop, I'm Abraham Lincoln."
-end_dialogue_no_wrng = "Skater Girl:I'm not buying that! I'll find a belt somewhere else. &You: (Well it was worth a try.)"
-end_dialogue_no_tim = "Skater Girl: Are you ignoring me?! Fine! I know when I'm not wanted. Guess I'll just have to tell my dad... who's a cop... Whatever! &You:(In that case, Four score and seven years ago...)"
+start_dialogue = "Skater Goth:Yeah… i brought this belt last week and it already stopped being shiny and i like want a new one. okay?&Skater Goth:My dad’s the mayor, so just make it quick yeah?&You:(Alright, alrighttt. Don't want the mayor's kid hitting me with a city ordinance.)"
+end_dialogue_yes = "Skater Goth:finally …this is shiny. thanks i guess."
+end_dialogue_no_wrng = "Skater Goth:Ugh. No, not even close. Do i look like id wear this?"
+end_dialogue_no_tim = "Skater Goth:Ugh, is it like your first day or something?&You:Matter of fact yeah... It is."
 news_scammed = "Local Skater Crippled in Skateboarding Accident.
 Wardrobe Malfunction to Blame? &A local skater was injured in a skateboarding accident yesterday, resulting in the permanent disablement of both of her legs. While she otherwise is recovering quickly, doctors say she will never walk again, confined to a wheelchair the rest of her life. Her parents declined to comment, but one of her fellow skaters that day had this to say, \"It was totally that belt's fault she crashed. It's a [lesson to all of] us, watch where you buy your belts and stuff.\" Another skater adds, \"Out of all of us, she was the one that had the best chance of going pro. She was the one that had, like, what it takes to make it. That was her dream.\" While a third had a more cynical answer, \"I hope she sues the place that sold it to her.\""
-
-[node name="Control11" type="Control" parent="track/Customer5"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -38.0
-offset_top = -156.0
-offset_right = -34.25
-offset_bottom = -150.6823
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "She really likes gold."
-theme = ExtResource("4_5pefq")
 
 [node name="Control12" type="Control" parent="track/Customer5"]
 layout_mode = 3
@@ -1544,7 +1523,7 @@ offset_right = 14.0
 offset_bottom = -141.04686
 scale = Vector2(1.6, 1.3163583)
 tooltip_text = "Big, gold earrings...
-Wait! Is that gold fake?"
+Wait! HA! They're fake!"
 theme = ExtResource("4_5pefq")
 
 [node name="Control15" type="Control" parent="track/Customer5"]
@@ -1555,20 +1534,7 @@ offset_top = 11.0000305
 offset_right = 48.25
 offset_bottom = 23.914429
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Gold bracelets... Wait!
-Is that gold fake?"
-theme = ExtResource("4_5pefq")
-
-[node name="Control16" type="Control" parent="track/Customer5"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -31.0
-offset_top = -179.00002
-offset_right = -20.375
-offset_bottom = -155.45018
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "A lot of mascara.
-Is she goth?"
+tooltip_text = "So much gold."
 theme = ExtResource("4_5pefq")
 
 [node name="Control17" type="Control" parent="track/Customer5"]
@@ -1579,45 +1545,21 @@ offset_top = -144.0
 offset_right = -31.5
 offset_bottom = -137.16295
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Black lipstick?
-Is she goth?"
-theme = ExtResource("4_5pefq")
-
-[node name="Control18" type="Control" parent="track/Customer5"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -88.0
-offset_top = 125.0
-offset_right = -21.125
-offset_bottom = 196.40915
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "The perfect shoes
-for skateboarding."
-theme = ExtResource("4_5pefq")
-
-[node name="Control19" type="Control" parent="track/Customer5"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 20.0
-offset_top = 32.999958
-offset_right = 60.625
-offset_bottom = 158.34578
-scale = Vector2(1.6, 1.3163583)
-tooltip_text = "skamtebord"
+tooltip_text = "Black lipstick... she's
+kinda got a goth vibe?"
 theme = ExtResource("4_5pefq")
 
 [node name="Control13" type="Control" parent="track/Customer5"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -40.0
-offset_top = -125.0
-offset_right = -28.92749
-offset_bottom = -113.41318
-rotation = 0.9633789
+offset_left = -115.0
+offset_top = -338.0
+offset_right = -83.75
+offset_bottom = -297.7374
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "A gold arm band, like she thinks
-she's Cleopatra. She must be rich
-as Cleopatra to afford all this gold."
+tooltip_text = "Better be quick, she might
+have an important meeting
+with the mayor… yeah, right."
 theme = ExtResource("4_5pefq")
 
 [node name="Control14" type="Control" parent="track/Customer5"]
@@ -1629,8 +1571,9 @@ offset_right = -24.26109
 offset_bottom = -12.114132
 rotation = 0.32809496
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Are all her belts gold?
-She can afford gold belts."
+tooltip_text = "How many gold belts do
+you think she has? Maybe
+she has a collection?"
 theme = ExtResource("4_5pefq")
 
 [node name="inner" type="Control" parent="track/Customer5"]
@@ -1648,12 +1591,11 @@ offset_left = -29.0
 offset_top = -221.0
 offset_right = 138.0
 offset_bottom = 296.0
-tooltip_text = "She's rude, she's probably
-goth... but she's kinda cool."
+tooltip_text = "She's so rude,
+but in a cool way?"
 theme = SubResource("Theme_4kypb")
 
 [node name="Boss" type="Sprite2D" parent="track" node_paths=PackedStringArray("anims")]
-visible = false
 texture = ExtResource("43_s4pq6")
 script = ExtResource("44_y1hvh")
 id = "Boss"
@@ -1663,13 +1605,12 @@ tip = -150.0
 wants = 1
 allowed = Array[int]([2, 3, 1, 4])
 wait_time = 45.0
-start_dialogue = "Boss:Hiya lass! First day, huh...
-Well let's see you sell me a belt, then."
-end_dialogue_yes = "Boss:Not bad, but try hovering over a customer with your mouse for helpful info.&Boss:Let's try that one more time."
-end_dialogue_scam = "Boss:Do I look like a \"fashion diva\"? Open your eyes!&Boss:Let's try that one more time."
-end_dialogue_no_exp = "Boss:Hmm... You ARE good... I hope you're good with that knife and marker too. &Boss:Try to make at least $300 today. Just a little test to see if we keep you.&Boss:Shouldn't be too hard for you considering you can change prices with that marker if you want.&Boss:Don't forget you can hover over customers with your mouse to see helpful info and your own face to see what you're thinking. &Boss:Some customers tell you what they want, but they'll take what you give them if they can afford it. &Boss:If you want to survive in the business world, give them the ILLUSION of helping them, while taking as much of their money as you can. &Boss:Let me grab a spare belt for you to practice with."
-end_dialogue_no_wrng = "Boss:The cheapest one? I might fall for it... if I didn't know where it came from.&Boss:Let's try that one more time."
-end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
+start_dialogue = "Boss:Welcome to yer first day, lass. Alright then, let’s get started. I wanna see what you're made of.&Boss:Sell me a belt. C’mon now dont have all day."
+end_dialogue_yes = "Boss:Not bad… but you’ve got to get inside the customer’s head. Try hovering your cursor over them. Try again."
+end_dialogue_scam = "Boss:Open yer eyes, lass. Do I really look like some fastinista to you? Try again."
+end_dialogue_no_exp = "Boss:Hmm… I see a bright future for you, kid. Maybe even a hefty paycheck.&Boss:Today I want you aiming for at least 300. Consider it my wee test to see if you’re worth keeping around.&Boss:Shouldn’t be hard for you, with that little marker on your desk. One click and you can raise the price on any belt.&Boss:Those suckers won’t know the difference.&Boss:And don’t forget- sales is all about observation. Watch people. Study them.&Boss:Some customers tell you what they want. Most don’t. But they’ll take what you give them if they can afford it.&Boss:If you want to survive in this business, you give the illusion of good service while taking everything they’ve got.&Boss:I’ve got another test for you. Let me grab a spare belt."
+end_dialogue_no_wrng = "Boss:The cheap one, really? You trying to put this place out of business on day one? Let’s try that again, aye?"
+end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Dont ever let the timer run out, it’s there for a reason. Let's try that again."
 anims = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://rmhgcp2uoo8w"
 
@@ -1681,8 +1622,20 @@ offset_top = -52.000008
 offset_right = -30.75
 offset_bottom = -23.132484
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Big fake gold chain.
-He likes looking rich."
+tooltip_text = "Big gold chain.
+It's kinda tacky."
+theme = ExtResource("4_5pefq")
+
+[node name="Control4" type="Control" parent="track/Boss"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -117.0
+offset_top = -337.00003
+offset_right = -83.875
+offset_bottom = -298.25674
+scale = Vector2(1.6, 1.3163583)
+tooltip_text = "Let's not keep
+the Boss waiting!"
 theme = ExtResource("4_5pefq")
 
 [node name="Control2" type="Control" parent="track/Boss"]
@@ -1693,8 +1646,8 @@ offset_top = -125.00001
 offset_right = -27.0
 offset_bottom = -88.535774
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Moustache...
-Not helpful."
+tooltip_text = "Moustache, not
+very helpful."
 theme = ExtResource("4_5pefq")
 
 [node name="Control3" type="Control" parent="track/Boss"]
@@ -1705,8 +1658,8 @@ offset_top = 92.00002
 offset_right = -17.375
 offset_bottom = 171.00586
 scale = Vector2(1.6, 1.3163583)
-tooltip_text = "Once nice loafers,
-now old and worn."
+tooltip_text = "Worn out loafers that
+have seen better days."
 theme = ExtResource("4_5pefq")
 
 [node name="inner" type="Control" parent="track/Boss"]
@@ -1744,12 +1697,13 @@ my_belt = ExtResource("41_5ep8q")
 wait_time = 45.0
 fix_works = 100
 replace_price = 30
-start_dialogue = "Boss:Alright, alright I'll tell you about repairs and replacements. Here's what you need to know, always repair if you can. &Boss:All the customers want replacements, don't give 'em to 'em! Everything you replace comes outta your paycheck."
-end_dialogue_yes = "Boss:Right. You can use the knife for a quick fix. Some customers may also be willing to buy cheaper belts. &Boss:If you think they can afford it, you can try to upsell them on a cheaper belt, but if they get mad and leave, that's on you, you lose that sale. &You:Got it boss!"
-end_dialogue_scam = "Boss:What?! Are you tryin' to put me out of business?! We can't just give away belts for free, that costs us money.&Boss:Don't let me catch you doing that in front of the customers or you'll pay the difference. &Boss: Let's try one more time. The knife please."
-end_dialogue_no_exp = "Boss:You might be able sell a cheaper belt to someone who wants a repair, but go ahead and fix this one, huh. &Boss:Sometimes it's best to cut your losses. Let's try one more time."
-end_dialogue_no_wrng = "Boss:You're not gonna sell an expensive belt to someone who wants a repair. &Boss:Sometimes it's best to cut your losses. Let's try one more time."
-end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Don't let the timer run out, it's there for a reason.&Boss:Let's try that one more time."
+start_dialogue = "Boss:Alright, kid. Now we’re learning repairs and replacements.&Boss:If any customer comes in blabbering about replacements, don’t give it to them.&Boss:If you replace it, you pay for it.
+Now show me what you’d do in this situation."
+end_dialogue_yes = "Boss:That’s it. Right on, lass. Use the box cutter for a quick fix. Some customers might be willing to buy a new belt altogether.&Boss:And if you think they’ve got money, try to upsell them.But if they get mad and leave, that’s your loss.&You:Got it, boss!&Boss:And aye! Don’t forget to put yer name on the name tag. Company policy."
+end_dialogue_scam = "Boss:Open yer ears, lass! We’re not handing out free belts. This isn’t a charity shop. Don’t let me see you doing that in front of customers, or you’ll be paying the difference. Try again."
+end_dialogue_no_exp = "Boss:You might sell a cheaper belt to someone else, but for this one, let’s just fix it. Ok? Let’s try again, kid."
+end_dialogue_no_wrng = "Boss:You really think someone’s buying an expensive belt when they came in for a repair? That’s bad business. Try again."
+end_dialogue_no_tim = "Boss:You've gotta work faster than that, lass. Dont ever let the timer run out, it’s there for a reason. Let's try that again."
 anims = NodePath("AnimationPlayer")
 metadata/_custom_type_script = "uid://rmhgcp2uoo8w"
 

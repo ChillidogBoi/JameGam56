@@ -62,7 +62,7 @@ const beltese_male = [
 	preload("res://Sound/Beltese-Male/Y2.wav"),
 	preload("res://Sound/Beltese-Male/Z2.wav"),
 ]
-
+var flip_bit: bool = false
 
 func reset():
 	label.visible_characters = 0
@@ -79,9 +79,11 @@ func speak(male:bool):
 		label.visible_characters += 1
 		
 		if not Input.is_action_pressed("speed"):
-			if male: $beltese.stream = beltese_male[randi_range(0,beltese.size() - 1)]
-			else: $beltese.stream = beltese[randi_range(0,beltese.size() - 1)]
-			$beltese.play()
+			flip_bit = not flip_bit
+			if flip_bit:
+				if male: $beltese.stream = beltese_male[randi_range(0,beltese.size() - 1)]
+				else: $beltese.stream = beltese[randi_range(0,beltese.size() - 1)]
+				$beltese.play()
 				
 			await get_tree().create_timer(0.05).timeout
 	return
