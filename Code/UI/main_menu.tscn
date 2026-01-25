@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cwjo2ixg8f5f4" path="res://Art/UI/pause.png" id="15_7esfh"]
 [ext_resource type="Texture2D" uid="uid://bpy42bsu5es5y" path="res://Art/Placeholder/volume_slider.png" id="16_nxha8"]
 [ext_resource type="Texture2D" uid="uid://exujuf0htx2b" path="res://Art/Placeholder/volume_slider_lit.png" id="17_7p00j"]
+[ext_resource type="Texture2D" uid="uid://bvbedyluwhmdn" path="res://Art/Concept/image5.png" id="21_78oio"]
+[ext_resource type="Texture2D" uid="uid://ckfhtubbenty5" path="res://Art/Concept/IMG_7069.png" id="22_13ysf"]
 [ext_resource type="Texture2D" uid="uid://xv3uxjg48t4w" path="res://Art/UI/menu_background.jpg" id="23_8svqv"]
 [ext_resource type="Texture2D" uid="uid://0kc17kp3wdvd" path="res://Art/UI/menu_backmagazines.png" id="24_y6b3o"]
 [ext_resource type="Texture2D" uid="uid://didra1bx6mdf8" path="res://Art/UI/menu_frontmagazines.png" id="25_86i17"]
@@ -171,10 +173,6 @@ expand_margin_left = 8.0
 expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nxha8"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7p00j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jc5cr"]
 
@@ -900,7 +898,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_7esfh")
-icon = SubResource("PlaceholderTexture2D_nxha8")
+icon = ExtResource("21_78oio")
 icon_alignment = 1
 expand_icon = true
 
@@ -908,7 +906,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_7esfh")
-icon = SubResource("PlaceholderTexture2D_7p00j")
+icon = ExtResource("22_13ysf")
 icon_alignment = 1
 expand_icon = true
 

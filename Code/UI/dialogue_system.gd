@@ -78,11 +78,12 @@ func speak(male:bool):
 		if get_parent().paused: await get_parent().resume
 		label.visible_characters += 1
 		
-		if male: $beltese.stream = beltese_male[randi_range(0,beltese.size() - 1)]
-		else: $beltese.stream = beltese[randi_range(0,beltese.size() - 1)]
-		$beltese.play()
-			
-		await get_tree().create_timer(0.05).timeout
+		if not Input.is_action_pressed("speed"):
+			if male: $beltese.stream = beltese_male[randi_range(0,beltese.size() - 1)]
+			else: $beltese.stream = beltese[randi_range(0,beltese.size() - 1)]
+			$beltese.play()
+				
+			await get_tree().create_timer(0.05).timeout
 	return
 
 func _on_continue_pressed():
