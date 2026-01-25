@@ -287,6 +287,7 @@ func boss2():
 	run_customer()
 
 func sell(type:int):
+	print(cust.wants)
 	if not cust.allowed.has(type):
 		if cust == $"../track/Customer5": cust.end_dialogue_no_wrng = "Skater Goth:Fix it? No. Just give a new one. Are you slow or something?.."
 		cust.end_dia_setup(false, false, 1)
