@@ -22,8 +22,11 @@ func belt_pressed(type: int):
 		main.resume.emit()
 		marker.button_pressed = false
 	else:
-		if main.boss:
+		if main.cust == $"../../track/Boss":
 			main.boss_sell(type)
+			return
+		elif main.cust == $"../../track/Boss2":
+			main.sell_boss2(type)
 			return
 		main.sell(type)
 

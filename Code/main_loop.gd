@@ -186,7 +186,7 @@ func boss_sell(type:int):
 		sound.play()
 
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
-		if cust.wants == type or cust.wants == 6:
+		if cust.wants == type or cust.wants == 7:
 			cust.end_dia_setup(true, false)
 			$"../Node2D/Player/Face/fail".visible = true
 			sound.stream = AWW_01
@@ -208,6 +208,7 @@ func boss_sell(type:int):
 	end_boss()
 
 func sell_boss2(type:int):
+	print(type)
 	if not cust.allowed.has(type):
 		cust.end_dia_setup(false, false, 1)
 		$"../Node2D/Player/Face/sad".visible = true
@@ -215,9 +216,9 @@ func sell_boss2(type:int):
 		sound.play()
 
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
-		if cust.wants == type or cust.wants == 6:
+		if cust.wants == type or cust.wants == 7:
 			cust.end_dia_setup(true, false)
-			$"../Node2D/Player/Face/kind".visible = true
+			$"../Node2D/Player/Face/sad".visible = true
 			sound.stream = AWW_01
 			sound.play()
 		else: 
@@ -258,6 +259,7 @@ func end_boss():
 	run_boss_again()
 
 func end_boss2():
+	print(boss)
 	Settings.scammed = []
 	Settings.scammed_pic = []
 	Settings.helped = 0
@@ -287,7 +289,6 @@ func boss2():
 	run_customer()
 
 func sell(type:int):
-	print(cust.wants)
 	if not cust.allowed.has(type):
 		if cust == $"../track/Customer5": cust.end_dialogue_no_wrng = "Skater Goth:Fix it? No. Just give a new one. Are you slow or something?.."
 		cust.end_dia_setup(false, false, 1)
@@ -296,7 +297,7 @@ func sell(type:int):
 		sound.play()
 	
 	elif float(sell_buttons[type].tooltip_text.get_slice("$", 1)) <= cust.wallet:
-		if cust.wants == type or cust.wants == 6:
+		if cust.wants == type or cust.wants == 7:
 			cust.end_dia_setup(true, false)
 			$"../Node2D/Player/Face/kind".visible = true
 			profit.text = str("$", clamp(float(profit.text.get_slice("$", 1)) + cust.tip, 0, 5000000))
@@ -370,4 +371,6 @@ func _on_timer_timeout():
 	price_d.visible = false
 	timer.visible = false
 	cust.end_dia_setup(false, false, 2)
+	if cust == $"../track/Boss": end_boss()
+	elif cust == $"../track/Boss2": end_boss2()
 	end_cust()

@@ -53,7 +53,6 @@ func request_next_dialogue() -> String:
 	return str(dialogue_seperated[last_line_delivered -1])
 
 func end_dia_setup(answer: bool, scam: bool, reason: int = 0):
-	print(answer, scam, reason)
 	dialogue_seperated = []
 	last_line_delivered = 0
 	if scam and answer:
