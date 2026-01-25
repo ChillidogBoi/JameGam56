@@ -1308,7 +1308,7 @@ end_dialogue_yes = "Celebrity:Oh, this is just perfect, darling! This will be on
 end_dialogue_scam = "Celebrity:Cute! I like it! Toodaloo!"
 end_dialogue_no_exp = "Celebrity:HA! Why would someone like me ever wear this?&You:Uh... maybe in an alternate universe where everyone loves cheap gold belts?"
 end_dialogue_no_wrng = "Celebrity:I would never even put this on my body."
-end_dialogue_no_tim = "How dare you keep a VIP waiting??!! My fans won't forgive this!"
+end_dialogue_no_tim = "Celebrity:How dare you keep a VIP waiting??!! My fans won't forgive this!"
 news_scammed = "Model Fired for \"Ugly Belt\" &\"It's her fault for coming on [the set] wearing THAT. Ugh, I get shivers just thinking about it,\" says Example Name. When asked for a comment the model only had this to say: \"That's [the fashion industry] for you. [You] go looking for styles in new places, sometimes [they're] good, sometimes [you get] fired.\""
 
 [node name="Control5" type="Control" parent="track/Customer3"]

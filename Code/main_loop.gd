@@ -351,12 +351,11 @@ func _on_replacement_pressed():
 		cust.end_dia_setup(true, true)
 		end_boss2()
 		return
-	
 	else:
 		profit.text = str("$", float(profit.text.get_slice("$", 1)) - cust.replace_price)
 		Settings.profit = float(profit.text.get_slice("$", 1))
 		cust.end_dia_setup(true, false)
-	end_cust()
+		end_cust()
 
 
 func _process(delta):
@@ -373,4 +372,4 @@ func _on_timer_timeout():
 	cust.end_dia_setup(false, false, 2)
 	if cust == $"../track/Boss": end_boss()
 	elif cust == $"../track/Boss2": end_boss2()
-	end_cust()
+	else: end_cust()
